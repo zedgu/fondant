@@ -1,0 +1,58 @@
+dl
+  +fd()
+    font-size .8rem
+    dt
+      margin .4em auto
+    dd
+      margin .4em auto .4em 2em
+
+list-ol()
+  counter-reset ordered
+  list-style-type none
+list-li()
+  list-style-type none
+  &:before
+    counter-increment ordered
+    content counters(ordered, ".")
+    {block}
+
+// basic style for ul, ol
+ul
+ol
+  +fd()
+    &
+    ul
+    ol
+      padding-left 0
+      list-style-position outside
+      margin .8em auto auto 2em
+    li
+      margin .4em 0
+
+// list order
+ol
+  +fd()
+    &
+    ol
+      list-ol()
+      li
+        +list-li()
+          float left
+          margin-left -2em
+          margin-right 1.5em
+          display inline-block
+.ol
+  +fd()
+    &
+    .ol
+      list-ol()
+      .li
+        +list-li()
+          margin-right 1em
+
+.list
+  +fd()
+    list-style-type none
+    margin 0
+    li
+      margin .6em auto

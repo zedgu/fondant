@@ -1,0 +1,35 @@
+// Base Boxes
+section
+article
+.section
+.article
+.segment
+  &.fd
+    padding .4rem
+    &.gray
+      background-color back-gray
+  &.panel
+  > .panel
+    background-color base-white
+    border 1px solid base-border
+    border-radius(.4em)
+    margin-bottom 1rem
+    > header
+    > .header
+      background-color back-light-gray
+      border-bottom 1px solid base-border
+      border-radius(.4em .4em 0 0)
+      > *
+        padding 0 .8rem
+        margin 0
+        line-height 2em
+    > .content
+      padding .8rem
+  &.segment
+    background-color base-white
+    border 1px solid base-border
+    border-radius(.4em)
+  // p&
+  & > p
+    line-height 1.6em
+    margin .8em 0

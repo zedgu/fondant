@@ -1,0 +1,50 @@
+a
+  color a
+  text-decoration none;
+  &:hover
+    color a-hover
+  &:active
+    color a-active
+
+h(n)
+  fr((n - 2 * i) / 10)
+  color darken(base-black, 20%)
+  margin 0 auto .4em auto
+
+// h1-h6
+for i in 1 2 3 4 5 6
+  .fd
+    > h{i}
+    &.h{i}
+    h{i}&
+      font-weight normal
+      h(22)
+
+// h2-h6 .sub
+for i in 2 3 4 5 6
+  .fd
+    > h{i}.sub
+    h{i}&.sub
+    &.h{i}.sub
+    hgroup& .sub
+    > hgroup .sub
+      h(18)
+
+.fd
+  &.header
+  > .header
+    fr(1.8)
+  &.header.sub
+  > .header.sub
+    fr(1.2)
+
+code
+  color base-red
+  font-size 1em
+  background-color light-gray
+  border 1px solid dark-gray
+  border-radius(4px)
+  padding 0 3px
+
+.bold
+  font-weight bold

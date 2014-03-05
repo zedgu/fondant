@@ -1,0 +1,141 @@
+button-background(c)
+  gradient('linear', to bottom, rgba(lighten(c, 30%), 1) 0%, rgba(c, 1) 50%, rgba(darken(c, 20%), 1) 100%)
+
+button
+input[type="button"]
+.button
+  +fd()
+    border-width 1px
+    border-style solid
+    border-radius(.2rem)
+    display inline-block
+    font-family base-family
+    font-size 1.2rem
+    line-height 2em
+    padding .1em .9em
+    vertical-align middle
+    cursor pointer
+    margin 2px
+    cbn('user-select', none)
+    white-space nowrap
+    &.s
+      font-size .8rem
+    &.m
+      font-size 1rem
+    &.l
+      font-size 1.4rem
+    &.xl
+      font-size 1.6rem
+    &.xxl
+      font-size 1.8rem
+    &:focus
+      text-decoration none
+      outline 0
+    for key, state in states
+      if key != 'normal'
+        key = '.' + key
+      else
+        key = ''
+      &{key}
+        color state[0]
+        background-color state[1]
+        border-color darken(state[2], 10%)
+        &:hover
+        &:focus
+        &.active
+          background-color darken(@background-color, state[3])
+        &:active
+          box-shadow(inset .05em .05em .8em .1em darken(darken(@background-color, state[3]), 25%))
+    +icon-class(\&)
+      &:empty
+        padding-left .6em
+        padding-right .6em
+        &:before
+          margin auto .2em
+      &:before
+        margin-left 0
+      &:after
+        margin-right 0
+      +icon-class(\>)
+        &:before
+          margin-left 0
+      &.labeled
+        position relative
+        padding-left 3.3em
+        overflow hidden
+        &:before
+          clear both
+          position absolute
+          top 0
+          left 0
+          width 2.4em
+          background-color rgba(dark-black, .15)
+          border-right 1px solid rgba(dark-black, .17)
+          line-height 2em
+          padding .1em 0
+          margin 0
+        &.toggle
+          padding-left .9em
+          padding-right 3.3em
+          &:after
+            position absolute
+            top 0
+            right 0
+            width 2.4em
+            background-color rgba(dark-black, .15)
+            line-height 2em
+            padding .1em 0
+            border-left 1px solid rgba(dark-black, .17)
+            margin 0 0 0 .8em
+
+.buttons
+  +fd()
+    display inline-block
+    button
+    input[type="button"]
+    .button
+      border-radius(0)
+      border-left-width 0
+      float left
+      margin 0
+      &:first-child
+        border-left-width 1px
+        border-radius(.2rem, top, left)
+        border-radius(.2rem, bottom, left)
+      &:last-child
+        border-radius(.2rem, top, right)
+        border-radius(.2rem, bottom, right)
+      &.toggle
+        padding-left .6em
+        padding-right .6em
+        +icon-class(\&)
+          &:after
+            margin 0
+        &:empty
+          &:before
+            font-family "fontello"
+            font-style normal
+            font-weight normal
+            speak none
+            width .6em
+            line-height 1em
+            text-decoration inherit
+            content '%s' % icons['angle-down']
+    .buttons
+      float left
+      button
+        &:first-child
+        &:last-child
+          border-radius(0)
+          border-left-width 0
+        
+    &.s > button
+      font-size .8rem
+    &.m > button
+      font-size 1rem
+    &.l > button
+      font-size 1.4rem
+    &.xl > button
+      font-size 1.6rem
+    &.xxl > button
+      font-size 1.8rem

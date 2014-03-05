@@ -1,0 +1,360 @@
+<article class="fd gray">
+  <h2 class="fd divider">Fondant - A Css Framework for HTML 5</h2>
+  <p>Fondant is a</p>
+  <section class="panel">
+    <div class="header">
+      <h3 class="fd">Text</h3>
+    </div>
+    <div class="content">
+      <section class="fd">
+        <h4 class="divider">Headings</h4>
+        <div class="fd">
+          <dl>
+            <dt>Tag</dt>
+            <dd><code>h1</code> - <code>h6</code> or <em class="lowlight">inline tags</em></dd>
+            <dt>Usage</dt>
+            <dd>Your Headings.</dd>
+          </dl>
+          <div class="fd examples">
+            <section>
+              <dl class="fd">
+                <dt>base headings</dt>
+                <dd><code>.h1</code> - <code>.h6</code></dd>
+              </dl>
+              <div class="example">
+                <h1 class="fd">h1</h1>
+                <h2 class="fd">h2</h2>
+                <h3 class="fd">h3</h3>
+                <h4 class="fd">h4</h4>
+                <h5 class="fd">h5</h5>
+                <h6 class="fd">h6</h6>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section class="fd">
+        <h4 class="divider">Sub Headings</h4>
+        <div class="fd">
+          <dl>
+            <dt>Tag</dt>
+            <dd>
+              <code>h2</code> - <code>h6</code> or <em class="lowlight">inline tags</em>
+            </dd>
+            <dt>Class</dt>
+            <dd><code>.sub</code> or <code>.h*.sub</code></dd>
+            <dt>Usage</dt>
+            <dd>Sub headings.</dd>
+          </dl>
+          <div class="fd examples">
+            <h2 class="sub">sub h2</h2>
+            <h3 class="sub">sub h3</h3>
+            <h4 class="sub">sub h4</h4>
+            <h5 class="sub">sub h5</h5>
+            <h6 class="sub">sub h6</h6>
+          </div>
+        </div>
+      </section>
+      <section class="fd">
+        <h4 class="divider">Link</h4>
+        <div class="fd">
+          <p>Standard link with tag <code>a</code></p>
+          <div class="examples">
+            <a href="#">A Link</a>
+          </div>
+        </div>
+      </section>
+      <section class="fd">
+        <h4 class="divider">Paragraph</h4>
+        <div class="fd">
+          <p>Paragraph content with tag <code>p</code></p>
+          <div class="examples">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="header">
+      <h3 class="fd">Button</h3>
+    </div>
+    <div class="content">
+      <section class="fd">
+        <h4 class="divider">Button</h4>
+        <div class="fd">
+          <dl>
+            <dt>Tag</dt>
+            <dd><code>button</code> or <code>a.button</code> or <code>input[type="button"]</code></dd>
+            <dt>Usage</dt>
+            <dd>Standard buttons or links in button style, or both with icons.</dd>
+          </dl>
+          <div class="examples">
+            <section>
+              <dl class="fd">
+                <dt>6 sizes</dt>
+                <dd><code>.s</code> <code>.m</code> default <code>.l</code> <code>.xl</code> <code>.xxl</code></dd>
+                <dt>7 colors</dt>
+                <dd>default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></dd>
+              </dl>
+              <div class="example">
+                <button class="fd s">Button</button>
+                <a class="fd s button lowlight">Lowlight</a>
+                <input class="fd m highlight" value="Highlight" type="button" />
+                <button class="fd ok">Ok</button>
+                <button class="fd l warning">Warning</button>
+                <button class="fd xl danger">Danger</button>
+                <button class="fd xxl info">Info</button>
+              </div>
+            </section>
+            <section>
+              <dl class="fd">
+                <dt>with icon - <q><a>see all icons</a></dt>
+                <dd>only icon: <code>.icon-*</code> and empty content</dd>
+                <dd>on left: <code>.icon-*</code></dd>
+                <dd>on right: <code>.icon-*.toggle</code></dd>
+              </dl>
+              <div class="example">
+                <button class="fd icon-weibo"></button>
+                <button class="fd icon-weibo">Weibo</button>
+                <button class="fd icon-weibo toggle">Weibo</button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section class="fd">
+        <h4 class="divider">Labeled Button</h3>
+        <dl>
+          <dt>Class</dt>
+          <dd><code>.labeled</code></dd>
+        </dl>
+        <div class="fd">
+          <div class="examples">
+            <section>
+              <dl class="fd">
+                <dt>with a labeled icon</dt>
+                <dd>on left: <code>.labeled</code></dd>
+                <dd>on right: <code>.labeled.toggle</code></dd>
+              </dl>
+              <div class="example">
+                <button class="fd s icon-weibo labeled">Weibo</button>
+                <button class="fd s lowlight icon-weibo labeled toggle">Weibo</button>
+                <button class="fd m highlight icon-weibo labeled">Weibo</button>
+                <button class="fd ok icon-weibo labeled toggle">Weibo</button>
+                <button class="fd l warning icon-weibo labeled">Weibo</button>
+                <button class="fd xl danger icon-weibo labeled toggle">Weibo</button>
+                <button class="fd xxl info icon-weibo labeled">Weibo</button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section class="fd">
+        <h4 class="divider">Icon Button with Toggle</h3>
+        <div class="fd">
+          <div class="examples">
+            <section>
+              <button class="fd icon-angle-down">Dropdown</button>
+              <button class="fd icon-angle-up toggle">Dropup</button>
+            </section>
+            <section>
+              <a class="fd button icon-angle-double-down toggle">
+                <span class="icon-folder">folder</span>
+              </a>
+              <button class="fd icon-angle-double-down toggle">
+                <span class="icon-folder">folder</span>
+              </button>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section class="fd">
+        <h4 class="divider">Buttons Group</h4>
+        <div class="fd">
+          <dl>
+            <dt>Tag</dt>
+            <dd><code>div</code> or <code>span</code> or <em class="lowlight">any one you like</em></dd>
+            <dt>Class</dt>
+            <dd><code>.buttons</code></dd>
+          </dl>
+          <div class="examples">
+            <section>
+              <div class="fd buttons">
+                <button class="active">One</button>
+                <button>Two</button>
+                <button>Three</button>
+              </div>
+            </section>
+            <section>
+              <div class="fd buttons l">
+                <a class="button">One</a>
+                <a class="button">Two</a>
+                <a class="button">Three</a>
+              </div>
+            </section>
+            <section>
+              <div class="fd buttons">
+                <button class="icon-align-left"></button>
+                <button class="icon-align-center"></button>
+                <button class="icon-align-right"></button>
+              </div>
+            </section>
+            <section>
+              <div class="fd buttons">
+                <button class="icon-font"></button>
+                <button class="icon-bold"></button>
+                <button class="icon-italic"></button>
+                <button class="icon-text-height"></button>
+                <button class="icon-text-width"></button>
+              </div>
+            </section>
+            <section>
+              <div class="fd buttons">
+                <button class="icon-sort-alt-up"></button>
+                <button class="toggle"></button>
+              </div>
+            </section>
+            <div class="fd buttons">
+              <button class="icon-bug"></button>
+              <button class="toggle icon-angle-up"></button>
+            </div>
+            <div class="fd buttons">
+              <button class="icon-mail">Inbox</button>
+              <span class="fd buttons">
+                <button class="icon-folder">Folder</button>
+                <button class="toggle"></button>
+              </span>
+              <button class="icon-trash">Trash</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="header">
+      <h3 class="fd">List</h3>
+    </div>
+    <div class="content">
+      <section class="fd">
+        <h4 class="divider">Bulleted</h4>
+        <div class="fd">
+          <dl>
+            <dt>Tag</dt>
+            <dd><code>ul</code></dd>
+          </dl>
+          <div class="examples">
+            <ul class="fd">
+              <li>UL Item 1</li>
+              <li>UL Item 2</li>
+              <li>
+                UL Item 3
+                <ul>
+                  <li>Nested Item 1</li>
+                  <li>Nested Item 2</li>
+                  <li>
+                    Nested Item 3
+                    <ul>
+                      <li>More</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="fd">
+        <h4 class="divider">Ordered</h4>
+        <div class="fd">
+          <dl>
+            <dt>Tag</dt>
+            <dd><code>ol</code> or <em class="lowlight">any one you like</em></dd>
+            <dt>Class</dt>
+            <dd><code>.ol</code> <code>.li</code></dd>
+            <dt>备注</dt>
+            <dd>非<code>ol</code>标签使用时，须完成类<code>ol>(li>ol)+li</code>的嵌套，以避免<code>counter-reset</code>错误。详见下面示例：</dd>
+          </dl>
+          <div class="examples">
+            <section>
+              <ol class="fd">
+                <li>OL Item 1</li>
+                <li>OL Item 2</li>
+                <li>
+                  OL Item 3
+                  <ol>
+                    <li>Nested Item 1</li>
+                    <li>
+                      Nested Item 2
+                      <ol>
+                        <li>
+                          More
+                          <ol>
+                            <li>And More</li>
+                          </ol>
+                        </li>
+                      </ol>
+                    </li>
+                    <li>
+                      Nested Item 3
+                      <ol>
+                        <li>
+                          More
+                          <ol>
+                            <li>And More</li>
+                          </ol>
+                        </li>
+                      </ol>
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </section>
+            <section>
+              <article class="fd ol">
+                <section class="fd">
+                  <h3 class="li">Phase I</h3>
+                  <section class="ol">
+                    <h4 class="fd li">Job A</h4>
+                    <h4 class="fd li">Job B</h4>
+                  </section>
+                </section>
+                <section class="fd">
+                  <h3 class="li">Phase II</h3>
+                </section>
+              </article>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section class="fd">
+        <h4 class="divider">List View</h4>
+        <div class="fd">
+          <dl>
+            <dt>Tag</dt>
+            <dd><code>ul</code> or <code>div</code> or <em class="lowlight">any one you like</em></dd>
+          </dl>
+          <div class="examples">
+            <ul class="fd list">
+              <li>
+                <div class="fd h5">Item Header 1</div>
+                <div>List Item Content 1</div>
+              </li>
+              <li>
+                <div class="fd h5">Item Header 2</div>
+                <div>List Item Content 2</div>
+              </li>
+              <li>
+                <div class="fd h5">Item Header 3</div>
+                <div>List Item Content 3</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- section.fd>(h4.divider>{})+div.fd>(dl>dt+dd)+div.examples -->
+    </div>
+  </section>
+  <!-- section.panel>(div.header>h3.fd{})+div.content -->
+</article>

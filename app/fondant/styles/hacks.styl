@@ -1,0 +1,23 @@
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  .fd
+    button&
+    & > button
+    .button&
+    & > .button
+      &[class^="icon-"]
+      &[class*=" icon-"]
+        > span
+          margin auto -.3em
+
+@-moz-document url-prefix()
+  button
+    &.fd
+    .fd > &
+      &.labeled
+        &:before
+          height 2.1em
+        &.toggle
+          &:before
+            left -10em
+          &:after
+            height 2.1em
