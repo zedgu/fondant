@@ -1,11 +1,19 @@
-// Header
-header
-.header
-  &.fd
-    &.nav
-      padding 0 \!important
-    .logo
-      // margin-bottom .4rem
+// top nav
+.top
+  +fd()
+    padding 0 \!important
+    height 4.5rem
+    .menu
+      list-style-type none
+      margin 0
+      padding 1rem 0
+      li
+        display inline-block
+        fr(1.2)
+        padding 0 1em
+    .brand
       a
         color base-highlight
-        fr(2.4)
+        fr(1.4)
+      &.logo
+        text-indent 100% // to do 完成图片logo的样式

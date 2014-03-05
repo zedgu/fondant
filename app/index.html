@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Fondant</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -15,16 +15,22 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/stylus.css -->
+    <link rel="stylesheet" href="styles/fondant.css">
     <link rel="stylesheet" href="styles/stylus.css">
-    <link rel="stylesheet" href="fondant/stylus.css">
     <!-- endbuild -->
   </head>
   <body ng-app="siteApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <!-- Add your site or application content here -->
+    <header class="fd">
+      <nav class="top mid">
+        <ul class="menu">
+          <li class="brand"><a href="/">Fondant</a></li>
+          <li><a href="/docs.html">Documentation</a></li>
+        </ul>
+      </nav>
+    </header>
     <div id="body" ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

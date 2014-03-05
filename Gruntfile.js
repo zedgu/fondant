@@ -31,7 +31,7 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
-          livereload: true
+          livereload: '<%= connect.options.livereload %>'
         }
       },
       jsTest: {
@@ -64,10 +64,10 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        port: 9002,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
-        livereload: 35729,
+        livereload: 35739,
         middleware: function(connect, options) {
           var middlewares = [];
           var directory = options.directory || options.base[options.base.length - 1];
@@ -98,7 +98,7 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          port: 9001,
+          port: 9003,
           base: [
             '.tmp',
             'test',
@@ -351,7 +351,7 @@ module.exports = function (grunt) {
       compile: {
         files: {
           '.tmp/styles/stylus.css': ['<%= yeoman.app %>/styles/index.styl'],
-          '<%= yeoman.app %>/fondant/stylus.css': ['<%= yeoman.app %>/fondant/index.styl']
+          '.tmp/styles/fondant.css': ['<%= yeoman.app %>/fondant/index.styl']
         }
       }
     }
