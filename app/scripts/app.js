@@ -4,7 +4,8 @@ angular.module('siteApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'hljs'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

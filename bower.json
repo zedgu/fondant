@@ -9,7 +9,7 @@
     "angular-cookies": "1.2.6",
     "angular-sanitize": "1.2.6",
     "angular-route": "1.2.6",
-    "rainbow": "~1.1.9"
+    "angular-highlightjs": "~0.2.5"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",
