@@ -70,7 +70,7 @@ module.exports = function (grunt) {
         middleware: function(connect, options) {
           var middlewares = [];
           var directory = options.directory || options.base[options.base.length - 1];
-          middlewares.push(require('connect-modrewrite')(['!\\.html|\\.js|\\.svg|\\.css|\\.png$ /index.html [L]']));
+          middlewares.push(require('connect-modrewrite')(['!\\.html|\\.js|\\.svg|\\.css|\\.png|\\.eot|\\.ttf|\\.woff$ /index.html [L]']));
 
           if (!Array.isArray(options.base)) {
             options.base = [options.base];
