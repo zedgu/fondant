@@ -9,12 +9,12 @@ angular.module('siteApp', [
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: '/views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/docs.html', {
-        templateUrl: 'views/docs.html',
-        controller: 'MainCtrl'
+      .when('/docs/:category/:detail?', {
+        templateUrl: '/views/docs.html',
+        controller: 'DocsCtrl'
       })
       .otherwise({
         redirectTo: '/'

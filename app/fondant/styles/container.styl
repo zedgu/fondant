@@ -1,6 +1,7 @@
 // Base Boxes
 section
 article
+aside
 .section
 .article
 .segment
@@ -35,7 +36,25 @@ article
     margin .8em 0
 
 .mid
-  margin auto
+  +fd()
+    margin auto
+
+aside
+  +fd()
+    float left
+
+.cross
+  +fd()
+    clear both
+    background-color back-highlight
+    width 100%
+    padding 1em 0
+    color base-white
+    for i in 1 2 3 4 5 6
+      .h{i}
+      h{i}
+        color base-white !important
+
 
 @media (min-width: 768px)
   .mid

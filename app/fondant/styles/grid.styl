@@ -1,23 +1,6 @@
 e_n_12 = {one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12}
-.fd .row
-.fd.row
-  width 100%
-  display table
-  &:before
-  &:after
-    content " "
-    clear both
-  .row
-    width auto
-  .col
-    padding 1% 1.5%
-    display table-cell
-  for key,value in e_n_12
-    &.{key}
-      > .col
-        vertical-align middle
-        width unit(100/value, "%")
-  &.block
+.row
+  +fd()
     display block
     > .col
       display block
@@ -25,3 +8,30 @@ e_n_12 = {one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8
       for key,value in e_n_12
         &.{key}
           width unit(100/12*value, "%")
+    &:before
+    &:after
+      content "."
+      clear both
+      height 0
+      display block
+      overflow hidden
+    // .row
+    //   width auto
+    &.table
+      display table
+      > .col
+        padding 1% 1.5%
+        display table-cell
+        vertical-align middle
+      aside
+        width 17%
+      article
+        width 77%
+      for key,value in e_n_12
+        &.{key}
+          > .col
+            width unit(100/value - 3, "%")
+    aside
+      width 20%
+    article
+      width 80%

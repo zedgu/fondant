@@ -15,9 +15,10 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/stylus.css -->
-    <link rel="stylesheet" href="styles/fondant.css">
-    <link rel="stylesheet" href="styles/stylus.css">
+    <link rel="stylesheet" href="/styles/fondant.css">
+    <link rel="stylesheet" href="/styles/stylus.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="/bower_components/rainbow/themes/github.css">
   </head>
   <body ng-app="siteApp">
     <!--[if lt IE 7]>
@@ -27,7 +28,10 @@
       <nav class="top mid">
         <ul class="menu">
           <li class="brand"><a href="/">Fondant</a></li>
-          <li><a href="/docs.html">Documentation</a></li>
+          <li><a href="/getting-started/">Getting Started</a></li>
+          <li><a href="/docs/css">CSS</a></li>
+          <li><a href="/docs/components">Components</a></li>
+          <li><a href="/download/">Download</a></li>
         </ul>
       </nav>
     </header>
@@ -51,17 +55,23 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <script src="/bower_components/rainbow/js/rainbow.min.js"></script>
+    <script src="/bower_components/rainbow/js/language/html.js"></script>
+    <script src="/bower_components/rainbow/js/language/css.js"></script>
+
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/controllers/main.js"></script>
+        <script src="/scripts/controllers/docs.js"></script>
+        <script src="/scripts/directives/fdCode.js"></script>
         <!-- endbuild -->
 </body>
 </html>

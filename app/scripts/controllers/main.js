@@ -1,10 +1,6 @@
 'use strict';
 
-angular.module('fondantApp')
+angular.module('siteApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.abc = '';
   });

@@ -8,7 +8,6 @@
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
-
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
@@ -71,6 +70,8 @@ module.exports = function (grunt) {
         middleware: function(connect, options) {
           var middlewares = [];
           var directory = options.directory || options.base[options.base.length - 1];
+          middlewares.push(require('connect-modrewrite')(['!\\.html|\\.js|\\.svg|\\.css|\\.png$ /index.html [L]']));
+
           if (!Array.isArray(options.base)) {
             options.base = [options.base];
           }
@@ -81,9 +82,9 @@ module.exports = function (grunt) {
           // Make directory browse-able.
           middlewares.push(connect.directory(directory));
           // Handle 404
-          middlewares.push(function(req, res, next) {
-            res.end(grunt.file.read(options.base[1] + '/index.html'));
-          });
+          // middlewares.push(function(req, res) {
+          //   res.end(grunt.file.read(options.base[1] + '/index.html'));
+          // });
           return middlewares;
         }
       },
@@ -165,7 +166,10 @@ module.exports = function (grunt) {
     'bower-install': {
       app: {
         html: '<%= yeoman.app %>/index.html',
-        ignorePath: '<%= yeoman.app %>/'
+        ignorePath: '<%= yeoman.app %>/',
+        jsPattern: '<script src="/{{filePath}}"></script>',
+        cssPattern: '<link rel="stylesheet" href="/{{filePath}}" />',
+        exclude: [/rainbow/i, '/bower_components/rainbow/js/rainbow.min.js']
       }
     },
 
