@@ -1,56 +1,75 @@
 <section class="fd">
   <h3 class="divider">Headings</h3>
   <div class="fd docs">
-    <dl>
-      <dt>Tag</dt>
-      <dd><code>h1</code> - <code>h6</code> or <em class="lowlight">inline tags</em></dd>
-      <dt>Usage</dt>
-      <dd>Your Headings.</dd>
-    </dl>
+    <p>Your Headings.</p>
+    <div class="tag">
+      <code>h1</code> - <code>h6</code> or <em class="lowlight">any one you like</em>
+    </div>
     <div class="usage">
-      Your Headings.
+      <ul class="fd">
+        <li>
+          <code>h1.fd</code> - <code>h6.fd</code>
+        </li>
+        <li>
+          <code>.fd > h1</code> - <code>.fd > h6</code>
+        </li>
+        <li>
+          <code>.fd.h1</code> - <code>.fd.h6</code>
+        </li>
+        <li>
+          <code>.fd > .h1</code> - <code>.fd > .h6</code>
+        </li>
+      </ul>
     </div>
-    <div class="fd">
-      <section>
-        <dl class="fd">
-          <dt>base headings</dt>
-          <dd><code>.h1</code> - <code>.h6</code></dd>
-        </dl>
-        <div class="example">
-          <h1 class="fd">h1</h1>
-          <div class="fd h2">h2</div>
-          <p class="fd h3">h3</p>
-          <p class="fd">
-            <span class="h4">h4</span>
-          </p>
-          <h5 class="fd">h5</h5>
-          <span class="fd h6">h6</span>
-        </div>
-        <div class="markup" fd-code hljs language="html" source="code"></div>
-      </section>
+    <div class="example">
+      <h1 class="fd">Heading h1</h1>
+      <div class="fd h2">Heading h2</div>
+      <p class="fd h3">Heading h3</p>
+      <p class="fd">
+        <span class="h4">Heading h4</span>
+      </p>
+      <h5 class="fd">Heading h5</h5>
+      <span class="fd h6">Heading h6</span>
     </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
 </section>
 <section class="fd">
   <h3 class="divider">Sub Headings</h3>
-  <div class="fd">
-    <dl>
-      <dt>Tag</dt>
-      <dd>
-        <code>h2</code> - <code>h6</code> or <em class="lowlight">inline tags</em>
-      </dd>
-      <dt>Class</dt>
-      <dd><code>.sub</code> or <code>.h*.sub</code></dd>
-      <dt>Usage</dt>
-      <dd>Sub headings.</dd>
-    </dl>
-    <div class="fd examples">
-      <h2 class="sub">sub h2</h2>
-      <h3 class="sub">sub h3</h3>
-      <h4 class="sub">sub h4</h4>
-      <h5 class="sub">sub h5</h5>
-      <h6 class="sub">sub h6</h6>
+  <div class="fd docs">
+    <div class="tag">
+      <code>h2</code> - <code>h6</code> or <em class="lowlight">any one you like</em>
     </div>
+    <div class="usage">
+      <ul class="fd">
+        <li>
+          <code>h2.fd.sub</code> - <code>h6.fd.sub</code>
+        </li>
+        <li>
+          <code>.fd > h2.sub</code> - <code>.fd > h6.sub</code>
+        </li>
+        <li>
+          <code>.fd.h2.sub</code> - <code>.fd.h6.sub</code>
+        </li>
+        <li>
+          <code>.fd > .h2.sub</code> - <code>.fd > .h6.sub</code>
+        </li>
+      </ul>
+    </div>
+    <div class="example">
+      <hgroup class="fd">
+        <h1>Heading</h1>
+        <h2 class="sub">Sub Heading</h2>
+      </hgroup>
+      <h2 class="fd sub">sub h2</h2>
+      <div class="fd h3 sub">sub h3</div>
+      <p class="fd h4 sub">sub h4</p>
+      <p class="fd">
+        <span class="h5 sub">sub h5</span>
+      </p>
+      <span class="fd h6 sub">sub h6</span>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
 </section>
 <section class="fd">
