@@ -10,7 +10,7 @@ angular.module('siteApp')
     $scope.category = $routeParams.category;
     $scope.detail = $routeParams.detail;
     $scope.data = $scope.menuData[$scope.category];
-    $scope.include = '/views/' + $scope.category + '/' + $scope.detail + '.html';
+    $scope.include = '/views/' + $scope.category + '/' + ($scope.detail || 'index') + '.html';
     if ($scope.data) {
       if(!$scope.detail) {
         $location.path('/docs/' + $scope.category);

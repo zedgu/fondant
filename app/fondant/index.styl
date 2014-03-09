@@ -115,6 +115,8 @@ body
 
 p
   font-size 0.8rem
+  line-height 1.8em
+  margin .6em auto
 
 // Common Class
 .divider
@@ -125,7 +127,8 @@ p
 for key, state in states
   if key != 'normal'
     .{key}
-      color dark(state[1]) ? state[1] : state[0]
+      +fd()
+        color dark(state[1]) ? state[1] : state[0]
 
 /**
  * icons from fontello.com
@@ -218,6 +221,7 @@ icons = {
   , 'angle-left': '\e852'
   , 'angle-right': '\e853'
   , 'angle-up': '\e854'
+  , 'angle-down': '\e855'
   , 'spin6': '\e8ad'
   , 'angle-double-left': '\e856'
   , 'angle-double-right': '\e857'
@@ -298,14 +302,13 @@ icons = {
   , 'apple': '\e8a2'
   , 'css3': '\e8a4'
   , 'dropbox': '\e8a6'
-  , 'facebook-squared': '\e8a7'
+  , 'facebook': '\e8a7'
   , 'flickr': '\e8a8'
-  , 'github-circled': '\e8a9'
-  , 'gplus-squared': '\e8aa'
+  , 'github': '\e8a9'
+  , 'gplus': '\e8aa'
   , 'html5': '\e8a5'
-  , 'tumblr-squared': '\e8ab'
+  , 'tumblr': '\e8ab'
   , 'weibo': '\e8ac'
-  , 'angle-down': '\e855'
 }
 @font-face
   font-family 'fontello'

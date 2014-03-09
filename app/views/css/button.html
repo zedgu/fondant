@@ -1,0 +1,163 @@
+<section class="fd">
+  <h3 class="divider">Standard Button</h3>
+  <div class="fd docs">
+    <p>Standard buttons or links in button style</p>
+    <div class="tag">
+      <code>button</code> or <code>a</code> or <code>input[type="button"]</code> or <em class="lowlight">any one you like</em>
+    </div>
+    <div class="usage">
+      <ul class="fd">
+        <li><code>button.fd</code> or <code>.fd &gt; button</code></li>
+        <li><code>a.fd.button</code> or <code>.fd &gt; a.button</code></li>
+        <li><code>input[type="button"].fd</code> or <code>.fd &gt; input[type="button"]</code></li>
+        <li><span class="fd h6">6 sizes :</span> <code>.s</code> <code>.m</code> default <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
+        <li><span class="fd h6">on active :</span> <code>.active</code></li>
+      </ul>
+    </div>
+    <div class="example">
+      <button class="fd s">Button</button>
+      <a class="fd s button lowlight">Lowlight</a>
+      <input class="fd m highlight" value="Highlight" type="button" />
+      <span class="fd"><button class="ok active">Ok</button></span>
+      <span class="fd"><a class="button l warning">Warning</a></span>
+      <div class="fd button xl danger">Danger</div>
+      <span class="fd button xxl info">Info</span>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="divider">Icon Button</h3>
+  <div class="fd docs">
+    <p>Buttons with icon. <q><a>see all icons</a></q></p>
+    <div class="tag">
+      <code>button</code> or <code>a</code> or <em class="lowlight">any one you like ( exclude input )</em>
+    </div>
+    <div class="usage">
+      <ul class="fd">
+        <li><span class="fd h6">only icon :</span> <code>.icon-*</code> <em>with empty content</em></li>
+        <li><span class="fd h6">on left :</span> <code>.icon-*</code></li>
+        <li><span class="fd h6">on right ( toggle side ) :</span> <code>.icon-*.toggle</code></li>
+      </ul>
+    </div>
+    <div class="example">
+      <a class="fd button icon-weibo s"></a>
+      <button class="fd icon-weibo lowlight m">Weibo</button>
+      <div class="fd button icon-weibo toggle highlight">Weibo</div>
+      <span class="fd"><a class="button icon-github ok l"></a></span>
+      <span class="fd"><button class="icon-flickr warning xl">Flickr</button></span>
+      <span class="fd button icon-facebook toggle info xxl">Facebook</span>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="divider">Labeled Button</h3>
+  <div class="fd docs">
+    <p>Buttons with a labeled icon</p>
+    <div class="tag">
+      <code>button</code> or <code>a</code> or <em class="lowlight">any one you like ( except input )</em>
+    </div>
+    <div class="usage">
+      <ul class="fd">
+        <li><span class="fd h6">on left :</span> <code>.labeled</code></li>
+        <li><span class="fd h6">on right :</span> <code>.labeled.toggle</code></li>
+      </ul>
+    </div>
+    <div class="example">
+      <a class="fd button s icon-weibo labeled">Weibo</a>
+      <button class="fd m lowlight icon-weibo labeled toggle">Weibo</button>
+      <span class="fd"><a class="button highlight icon-weibo labeled">Weibo</a></span>
+      <span class="fd"><button class="l ok icon-weibo labeled toggle">Weibo</button></span>
+      <div class="fd button xl warning icon-weibo labeled">Weibo</div>
+      <span class="fd button xxl danger icon-weibo labeled toggle">Weibo</span>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="divider">Icon Button with Toggle</h3>
+  <div class="fd docs">
+    <div class="usage">
+      <code>.fd.icon-*.toggle &gt; .icon-*</code> or <code>.fd &gt; .icon-*.toggle &gt; .icon-*</code>
+    </div>
+    <div class="example">
+      <button class="fd icon-angle-double-down toggle">
+        <span class="icon-folder">folder</span>
+      </button>
+      <span class="fd">
+        <a class="button icon-angle-double-down toggle">
+          <span class="fd icon-folder">folder</span>
+        </a>
+      </span>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="divider">Button Group</h3>
+  <div class="fd docs">
+    <div class="tag">
+      <code>div</code> or <code>span</code> or <em class="lowlight">any one you like</em>
+    </div>
+    <div class="usage">
+      <code>.buttons &gt; button / .button / input[type="button"]</code>
+    </div>
+    <div class="example">
+      <div class="fd buttons l">
+        <a class="button">One</a>
+        <a class="button active">Two</a>
+        <a class="button">Three</a>
+      </div>
+      <div class="fd buttons">
+        <input type="button" value="One" class="active">
+        <input type="button" value="Two">
+        <input type="button" value="Three">
+      </div>
+      <div class="fd buttons m">
+        <button class="icon-align-left"></button>
+        <button class="icon-align-center"></button>
+        <button class="icon-align-right"></button>
+      </div>
+      <div class="fd buttons s">
+        <a class="button icon-font"></a>
+        <a class="button icon-bold"></a>
+        <a class="button icon-italic"></a>
+        <a class="button icon-text-height"></a>
+        <a class="button icon-text-width"></a>
+      </div>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="divider">Button Group with Toggle</h3>
+  <div class="fd docs">
+    <div class="tag">
+      <code>div</code> or <code>span</code> or <em class="lowlight">any one you like</em>
+    </div>
+    <div class="usage">
+      <code>.buttons &gt; button / .button + button.toggle / .button.toggle</code>
+    </div>
+    <div class="example">
+      <div class="fd buttons">
+        <a class="button icon-sort-alt-up"></a>
+        <button class="toggle"></button>
+      </div>
+      <div class="fd buttons">
+        <button class="icon-bug"></button>
+        <a class="button toggle icon-angle-up"></a>
+      </div>
+      <div class="fd buttons">
+        <button class="icon-mail">Inbox</button>
+        <span class="fd buttons">
+          <input type="button" class="icon-folder" value="Folder">
+          <button class="toggle"></button>
+        </span>
+        <button class="icon-trash">Trash</button>
+      </div>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
