@@ -1,0 +1,108 @@
+<section class="fd">
+  <h3 class="divider">Elements</h3>
+  <div class="fd docs">
+    <h4>text</h4>
+    <p>Most common form control, text-based input fields. Includes support for all HTML5 types: text, password, datetime, datetime-local, date, month, time, week, number, email, url, search, tel, and color.</p>
+    <div class="tag">
+      <code>input[type="text"]</code>
+    </div>
+    <div class="usage">
+      <code>input[type="text"].fd</code>  or <code>.fd &gt; input[type="text"]</code>    
+    </div>
+    <div class="example">
+      <div><input type="text" class="fd s" placeholder="Text 10"></div>
+      <div><input type="password" class="fd m" placeholder="Password 30"></div>
+      <div><input type="email" class="fd l" placeholder="Email 50"></div>
+      <div><input type="datetime" class="fd xl" placeholder="Datetime 70"></div>
+      <div><input type="url" class="fd" placeholder="http:// 100"></div>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="divider">Radio & Checkbox</h3>
+  <div class="fd docs">
+    <p>如果想让选择框在一行显示，你可以加上<code>.form-inline</code></p>
+    <div class="tag">
+      <code>input[type="radio"]</code> , <code>input[type="checkbox"]</code>
+    </div>
+    <div class="usage">
+      <code>input[type="radio"].fd</code>  or <code>.fd &gt; input[type="radio"]</code> ,
+      <code>input[type="checkbox"].fd</code> or <code>.fd &gt; input[type="checkbox"]</code>
+    </div>
+    <div class="example">
+      <div>
+        <label class="fd">
+          <input type="radio"> apple
+        </label>
+        <label class="fd">
+          <input type="radio"> 苹果
+        </label> 
+      </div>
+      <div>
+        <label class="fd form-inline">
+          <input type="checkbox"> orange
+        </label>
+      
+        <label class="fd form-inline">
+          <input type="checkbox"> 桔子
+        </label>
+      </div>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="divider">Select</h3>
+  <p>使用默认选项或添加<code>multiple</code>属性可以显示多个选项</p>
+  <div class="fd docs">
+    <div class="tag">
+      <code>select</code>
+    </div>
+    <div class="example">
+      <select class="fd">
+        <option selected="selected">Option 01</option>
+        <option>Option 02</option>
+        <option>Option 03</option>
+      </select> 
+      <select class="fd" multiple="">
+        <option selected="selected">Option 01</option>
+        <option>Option 02</option>
+        <option>Option 03</option>
+        <option>Option 04</option>
+        <option>Option 05</option>
+      </select>
+
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="divider">File</h3>
+  <div class="fd docs">
+    <div class="tag">
+      <code>input[type="file"]</code>
+    </div>
+    <div class="example">
+      <input type="file">
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="divider">Validation states</h3>
+  <div class="fd docs">
+    <div class="example">
+      <input type="text" class="fd warning" value="warning">
+      <input type="text" class="fd ok" value="ok" >
+      <input type="text" class="fd danger" value="danger">
+      <div class="field fd">
+        <input type="text" class="fd danger" value="danger">
+        <div class="pointing danger label above">
+          Enter your username
+        </div>
+      </div>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>

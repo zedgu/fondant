@@ -1,0 +1,101 @@
+inattrs = text password tel email url date number time datetime datetime-local month week search color
+focusbg = #F5FBFE 
+focusbc = #99BACA
+dangerbg = #FFF7F8
+dangerbc = #DC8D99
+dangerclr = #C91032
+okbg = #FAFFF2
+okbc = #8EC73B
+okclr = #539022
+warnbg = #f7f5e4
+warnbc = #c9b91a
+warnclr = #9c922a
+
+attr()
+  for inattr in inattrs
+    input[type={inattr}]
+      {block}
+
+label
+  +fd()
+    display block
+    line-height 1.4rem
+
+form
+textarea
+input
+select
+  +fd()
+    font-size .9rem
+    outline none
+    box-sizing border-box  
+
+textarea
+input[type="text"]
+input[type="password"]
+input[type="tel"]
+input[type="email"]
+input[type="url"]
+input[type="date"]
+input[type="number"]
+input[type="time"]
+input[type="datetime"]
+input[type="datetime-local"]
+input[type="month"]
+input[type="week"]
+input[type="search"]
+input[type="color"]
+  +fd()
+    margin 2px
+    padding .6em .5em
+    background-color base-white
+    border 1px solid rgba(dark-black, .15)
+    border-radius(.2rem)
+    color rgba(dark-black, .7)
+    width 100%
+    transition all 0.2s linear 0s
+    &:focus
+      background-color focusbg
+      border-color focusbc
+    &.s
+      width 10%
+    &.m
+      width 30%
+    &.l 
+      width 50%
+    &.xl
+      width 70%
+    &.danger
+      background-color dangerbg
+      border-color dangerbc
+      color dangerclr
+    &.ok
+      background-color okbg
+      border-color okbc
+      color okclr
+    &.warning
+      background-color warnbg
+      border-color warnbc
+      color warnclr
+
+.form-inline
+  +fd()
+    display inline-block 
+    vertical-align middle
+    padding-right 2em    
+      
+input[type="radio"]
+ +fd()
+    float left
+    margin-left 0
+    margin-top .35em
+
+input[type="checkbox"]
+  +fd()
+    float left
+    margin-left 0
+    margin-top .3em
+
+input[type="file"]
+  display block
+

@@ -1,0 +1,97 @@
+.label
+  +fd()
+    display inline-block
+    vertical-align middle
+    background-color light-gray
+    border 1px solid base-black
+    padding .5em .8em
+    color rgba(base-black, .65)
+    font-weight normal
+    border-radius .2rem
+    box-sizing border-box
+    font-size .9rem
+    margin-left .2em
+    &.warning
+      background-color warnclr
+      border-color warnclr
+      color base-white
+    &.danger
+      background-color dangerclr
+      border-color dangerclr
+      color base-white
+    &.ok
+      background-color okclr
+      border-color okclr
+      color base-white
+
+.pointing
+  +fd()
+    &.label
+      position relative
+      margin-top 1em
+      &:before
+        position: absolute
+        content: ""
+        width .6em
+        height .6em
+        background-image none
+        background-color light-gray
+        transform rotate(45deg)
+        z-index 2
+        transition background 0.1s linear
+    &.above
+      &.label
+        margin-top 1em
+        &:before
+          margin-left -.3em
+          top -.3em
+          left 50%
+    &.left
+      &.label
+        margin-top 0em
+        margin-left 1em
+        &:before
+          margin-top -.3em
+          bottom auto
+          right auto
+          top 50%
+          left -.3em
+    &.right
+      &.label
+        margin-top 0em
+        margin-right 1em
+        &:before
+          margin-top -.3em
+          bottom auto
+          right -.3em
+          top 50%
+          left auto
+    &.below
+      &.label
+        margin-top 0em
+        margin-bottom 1em
+        &:before
+          margin-top -.3em
+          bottom -.3em
+          right auto
+          top auto
+          left 46%
+    &.danger
+      &.label
+        background-color dangerclr
+        &:before
+          background-color dangerclr
+    &.warning
+      &.label
+        background-color warnclr
+        &:before
+          background-color warnclr
+    &.ok
+      &.label
+        background-color okclr
+        &:before
+          background-color okclr
+        
+        
+          
+
