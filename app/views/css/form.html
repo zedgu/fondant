@@ -10,11 +10,16 @@
       <code>input[type="text"].fd</code>  or <code>.fd &gt; input[type="text"]</code>    
     </div>
     <div class="example">
+      <p>Width modifiers</p>
       <div><input type="text" class="fd s" placeholder="Text 10"></div>
       <div><input type="password" class="fd m" placeholder="Password 30"></div>
       <div><input type="email" class="fd l" placeholder="Email 50"></div>
       <div><input type="datetime" class="fd xl" placeholder="Datetime 70"></div>
       <div><input type="url" class="fd" placeholder="http:// 100"></div>
+      <p>Size modifiers</p>
+      <div><input type="text" class="fd l large" placeholder="large"></div>
+      <div><input type="text" class="fd l" placeholder="default"></div>
+      <div><input type="text" class="fd l small" placeholder="small"></div>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
@@ -22,7 +27,7 @@
 <section class="fd">
   <h3 class="divider">Radio & Checkbox</h3>
   <div class="fd docs">
-    <p>如果想让选择框在一行显示，你可以加上<code>.form-inline</code></p>
+    <div>如果想让选择框在一行显示，你可以加上<code>.form-inline</code> 如果你想自定义样式，可以加上<code>.radio</code>or<code>.checkbox</code>试试</div>
     <div class="tag">
       <code>input[type="radio"]</code> , <code>input[type="checkbox"]</code>
     </div>
@@ -31,22 +36,50 @@
       <code>input[type="checkbox"].fd</code> or <code>.fd &gt; input[type="checkbox"]</code>
     </div>
     <div class="example">
-      <div>
+      <div class="fd field">
         <label class="fd">
-          <input type="radio"> apple
+          <input type="radio" name="radio"> apple
         </label>
         <label class="fd">
-          <input type="radio"> 苹果
+          <input type="radio" name="radio"> 苹果
         </label> 
       </div>
-      <div>
+      <div class="fd field">
+        <label class="fd radio checkbox">
+          <input type="radio" name="radio"> <span class="box">apple</span>
+        </label>
+        <label class="fd radio checkbox">
+          <input type="radio" name="radio"> <span class="box">苹果</span>
+        </label> 
+      </div>
+      <div class="fd field">
         <label class="fd form-inline">
-          <input type="checkbox"> orange
+          <input type="checkbox"> 苹果
         </label>
       
         <label class="fd form-inline">
           <input type="checkbox"> 桔子
         </label>
+      </div>
+      <div class="fd field">
+        <label class="fd checkbox">
+          <input type="checkbox"> <span class="box">apple</span>
+        </label>
+        <label class="fd checkbox">
+          <input type="checkbox"> <span class="box">苹果</span>
+        </label> 
+      </div>
+      <div class="fd field">
+        <p>
+          <label class="fd checkbox">
+          <input type="checkbox"> <span class="box">apple</span>
+        </label>
+        </p>
+        <p>
+          <label class="fd checkbox">
+          <input type="checkbox"> <span class="box">桔子</span>
+        </label>
+        </p>
       </div>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
@@ -60,12 +93,12 @@
       <code>select</code>
     </div>
     <div class="example">
-      <select class="fd">
+      <select class="fd m">
         <option selected="selected">Option 01</option>
         <option>Option 02</option>
         <option>Option 03</option>
       </select> 
-      <select class="fd" multiple="">
+      <select class="fd l" multiple="">
         <option selected="selected">Option 01</option>
         <option>Option 02</option>
         <option>Option 03</option>
@@ -73,6 +106,16 @@
         <option>Option 05</option>
       </select>
 
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="divider">Textarea</h3>
+  <div>可根据需要改变 <code>rows</code> 属性</div>
+  <div class="fd docs">
+    <div class="example">
+      <textarea class="fd" rows="5"></textarea>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
@@ -96,11 +139,87 @@
       <input type="text" class="fd warning" value="warning">
       <input type="text" class="fd ok" value="ok" >
       <input type="text" class="fd danger" value="danger">
+      <p>Message block ,do any one you like</p>
       <div class="field fd">
-        <input type="text" class="fd danger" value="danger">
+        <input type="text" class="danger" value="danger">
         <div class="pointing danger label above">
           Enter your username
         </div>
+      </div>
+      <div class="field fd">
+        <input type="text" class="fd danger l">
+        <div class="pointing danger label left">
+          Enter your username
+        </div>
+      </div>
+      <div class="field fd">
+        <div class="pointing ok label right">
+          Enter your username
+        </div>
+        <input type="text" class="fd ok l">
+      </div>
+      <div class="field fd">
+        <div class="pointing warning label below">
+          Enter your username
+        </div>
+        <input type="text" class="fd warning">
+      </div>
+
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="divider">disabled</h3>
+  <div>input & fieldset <code>disabled</code></div>
+  <div class="fd docs">
+    <div class="example">
+      <input type="text" class="fd" disabled="" placeholder="Disabled input here…">
+      <fieldset disabled="" class="fd">
+        <input type="text" class="fd" placeholder="Disabled input here…">        
+      </fieldset>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="divider">Form and icons</h3>
+  <div>This is an example of how to add an icon from the Icon component to a form</div>
+  <div class="fd docs">
+    <div class="example">
+      <div class="fd form-icon">
+        <input type="text" class="fd icon small" placeholder="">
+        <i class="icon-help"></i>
+      </div>
+      <div class="fd form-icon">
+        <input type="text" class="fd icon" placeholder="">
+        <i class="icon-calendar"></i>
+      </div>
+      <div class="fd form-icon">
+        <input type="text" class="fd icon large" placeholder="">
+        <i class="icon-star"></i>
+      </div>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="divider">Prepended and appended inputs</h3>
+  <div>Add text or buttons before or after any text-based input.</div>
+  <div class="fd docs">
+    <div class="example">
+      <div class="fd input-prepend">
+        <span class="add small">@</span>
+        <input type="text" class="fd l small" placeholder="">
+      </div>
+      <div class="fd input-append">
+        <input type="text" class="fd m" placeholder="">
+        <span class="add">.00</span>
+      </div>
+      <div class="fd input-append input-prepend">
+        <span class="add large">@</span>
+        <input type="text" class="fd l large" placeholder="">
+        <span class="add large">.00</span>
       </div>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>

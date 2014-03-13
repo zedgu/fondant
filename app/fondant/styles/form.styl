@@ -10,11 +10,17 @@ okclr = #539022
 warnbg = #f7f5e4
 warnbc = #c9b91a
 warnclr = #9c922a
+radioclr = #0090d1
 
 attr()
   for inattr in inattrs
     input[type={inattr}]
       {block}
+
+.field
+  +fd()
+   clear both
+   margin-bottom 1em
 
 label
   +fd()
@@ -22,14 +28,19 @@ label
     line-height 1.4rem
 
 form
+fieldset
 textarea
 input
 select
   +fd()
     font-size .9rem
     outline none
-    box-sizing border-box  
+    box-sizing border-box
+    vertical-align middle
+    margin 0
+    padding 0
 
+select
 textarea
 input[type="text"]
 input[type="password"]
@@ -47,7 +58,8 @@ input[type="search"]
 input[type="color"]
   +fd()
     margin 2px
-    padding .6em .5em
+    padding 4px 6px
+    height 30px
     background-color base-white
     border 1px solid rgba(dark-black, .15)
     border-radius(.2rem)
@@ -65,6 +77,14 @@ input[type="color"]
       width 50%
     &.xl
       width 70%
+    &.large
+      font-size 1.2rem
+      height 40px
+      padding 8px 6px
+    &.small
+      height 25px
+      font-size .8rem
+      padding 3px
     &.danger
       background-color dangerbg
       border-color dangerbc
@@ -89,13 +109,174 @@ input[type="radio"]
     float left
     margin-left 0
     margin-top .35em
+    cursor pointer
 
 input[type="checkbox"]
   +fd()
     float left
     margin-left 0
     margin-top .3em
+    cursor pointer
 
 input[type="file"]
-  display block
+  +fd()
+    display block
 
+textarea
+  +fd()
+    height auto
+
+fieldset
+    border 0
+    padding 0
+    margin 0
+
+input[disabled]
+input[readonly]
+fieldset[disabled] & 
+  +fd()
+    cursor not-allowed
+    background-color dark-gray
+    opacity 1 
+  
+.form-icon
+  +fd()
+    display inline-block
+    max-width 100%
+    position relative
+    +icon-class(\>)
+      position absolute
+      text-align center
+      top 50%
+      margin-top -10px
+      width 30px
+      color rgba(base-black, .5)
+    .icon
+      padding-left 25px
+      &:focus ~ 
+        +icon-class()
+          color rgba(base-black, .9)
+      &.large
+        padding-left 25px
+      &.small
+        padding-left 25px
+ 
+select[multiple]
+select[size]
+  height auto
+
+.checkbox
+  +fd()
+    position relative
+    min-width 1em
+    height 1.25em
+    line-height 1em
+    display inline-block
+    vertical-align middle
+    margin-right 1em
+    input
+      position absolute
+      top 0
+      left 0
+      opacity 0
+      &:checked + .box:after
+        opacity 1
+    .box
+      cursor pointer
+      padding-left 1.5em
+      &:before
+        position absolute
+        top 0
+        left 0
+        line-height 1
+        width 1em
+        height 1em
+        content ''
+        border-radius .2rem
+        background base-white
+        transition background-color .3s ease
+        box-shadow .3s ease
+        box-shadow 0em 0em 0em 1px rgba(dark-black, .3)
+      &:after
+        opacity 0
+        content ''
+        position absolute
+        background transparent
+        border .2em solid base-black
+        border-top none
+        border-right none
+        border-color radioclr
+        transform rotate(-45deg)
+        height .2em
+        left .2em
+        top .275em
+        width .5em
+    &.radio
+      >.box
+        &:before
+          min-width 1em
+          height 1em
+          border-radius 500px
+          transform none
+        &:after
+          border none
+          top .2em
+          left .2em
+          width .6em
+          height .6em
+          background-color radioclr
+          transform none
+          border-radius 500px
+
+.input-prepend
+.input-append
+  +fd()
+    display inline-block
+    vertical-align middle
+    white-space nowrap
+    .add
+      background-color rgba(base-black, .1)
+      border 1px solid rgba(dark-black, .15)
+      display inline-block
+      font-weight normal
+      min-width 10px
+      height 20px
+      line-height 20px
+      padding 4px 6px
+      text-align center
+      text-shadow 0 1px 0 base-white
+      width auto
+      vertical-align top
+      margin-top 2px
+    .large
+      font-size 1.2rem
+      height 30px
+      line-height 30px
+    .small
+      height 15px
+      line-height 15px
+      font-size .8rem
+
+.input-append
+  +fd()
+    .add
+      margin-left -.7rem
+      border-top-right-radius .2rem
+      border-bottom-right-radius .2rem
+    input
+      position relative
+      border-top-right-radius 0
+      border-bottom-right-radius 0
+    &.input-prepend
+      border-radius 0
+
+.input-prepend
+  +fd()
+    .add
+      margin-right -.7rem
+      border-top-left-radius .2rem
+      border-bottom-left-radius .2rem
+    input
+      position relative
+      border-top-left-radius 0
+      border-bottom-left-radius 0
