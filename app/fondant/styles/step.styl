@@ -1,0 +1,190 @@
+stephover = #1B95EA
+breadhover = #00BAFF
+stepactive = #0088E5
+disabled = #CBCBCB
+stepdefault = #ecf3f8
+
+.step
+  +fd()
+  	display inline-block
+  	position relative
+    font-size: 1rem
+  	padding 1em 2em 1em 3em
+  	vertical-align top
+  	background-color stepdefault
+  	color base-black
+    box-sizing border-box
+    transition opacity .1s ease, color .1s ease, box-shadow .1s ease
+    &:after
+      position absolute
+  	  z-index 2
+  	  content ''
+  	  top 0em
+  	  right -1.46em
+  	  border-bottom 1.5em solid transparent
+  	  border-left 1.5em solid stepdefault
+  	  border-top 1.5em solid transparent
+  	  width 0em
+  	  height 0em
+    &:hover
+      background-color stephover
+      color base-white
+      border-left-color stephover
+      &:after
+        border-left-color stephover
+    &.hover
+      background-color stephover
+      color base-white
+      &:after
+        background-color stephover      
+
+.steps
+  +fd()
+    cursor pointer
+    display inline-block
+    font-size 0em
+    overflow hidden
+    box-shadow 0px 0px 0px 1px rgba(dark-black, .1)
+    line-height 1
+    box-sizing border-box
+    border-radius(0.2rem)
+    .step
+      display inline-block
+      position relative
+      font-size: 1rem
+      padding 1em 2em 1em 3em
+      vertical-align top
+      background-color stepdefault
+      color base-black
+      box-sizing border-box
+      transition opacity .1s ease, color .1s ease, box-shadow .1s ease
+      &:hover
+        background-color stephover
+        color base-white
+        &:after
+            border-left-color stephover
+      &.hover
+        background-color stephover
+        color base-white
+          &:after
+            background-color stephover
+            border-left-color stephover
+      &:active
+        background-color stepactive
+        &:after
+          background-color stepactive
+      &.active
+        cursor auto
+        background-color stepactive
+        color base-white
+        font-weight bold
+        &:after
+          border-left-color stepactive
+      &:after
+        position absolute
+        z-index 2
+        content ''
+        top 0em
+        right -1.46em
+        border-bottom 1.5em solid transparent
+        border-left 1.5em solid stepdefault
+        border-top 1.5em solid transparent
+        width 0em
+        height 0em
+      &:first-child
+        padding-left 1.2em
+        border-radius(.2em 0em 0em .2em)
+      &:last-child
+        border-radius(0em .2em .2em 0em)
+        margin-right 0em
+        &:after
+          display none
+      &:only-child
+        border-radius(.2em)
+    .disabled
+      &.step
+        cursor auto
+        background-color base-white
+        color disabled
+    .before
+      &.step
+        &:after
+          top -.12em
+          width 1.2em
+          background-color stepdefault
+          transform rotate(135deg)
+          box-shadow -1px -1px 0px 0px rgba(dark-black, .1)
+        &:hover
+          &:after
+           background-color stephover
+    &.small
+      font-size 0.8rem
+      .step
+        font-size 0.8rem
+    &.large
+      font-size 1.2rem
+      .step
+        font-size 1.2rem
+.disabled
+  +fd()
+    &.step
+      cursor auto
+      background-color base-white
+      color disabled 
+      &:after
+        border none
+        background-color base-white
+        top 0.42em
+        right -1em
+        width 2.15em
+        height 2.15em
+        transform rotate(-45deg)
+        box-shadow -1px -1px 0px 0px rgba(dark-black, .1) inset 
+
+.vertical
+  &.steps
+    overflow visible  
+    .step
+      display block
+      border-radius 0em
+      padding 1em 2em
+      &:first-child
+        padding 1em 2em
+        border-top-left-radius .2rem
+        border-top-right-radius .2rem
+        border-bottom-left-radius 0
+      &:last-child
+        border-bottom-left-radius .2rem
+        border-bottom-right-radius .2rem
+      &:after
+        display none
+    .disabled
+      &.step
+        &:after
+          padding 1em 2em
+    .active
+      &.step
+        &:after
+          display block
+    .before
+      &.step
+         border-bottom 1px solid rgba(dark-black, .1)
+
+.breadcrumb
+  +fd()
+    .sections
+      color stepactive
+      &:hover
+        color breadhover
+      &.active
+        color base-black
+        font-weight bolder
+    .dividers
+      color rgba(base-black, .3)
+      margin 0 .15em
+      opacity .5
+    &.small
+      font-size 0.8rem
+    &.large
+      font-size 1.2rem
+
