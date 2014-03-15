@@ -36,16 +36,67 @@ for i in 2 3 4 5 6
   > .header.sub
     fr(1.2)
 
+strong
+  color base-black
+
 code
   color base-red
-  font-size 1em
   background-color light-gray
   border 1px solid dark-gray
   border-radius(4px)
+  font-size 1em
   padding 0 3px
   overflow auto
   word-wrap break-word
   word-break break-word
+
+[lang|=zh]
+  dfn&
+    font-style normal
+    text-decoration underline
+  cite&
+    font-style normal
+    &:before
+      content '\300A'
+    &:after
+      content '\300B'
+
+mark
+::selection
+  background-color back-blue
+
+address
+  font-style normal
+
+blockquote
+  position relative
+  &:before
+  &:after
+    position absolute
+    font-size 2em
+    // font-family fantasy
+  &:before
+    left -.5em
+    top -.2em
+    content '\201C'
+  &:after
+    right -.5em
+    bottom -.7em
+    content '\201D'
+
+samp
+  background-color dark-black
+  color base-white
+  padding .1em .4em
+
+kbd
+  background-color back-gray
+  border 1px solid dark-gray
+  border-radius(3px)
+  font-size .6em
+  padding .1em .2em
+  white-space nowrap
+  box-shadow(0.1em 0.2em 0.2em #aaa)
 
 .bold
   font-weight bold
