@@ -4,7 +4,7 @@ angular.module('siteApp')
   .controller('DocsCtrl', function ($scope, $routeParams, $location) {
     $scope.menuData = {
       'css': {
-        'Base CSS': ['Text', 'Layout', 'Button', 'Container', 'List', 'Form', 'Image', 'Icon','Step','Breadcrumb']
+        'Base CSS': ['Text', 'Layout', 'Button', 'Container', 'List', 'Form', 'Image', 'Icon','Step','Breadcrumb','Progress','Loader']
       }
     };
     $scope.category = $routeParams.category;
