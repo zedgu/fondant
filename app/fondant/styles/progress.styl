@@ -1,0 +1,108 @@
+pbaseclr = #FAFAFA
+pbarclr-t = #00B4F5
+pbarclr-m = #008DC5
+pbarclr-b = #009DD8
+ok-t = #82CA6C
+ok-m = #77B862
+ok-b = #7FC569
+warning-t = #FAC637
+warning-m = #EBBB33
+warning-b = #FFD145
+danger-t = #EF4C3E
+danger-m = #D24336
+danger-b = #EA4A3C
+
+* + .progress
+  +fd()
+    margin-top 15px
+
+.progress
+  +fd()
+    border 1px solid rgba(dark-black, .1)
+    width 100%
+    height 30px
+    background-color pbaseclr
+    border-radius 4px
+    padding 2px
+    box-sizing border-box
+    .progress-bar
+      float left
+      height 100%
+      background linear-gradient(to bottom, pbarclr-t, pbarclr-m) repeat scroll 0 0 pbarclr-b
+      border-radius(.2rem)
+      transition width 1s ease-in-out,background-color 1s ease-out
+      width 0
+      animation 10s ease-in-out 0s normal none infinite finish
+    &.active
+      .progress-bar
+        position relative
+        &:after
+          content ''
+          opacity 0
+          position absolute
+          top 0
+          left 0
+          right 0
+          bottom 0
+          background base-white
+          border-radius 4px
+          animation progress-active 2s ease-out infinite
+    &.striped
+      .progress-bar
+        background-size 30px 30px
+        background-image linear-gradient(-45deg, rgba(base-white, .15) 25%, rgba(dark-black, 0) 25%, rgba(dark-black, 0) 50%, rgba(base-white, .15) 50%, rgba(base-white, .15) 75%, rgba(dark-black, 0) 75%, rgba(dark-black, 0))
+      &.striped-active
+        .progress-bar
+          animation 2s linear 0s normal none infinite progress-striped
+    &.no
+      .progress-bar
+        animation none  
+    &.xs
+      height 10px
+      padding 0
+    &.s
+      height 20px
+    &.ok
+      .progress-bar
+        background linear-gradient(to bottom, ok-t, ok-m) repeat scroll 0 0 ok-b
+    &.warning
+      .progress-bar
+        background linear-gradient(to bottom, warning-t, warning-m) repeat scroll 0 0 warning-b 
+    &.danger
+      .progress-bar
+        background linear-gradient(to bottom, danger-t, danger-m) repeat scroll 0 0 danger-b
+
+@-webkit-keyframes progress-active
+  0%
+    opacity 0
+    width 0
+  50% 
+    opacity .3
+  100%
+    opacity 0
+    width 95%
+
+@keyframes progress-active
+  0%
+    opacity 0
+    width 0
+  50% 
+    opacity .3
+  100%
+    opacity 0
+    width 100%
+
+@keyframes finish
+  0% 
+    width 0
+  40%
+    width 100%
+  100%
+    width 100%
+
+@keyframes progress-striped
+  0% 
+    background-position 0px 0
+  100%
+    background-position 60px 0
+
