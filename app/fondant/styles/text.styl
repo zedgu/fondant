@@ -1,3 +1,4 @@
+// default link
 a
   color a
   text-decoration none;
@@ -5,6 +6,13 @@ a
     color a-hover
   &:active
     color a-active
+
+// font colors
+for key, state in states
+  if key != 'normal'
+    .{key}
+      +fd()
+        color dark(state[1]) ? state[1] : state[0]
 
 h(n)
   fr((n - 2 * i) / 10)
@@ -28,13 +36,13 @@ for i in 2 3 4 5 6
       +h(18)
         color base-gray
 
-.fd
-  &.header
-  > .header
-    fr(1.8)
-  &.header.sub
-  > .header.sub
-    fr(1.2)
+// .fd
+//   &.header
+//   > .header
+//     fr(1.8)
+//   &.header.sub
+//   > .header.sub
+//     fr(1.2)
 
 strong
   color base-black
@@ -43,7 +51,7 @@ code
   color base-red
   background-color light-gray
   border 1px solid dark-gray
-  border-radius(4px)
+  border-radius 4px
   font-size 1em
   padding 0 3px
   overflow auto
@@ -93,11 +101,11 @@ samp
 kbd
   background-color back-gray
   border 1px solid dark-gray
-  border-radius(3px)
+  border-radius 3px
   font-size .6em
   padding .1em .2em
   white-space nowrap
-  box-shadow(0.1em 0.2em 0.2em #aaa)
+  box-shadow 0.1em 0.2em 0.2em #aaa
 
 .bold
   font-weight bold

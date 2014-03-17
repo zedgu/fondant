@@ -31,7 +31,6 @@ a-hover = base-black
 a-active = base-highlight
 front-blue = darken(#1B93E5, 4%)
 
-browsers = '-webkit-' '-moz-' '-ms-' '-o-' ''
 states = {
   // front-color main-color border-color darken-percent
   normal: (base-black base-white #E0E1E1 5%),
@@ -51,17 +50,6 @@ states = {
 fr(n)
   font-size unit(n, rem)
 
-// cross-browser
-cb(prop, args...)
-  for i in browsers
-    {i}{prop} args
-
-// cross-browser for nonstandard style
-cbn(prop, args...)
-  for i in browsers
-    if i != ''
-      {i}{prop} args
-
 gradient(prop, args...)
   background-image gradient-point(prop, args) % args
 
@@ -72,24 +60,16 @@ gradient-point(prop, points)
       $t += ', %s'
   return $t += ')'
 
-border-radius(size, tb = false, rl = false)
-  if tb
-    if rl
-      cb('border-'+tb+'-'+rl+'-radius', size)
-    else
-      cb('border-'+tb+'-left-radius', size)
-      cb('border-'+tb+'-right-radius', size)
-  else
-    cb('border-radius', size)
-
-box-shadow()
-  cb('box-shadow', arguments)
-
 // namespace
-fd()
-  &.fd
-  .fd > &
-    {block}
+fd(el = false)
+  if el
+    {el}.fd
+    .fd.{el}
+      {block}
+  else
+    &.fd
+    .fd > &
+      {block}
 
 // icon class selector
 icon-class(prefix = "")
@@ -131,12 +111,6 @@ br
   +fd()
     padding-bottom .2em
     border-bottom 1px solid dark-gray
-
-for key, state in states
-  if key != 'normal'
-    .{key}
-      +fd()
-        color dark(state[1]) ? state[1] : state[0]
 
 /**
  * icons from fontello.com

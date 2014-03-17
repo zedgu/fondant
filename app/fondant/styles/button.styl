@@ -16,7 +16,7 @@ buttons(flag = false)
   +fd()
     border-width 1px
     border-style solid
-    border-radius(.2rem)
+    border-radius .2rem
     display inline-block
     font-family base-family
     font-size 1.2rem
@@ -25,7 +25,7 @@ buttons(flag = false)
     vertical-align middle
     cursor pointer
     margin 2px
-    cbn('user-select', none)
+    user-select none
     white-space nowrap
     &.s
       font-size .8rem
@@ -54,7 +54,7 @@ buttons(flag = false)
         &.active
           background-color darken(@background-color, state[3])
         &:active
-          box-shadow(inset .05em .05em .8em .1em darken(darken(@background-color, state[3]), 25%))
+          box-shadow inset .05em .05em .8em .1em darken(darken(@background-color, state[3]), 25%)
 +buttons(2)
   +fd()
     +icon-class(\&)
@@ -101,17 +101,17 @@ buttons(flag = false)
   +fd()
     display inline-block
     +buttons()
-      border-radius(0)
+      border-radius 0
       border-left-width 0
       float left
       margin 0
       &:first-child
         border-left-width 1px
-        border-radius(.2rem, top, left)
-        border-radius(.2rem, bottom, left)
+        border-top-left-radius .2rem
+        border-bottom-left-radius .2rem
       &:last-child
-        border-radius(.2rem, top, right)
-        border-radius(.2rem, bottom, right)
+        border-top-right-radius .2rem
+        border-bottom-right-radius .2rem
     +buttons(2)
       &.toggle
         padding-left .6em
@@ -134,7 +134,7 @@ buttons(flag = false)
       +buttons()
         &:first-child
         &:last-child
-          border-radius(0)
+          border-radius 0
           border-left-width 0
     &.s >
       +buttons()

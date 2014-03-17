@@ -1,0 +1,101 @@
+e_n_12 = {one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12}
+clear()
+  content "."
+  clear both
+  height 0
+  display block
+  overflow hidden
+
+body
+.body
+  & >
+    +fd(header)
+      margin-bottom .4rem
+      padding 0
+      height 4rem
+      line-height 100%
+      width 100%
+      box-sizing border-box
+      &.fixed
+        position fixed
+    +fd(main)
+      width 100%
+      box-sizing border-box
+      &:after
+        clear()
+      > 
+        article
+        .article
+          float left
+          width 70%
+        aside
+        .aside
+          float right
+          width 30%
+    +fd(footer)
+      width 100%
+      margin .4rem 0
+      box-sizing border-box
+      &.fixed
+        position fixed
+
+// top navigation
+nav.top
+  +fd()
+    height 100%
+    line-height 4rem
+    .menu
+      list-style-type none
+      margin 0
+      height 100%
+      li
+      .li
+        fr(1.2)
+        display inline-block
+        padding 1.25rem 1rem
+        line-height 1.2em
+        &:first-child
+          padding-left 0
+    .brand
+      a
+        color base-highlight
+      &.logo
+        text-indent 100% // to do 完成图片logo的样式
+
+.row
+  +fd()
+    display block
+    box-sizing border-box
+    > .col
+      display block
+      float left
+      box-sizing border-box
+      for key,value in e_n_12
+        &.{key}
+          width unit(100/12*value, "%")
+    &:before
+    &:after
+      clear()
+    // .row
+    //   width auto
+    &.table
+      display table
+      width 100%
+      > .col
+        padding 1% 1.5%
+        display table-cell
+        vertical-align middle
+      aside
+        width 17%
+      article
+        width 77%
+      for key,value in e_n_12
+        &.{key}
+          > .col
+            width unit(100/value, "%")
+    > aside
+    > .aside
+      width 20%
+    > article
+    > .article
+      width 80%

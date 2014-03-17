@@ -117,6 +117,7 @@ module.exports = function (grunt) {
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
       options: {
+        laxcomma: true,
         jshintrc: '.jshintrc',
         reporter: require('jshint-stylish')
       },
@@ -150,7 +151,7 @@ module.exports = function (grunt) {
     // Add vendor prefixed styles
     autoprefixer: {
       options: {
-        browsers: ['last 1 version']
+        browsers: ['ie 8', 'ff 24', 'chrome 10', 'safari 3.1', 'opera 12', 'android 2.1', 'bb 7', 'ios 3.2']
       },
       dist: {
         files: [{
