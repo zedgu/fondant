@@ -1,9 +1,3 @@
-stephover = #1B95EA
-breadhover = #00BAFF
-stepactive = #0088E5
-disabled = #CBCBCB
-stepdefault = #ecf3f8
-
 .step
   +fd()
   	display inline-block
@@ -11,7 +5,7 @@ stepdefault = #ecf3f8
     font-size: 1rem
   	padding 1em 2em 1em 3em
   	vertical-align top
-  	background-color stepdefault
+  	background-color: states['highlight']['bg-color']
   	color base-black
     box-sizing border-box
     transition opacity .1s ease, color .1s ease, box-shadow .1s ease
@@ -22,21 +16,21 @@ stepdefault = #ecf3f8
   	  top 0em
   	  right -1.46em
   	  border-bottom 1.5em solid transparent
-  	  border-left 1.5em solid stepdefault
+  	  border-left: 1.5em solid states['highlight']['bg-color']
   	  border-top 1.5em solid transparent
   	  width 0em
   	  height 0em
     &:hover
-      background-color stephover
-      color base-white
-      border-left-color stephover
+      background-color: states['highlight']['color']
+      color: states['highlight']['invert-color']
+      border-left-color: states['highlight']['color']
       &:after
-        border-left-color stephover
+        border-left-color: states['highlight']['color']
     &.hover
-      background-color stephover
-      color base-white
+      background-color: states['highlight']['color']
+      color: states['highlight']['invert-color']
       &:after
-        background-color stephover      
+        background-color: states['highlight']['color']      
 
 .steps
   +fd()
@@ -54,32 +48,32 @@ stepdefault = #ecf3f8
       font-size: 1rem
       padding 1em 2em 1em 3em
       vertical-align top
-      background-color stepdefault
+      background-color: states['highlight']['bg-color']
       color base-black
       box-sizing border-box
       transition opacity .1s ease, color .1s ease, box-shadow .1s ease
       &:hover
-        background-color stephover
-        color base-white
+        background-color: states['highlight']['color']
+        color: states['highlight']['invert-color']
         &:after
-            border-left-color stephover
+            border-left-color: states['highlight']['color']
       &.hover
-        background-color stephover
-        color base-white
+        background-color: states['highlight']['color']
+        color: states['highlight']['invert-color']
           &:after
-            background-color stephover
-            border-left-color stephover
+            background-color: states['highlight']['color']
+            border-left-color: states['highlight']['color']
       &:active
-        background-color stepactive
+        background-color: states['highlight']['color']
         &:after
-          background-color stepactive
+          background-color: states['highlight']['color']
       &.active
         cursor auto
-        background-color stepactive
+        background-color: states['highlight']['color']
         color base-white
         font-weight bold
         &:after
-          border-left-color stepactive
+          border-left-color: states['highlight']['color']
       &:after
         position absolute
         z-index 2
@@ -87,7 +81,7 @@ stepdefault = #ecf3f8
         top 0em
         right -1.46em
         border-bottom 1.5em solid transparent
-        border-left 1.5em solid stepdefault
+        border-left: 1.5em solid states['highlight']['bg-color']
         border-top 1.5em solid transparent
         width 0em
         height 0em
@@ -105,18 +99,18 @@ stepdefault = #ecf3f8
       &.step
         cursor auto
         background-color base-white
-        color disabled
+        color color-disabled
     .before
       &.step
         &:after
           top -.12em
           width 1.2em
-          background-color stepdefault
+          background-color: states['highlight']['bg-color']
           transform rotate(135deg)
           box-shadow -1px -1px 0px 0px rgba(dark-black, .1)
         &:hover
           &:after
-           background-color stephover
+           background-color: states['highlight']['color']
     &.small
       font-size 0.8rem
       .step
@@ -130,7 +124,7 @@ stepdefault = #ecf3f8
     &.step
       cursor auto
       background-color base-white
-      color disabled 
+      color color-disabled 
       &:after
         border none
         background-color base-white
@@ -173,9 +167,9 @@ stepdefault = #ecf3f8
 .breadcrumb
   +fd()
     .sections
-      color stepactive
+      color color-a-highlight
       &:hover
-        color breadhover
+        color color-a-highlight-hover
       &.active
         color base-black
         font-weight bolder

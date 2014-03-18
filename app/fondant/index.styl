@@ -6,41 +6,84 @@
 /**
  * Common Setting
  */
-base-white = #FFF
-base-black = #4E555F
-base-gray = #8F949A
-base-highlight = #94B1EE
-base-family = Verdana, "Heiti SC", "Microsoft YaHei", sans-serif
 base-size = 15px
-base-border = #CCCED0
-base-red = #B90031
+base-family = Verdana, "Heiti SC", "Microsoft YaHei", sans-serif
 
+base-white = #FFF
+
+base-black = #4E555F
 dark-black = #000
-dark-gray = #DCDEDF
+
+base-highlight = #6CB3D3
+
 light-gray = #F9F9FA
-
-back-gray = #F2F2F4
-back-light-gray = light-gray
-back-drak-gray = dark-gray
-back-black = #273337
-back-highlight = #6CB3D3
-back-blue = #A6D8FF
-
-a = base-gray
-a-hover = base-black
-a-active = base-highlight
-front-blue = darken(#1B93E5, 4%)
+base-gray = #8F949A
+dark-gray = #DCDEDF
 
 states = {
-  // front-color main-color border-color darken-percent
-  normal: (base-black base-white #E0E1E1 5%),
-  lowlight: (base-gray light-gray dark-gray 7%),
-  highlight: (base-white #1B94E8 #007ACF 14%),
-  ok: (base-white #7EC469 #76B661 20%),
-  warning: (base-white #FFD143 #F8C537 24%),
-  danger: (base-white #EA4A3C #DB4638 24%),
-  info: (base-white #92AFEC #8EA6E0 24%)
+  normal: {
+    color: base-white,
+    bg-color: base-white,
+    invert-color: base-black,
+    border-color: #E0E1E1,
+    mask: 5%
+  },
+  lowlight: {
+    color: light-gray,
+    bg-color: base-white,
+    invert-color: base-gray,
+    border-color: dark-gray,
+    mask: 7%
+  },
+  highlight: {
+    color: #1B94E8,
+    bg-color: base-white,
+    invert-color: base-white,
+    border-color: #007ACF,
+    mask: 14%
+  },
+  ok: {
+    color: #7EC469,
+    bg-color: base-white,
+    invert-color: base-white,
+    border-color: #76B661,
+    mask: 20%
+  },
+  warning: {
+    color: #FFD143,
+    bg-color: base-white,
+    invert-color: base-white,
+    border-color: #F8C537,
+    mask: 24%
+  },
+  danger: {
+    color: #EA4A3C,
+    bg-color: base-white,
+    invert-color: base-white,
+    border-color: #DB4638,
+    mask: 24%
+  },
+  info: {
+    color: #92AFEC,
+    bg-color: base-white,
+    invert-color: base-white,
+    border-color: #8EA6E0,
+    mask: 24%
+  }
 }
+
+color-a = base-gray
+color-a-hover = base-black
+color-a-active = base-highlight
+color-a-highlight = states['highlight']['color']
+color-a-highlight-hover = darken(color-a-highlight, 10%)
+color-a-highlight-active = color-a-highlight-hover
+color-code = #B90031
+color-selection = #A6D8FF
+color-loader = #0088E5
+color-disabled = #CBCBCB
+// font path
+font-path = '../fondant/'
 
 /**
  * Functions
@@ -63,10 +106,12 @@ gradient-point(prop, points)
 // namespace
 fd(el = false)
   if el
+    // for element tag name
     {el}.fd
     .fd.{el}
       {block}
   else
+    // for normal
     &.fd
     .fd > &
       {block}
@@ -77,8 +122,14 @@ icon-class(prefix = "")
   {prefix}[class*=" icon-"]
     {block}
 
-// font path
-font-path = '../fondant/'
+colorful(fn, prefix = "")
+  for key, state in states
+    if key == 'normal'
+      key = ''
+    else
+      key = '.' + key
+    {prefix}{key}
+      fn(state, key)
 
 /**
  * Element
@@ -112,9 +163,7 @@ br
     padding-bottom .2em
     border-bottom 1px solid dark-gray
 
-/**
- * icons from fontello.com
- */
+// icons
 icons = {
     'spin3': '\e8ae'
   , 'windows': '\e8a3'
@@ -292,42 +341,5 @@ icons = {
   , 'tumblr': '\e8ab'
   , 'weibo': '\e8ac'
 }
-@font-face
-  font-family 'fontello'
-  src url(font-path+'fonts/fontello.eot')
-  src url(font-path+'fonts/fontello.eot#iefix') format('embedded-opentype'),
-       url(font-path+'fonts/fontello.woff') format('woff'),
-       url(font-path+'fonts/fontello.ttf') format('truetype'),
-       url(font-path+'fonts/fontello.svg#fontello') format('svg')
-  font-weight normal
-  font-style normal
-
-+icon-class()
-  +fd()
-    &:before
-    &:after
-      font-family "fontello"
-      font-style normal
-      font-weight normal
-      font-variant normal
-      speak none
-      width 1em
-      line-height 1em
-      text-align center
-      text-decoration inherit
-      text-transform none
-      margin-left .4em
-      margin-right .4em
-    &.toggle:before
-      content ''!important
-      width 0!important
-      margin 0!important
-      padding 0!important
-
-for name, character in icons
-  .icon-
-    &{name}:before
-    &{name}.toggle:after
-      content character
 
 @import 'styles/*'

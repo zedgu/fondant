@@ -1,6 +1,3 @@
-// button-background(c)
-//   gradient('linear', to bottom, rgba(lighten(c, 30%), 1) 0%, rgba(c, 1) 50%, rgba(darken(c, 20%), 1) 100%)
-
 buttons(flag = false)
   if flag == 2
     button
@@ -11,7 +8,18 @@ buttons(flag = false)
     .button
     input[type="button"]
       {block}
-    
+
+add-button-color(state)
+  color state[0]
+  background-color state[1]
+  border-color darken(state[2], 10%)
+  &:hover
+  &:focus
+  &.active
+    background-color darken(@background-color, state[3])
+  &:active
+    box-shadow inset .05em .05em .8em .1em darken(darken(@background-color, state[3]), 25%)
+
 +buttons()
   +fd()
     border-width 1px
@@ -40,21 +48,7 @@ buttons(flag = false)
     &:focus
       text-decoration none
       outline 0
-    for key, state in states
-      if key != 'normal'
-        key = '.' + key
-      else
-        key = ''
-      &{key}
-        color state[0]
-        background-color state[1]
-        border-color darken(state[2], 10%)
-        &:hover
-        &:focus
-        &.active
-          background-color darken(@background-color, state[3])
-        &:active
-          box-shadow inset .05em .05em .8em .1em darken(darken(@background-color, state[3]), 25%)
+    // colorful(add-button-color, \&)
 +buttons(2)
   +fd()
     +icon-class(\&)

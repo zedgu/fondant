@@ -1,20 +1,11 @@
-inattrs = text password tel email url date number time datetime datetime-local month week search color
-focusbg = #F5FBFE 
-focusbc = #99BACA
-dangerbg = #FFF7F8
-dangerbc = #DC8D99
-dangerclr = #C91032
-okbg = #FAFFF2
-okbc = #8EC73B
-okclr = #539022
-warnbg = #f7f5e4
-warnbc = #c9b91a
-warnclr = #9c922a
-radioclr = #0090d1
+inputs-type = text password tel email url date number time datetime datetime-local month week search color
 
-attr()
-  for inattr in inattrs
-    input[type={inattr}]
+inputs()
+  for i in inputs-type
+    input[type={i}]
+      {block}
+  for arg in arguments
+    {arg}
       {block}
 
 .field
@@ -38,22 +29,7 @@ select
     box-sizing border-box
     vertical-align middle
 
-select
-textarea
-input[type="text"]
-input[type="password"]
-input[type="tel"]
-input[type="email"]
-input[type="url"]
-input[type="date"]
-input[type="number"]
-input[type="time"]
-input[type="datetime"]
-input[type="datetime-local"]
-input[type="month"]
-input[type="week"]
-input[type="search"]
-input[type="color"]
++inputs(select textarea)
   +fd()
     margin 2px
     padding 4px 6px
@@ -65,8 +41,7 @@ input[type="color"]
     width 100%
     transition all 0.2s linear 0s
     &:focus
-      background-color focusbg
-      border-color focusbc
+      border-color: states['highlight']['border-color']
     &.s
       width 10%
     &.m
@@ -84,17 +59,17 @@ input[type="color"]
       font-size .8rem
       padding 3px
     &.danger
-      background-color dangerbg
-      border-color dangerbc
-      color dangerclr
+      background-color: states['danger']['bg-color']
+      border-color: states['danger']['border-color']
+      color: states['danger']['color']
     &.ok
-      background-color okbg
-      border-color okbc
-      color okclr
+      background-color: states['ok']['bg-color']
+      border-color: states['ok']['border-color']
+      color: states['ok']['color']
     &.warning
-      background-color warnbg
-      border-color warnbc
-      color warnclr
+      background-color: states['warning']['bg-color']
+      border-color: states['warning']['border-color']
+      color: states['warning']['color']
 
 .form-inline
   +fd()
@@ -102,21 +77,21 @@ input[type="color"]
     vertical-align middle
     padding-right 2em    
       
-input[type="radio"]
+input[type=radio]
  +fd()
     float left
     margin-left 0
     margin-top .35em
     cursor pointer
 
-input[type="checkbox"]
+input[type=checkbox]
   +fd()
     float left
     margin-left 0
     margin-top .3em
     cursor pointer
 
-input[type="file"]
+input[type=file]
   +fd()
     display block
 
@@ -203,7 +178,7 @@ select[size]
         border .2em solid base-black
         border-top none
         border-right none
-        border-color radioclr
+        border-color: states['highlight']['color']
         transform rotate(-45deg)
         height .2em
         left .2em
@@ -222,7 +197,7 @@ select[size]
           left .2em
           width .6em
           height .6em
-          background-color radioclr
+          background-color: states['highlight']['color']
           transform none
           border-radius 500px
 

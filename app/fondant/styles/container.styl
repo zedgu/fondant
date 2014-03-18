@@ -10,7 +10,7 @@ div
     &.light
       background-color base-white
     &.dark
-      background-color back-gray
+      background-color light-gray
 
 // default section
 section
@@ -27,13 +27,13 @@ section
 div.panel
   +fd()
     background-color base-white
-    border 1px solid base-border
+    border 1px solid dark-gray
     border-radius .4em
     margin-bottom 1rem
     > header
     > .header
-      background-color back-light-gray
-      border-bottom 1px solid base-border
+      background-color light-gray
+      border-bottom 1px solid dark-gray
       border-radius .4em .4em 0 0
       > *
         padding 0 .8rem
@@ -43,7 +43,7 @@ div.panel
       padding .8rem
 // div.segment
 //   background-color base-white
-//   border 1px solid base-border
+//   border 1px solid dark-gray
 //   border-radius .4em
 // // p&
 // & > p
@@ -59,7 +59,6 @@ div.panel
 .cross
   +fd()
     clear both
-    background-color back-highlight
     width 100%
     padding 1em 0
     color base-white

@@ -1,17 +1,3 @@
-pbaseclr = #FAFAFA
-pbarclr-t = #00B4F5
-pbarclr-m = #008DC5
-pbarclr-b = #009DD8
-ok-t = #82CA6C
-ok-m = #77B862
-ok-b = #7FC569
-warning-t = #FAC637
-warning-m = #EBBB33
-warning-b = #FFD145
-danger-t = #EF4C3E
-danger-m = #D24336
-danger-b = #EA4A3C
-
 * + .progress
   +fd()
     margin-top 15px
@@ -21,14 +7,14 @@ danger-b = #EA4A3C
     border 1px solid rgba(dark-black, .1)
     width 100%
     height 30px
-    background-color pbaseclr
+    background-color light-gray
     border-radius 4px
     padding 2px
     box-sizing border-box
     .progress-bar
       float left
       height 100%
-      background linear-gradient(to bottom, pbarclr-t, pbarclr-m) repeat scroll 0 0 pbarclr-b
+      background: linear-gradient(to bottom, states['highlight']['color'], states['highlight']['border-color']) repeat scroll 0 0 states['highlight']['color']
       border-radius(.2rem)
       transition width 1s ease-in-out,background-color 1s ease-out
       width 0
@@ -64,13 +50,13 @@ danger-b = #EA4A3C
       height 20px
     &.ok
       .progress-bar
-        background linear-gradient(to bottom, ok-t, ok-m) repeat scroll 0 0 ok-b
+        background: linear-gradient(to bottom, states['ok']['color'], states['ok']['border-color']) repeat scroll 0 0 states['ok']['color']
     &.warning
       .progress-bar
-        background linear-gradient(to bottom, warning-t, warning-m) repeat scroll 0 0 warning-b 
+        background: linear-gradient(to bottom, states['warning']['color'], states['warning']['border-color']) repeat scroll 0 0 states['warning']['color']
     &.danger
       .progress-bar
-        background linear-gradient(to bottom, danger-t, danger-m) repeat scroll 0 0 danger-b
+        background: linear-gradient(to bottom, states['danger']['color'], states['danger']['border-color']) repeat scroll 0 0 states['danger']['color']
 
 @-webkit-keyframes progress-active
   0%

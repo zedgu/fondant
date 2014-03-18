@@ -11,18 +11,18 @@
     box-sizing border-box
     font-size .9rem
     margin-left .2em
-    &.warning
-      background-color warnclr
-      border-color warnclr
-      color base-white
     &.danger
-      background-color dangerclr
-      border-color dangerclr
-      color base-white
+      background-color: states['danger']['bg-color']
+      border-color: states['danger']['border-color']
+      color: states['danger']['invert-color']
     &.ok
-      background-color okclr
-      border-color okclr
-      color base-white
+      background-color: states['ok']['bg-color']
+      border-color: states['ok']['border-color']
+      color: states['ok']['invert-color']
+    &.warning
+      background-color: states['warning']['bg-color']
+      border-color: states['warning']['border-color']
+      color: states['warning']['invert-color']
 
 .pointing
   +fd()
@@ -78,19 +78,19 @@
           left 46%
     &.danger
       &.label
-        background-color dangerclr
+        background-color: states['danger']['color']
         &:before
-          background-color dangerclr
+          background-color: states['danger']['color']
     &.warning
       &.label
-        background-color warnclr
+        background-color: states['warning']['color']
         &:before
-          background-color warnclr
+          background-color: states['warning']['color']
     &.ok
       &.label
-        background-color okclr
+        background-color: states['ok']['color']
         &:before
-          background-color okclr
+          background-color: states['ok']['color']
         
         
           

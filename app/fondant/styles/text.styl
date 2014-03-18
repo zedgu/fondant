@@ -1,18 +1,18 @@
 // default link
 a
-  color a
+  color color-a
   text-decoration none;
   &:hover
-    color a-hover
+    color color-a-hover
   &:active
-    color a-active
+    color color-a-active
 
 // font colors
-for key, state in states
-  if key != 'normal'
-    .{key}
-      +fd()
-        color dark(state[1]) ? state[1] : state[0]
+add-text-color(state)
+  +fd()
+    color lightness(state['color']) > 80% ? state['invert-color'] : state['color']
+
+colorful(add-text-color)
 
 h(n)
   fr((n - 2 * i) / 10)
@@ -48,7 +48,7 @@ strong
   color base-black
 
 code
-  color base-red
+  color color-code
   background-color light-gray
   border 1px solid dark-gray
   border-radius 4px
@@ -71,7 +71,7 @@ code
 
 mark
 ::selection
-  background-color back-blue
+  background-color color-selection
 
 address
   font-style normal
@@ -99,13 +99,13 @@ samp
   padding .1em .4em
 
 kbd
-  background-color back-gray
+  background-color light-gray
   border 1px solid dark-gray
   border-radius 3px
   font-size .6em
   padding .1em .2em
   white-space nowrap
-  box-shadow 0.1em 0.2em 0.2em #aaa
+  box-shadow 0.1em 0.2em 0.2em dark-gray
 
 .bold
   font-weight bold
