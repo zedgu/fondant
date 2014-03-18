@@ -10,15 +10,15 @@ buttons(flag = false)
       {block}
 
 add-button-color(state)
-  color state[0]
-  background-color state[1]
-  border-color darken(state[2], 10%)
+  color: state['invert-color']
+  background-color: state['color']
+  border-color: darken(state['border-color'], 10%)
   &:hover
   &:focus
   &.active
-    background-color darken(@background-color, state[3])
+    background-color: darken(@background-color, state['mask'])
   &:active
-    box-shadow inset .05em .05em .8em .1em darken(darken(@background-color, state[3]), 25%)
+    box-shadow: inset .05em .05em .8em .1em darken(darken(@background-color, state['mask']), 25%)
 
 +buttons()
   +fd()
@@ -48,7 +48,7 @@ add-button-color(state)
     &:focus
       text-decoration none
       outline 0
-    // colorful(add-button-color, \&)
+    colorful(add-button-color, \&)
 +buttons(2)
   +fd()
     +icon-class(\&)
