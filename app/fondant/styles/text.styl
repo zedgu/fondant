@@ -1,3 +1,19 @@
+/***** Functions *****/
+// font colors
+add-text-color(state)
+  +fd()
+    color (lightness(state['color']) > 80% ? state['invert-color'] : state['color']) !important
+
+// h1-h6 function
+h(n)
+  fr((n - 2 * i) / 10)
+  margin 0 auto .4em auto
+  {block}
+
+/***** Styles *****/
+// colorful text
+colorful(add-text-color)
+
 // default link
 a
   color color-a
@@ -6,18 +22,6 @@ a
     color color-a-hover
   &:active
     color color-a-active
-
-// font colors
-add-text-color(state)
-  +fd()
-    color lightness(state['color']) > 80% ? state['invert-color'] : state['color']
-
-colorful(add-text-color)
-
-h(n)
-  fr((n - 2 * i) / 10)
-  margin 0 auto .4em auto
-  {block}
 
 // h1-h6
 for i in 1 2 3 4 5 6
@@ -36,14 +40,7 @@ for i in 2 3 4 5 6
       +h(18)
         color base-gray
 
-// .fd
-//   &.header
-//   > .header
-//     fr(1.8)
-//   &.header.sub
-//   > .header.sub
-//     fr(1.2)
-
+// formatting
 strong
   color base-black
 
@@ -108,4 +105,15 @@ kbd
   box-shadow 0.1em 0.2em 0.2em dark-gray
 
 .bold
-  font-weight bold
+  +fd()
+   font-weight bold
+
+.align-left
+  +fd()
+    text-align left
+.align-right
+  +fd()
+    text-align right
+.align-center
+  +fd()
+    text-align center

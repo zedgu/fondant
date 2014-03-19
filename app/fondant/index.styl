@@ -3,12 +3,16 @@
  * Global File
  */
 
-/**
- * Common Setting
- */
+/***** Common Setting *****/
+
+// font
 base-size = 15px
 base-family = Verdana, "Heiti SC", "Microsoft YaHei", sans-serif
 
+// font path
+font-path = '../fondant/'
+
+// color
 base-white = #FFF
 
 base-black = #4E555F
@@ -82,28 +86,11 @@ color-code = #B90031
 color-selection = #A6D8FF
 color-loader = #0088E5
 color-disabled = #CBCBCB
-// font path
-font-path = '../fondant/'
 
-/**
- * Functions
- */
 
-// rem font-size setting
-fr(n)
-  font-size unit(n, rem)
+/***** Functions *****/
 
-gradient(prop, args...)
-  background-image gradient-point(prop, args) % args
-
-gradient-point(prop, points)
-  $t = prop + '-gradient(%s'
-  for i, index in points
-    if index > 0
-      $t += ', %s'
-  return $t += ')'
-
-// namespace
+// fd namespace
 fd(el = false)
   if el
     // for element tag name
@@ -116,12 +103,28 @@ fd(el = false)
     .fd > &
       {block}
 
+// rem font-size setting
+fr(n)
+  font-size unit(n, rem)
+
+// gradient
+gradient(prop, args...)
+  background-image gradient-point(prop, args) % args
+
+gradient-point(prop, points)
+  $t = prop + '-gradient(%s'
+  for i, index in points
+    if index > 0
+      $t += ', %s'
+  return $t += ')'
+
 // icon class selector
 icon-class(prefix = "")
   {prefix}[class^="icon-"]
   {prefix}[class*=" icon-"]
     {block}
 
+// colorful styles selector
 colorful(fn, prefix = "")
   for key, state in states
     if key == 'normal'
@@ -131,9 +134,7 @@ colorful(fn, prefix = "")
     {prefix}{key}
       fn(state, key)
 
-/**
- * Element
- */
+/***** Base Style Reset *****/
 html
 body
   padding 0
@@ -157,13 +158,13 @@ br
   line-height .2em
   width 100%
 
-// Common Class
+/***** Common Styles *****/
 .divider
   +fd()
     padding-bottom .2em
     border-bottom 1px solid dark-gray
 
-// icons
+/***** Icons *****/
 icons = {
     'spin3': '\e8ae'
   , 'windows': '\e8a3'

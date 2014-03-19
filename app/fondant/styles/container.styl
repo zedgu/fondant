@@ -1,3 +1,4 @@
+/***** Styles *****/
 // base boxes
 aside
 header
@@ -18,7 +19,7 @@ section
   +fd()
     padding .4rem
 
-// border for boxes
+// base border
 .border
   +fd()
     border 1px solid base-gray
@@ -50,30 +51,34 @@ div.panel
 //   line-height 1.6em
 //   margin .8em 0
 
-// main boxes be center
+// box be center
 .mid
   +fd()
     margin auto
+    max-width 96%
+@media (min-width: 768px)
+  .mid
+    +fd()
+      width 756px
+@media (min-width: 992px)
+  .mid
+    +fd()
+      width 960px
+@media (min-width: 1200px)
+  .mid
+    +fd()
+      width 1176px
+
+// box float
+.left
+  +fd()
+    float left !important
+.right
+  +fd()
+    float right !important
 
 // cross banner boxes
 .cross
   +fd()
     clear both
     width 100%
-    padding 1em 0
-    color base-white
-    for i in 1 2 3 4 5 6
-      .h{i}
-      h{i}
-        color base-white !important
-
-
-@media (min-width: 768px)
-  .mid
-    width 756px
-@media (min-width: 992px)
-  .mid
-    width 960px
-@media (min-width: 1200px)
-  .mid
-    width 1176px

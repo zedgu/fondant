@@ -1,3 +1,5 @@
+/***** Functions *****/
+// button selector
 buttons(flag = false)
   if flag == 2
     button
@@ -9,6 +11,7 @@ buttons(flag = false)
     input[type="button"]
       {block}
 
+// colorful button
 add-button-color(state)
   color: state['invert-color']
   background-color: state['color']
@@ -20,6 +23,7 @@ add-button-color(state)
   &:active
     box-shadow: inset .05em .05em .8em .1em darken(darken(@background-color, state['mask']), 25%)
 
+/***** Styles *****/
 +buttons()
   +fd()
     border-width 1px
