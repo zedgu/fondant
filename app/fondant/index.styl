@@ -91,12 +91,23 @@ color-disabled = #CBCBCB
 /***** Functions *****/
 
 // fd namespace
-fd(el = false)
+fd(el = false, parent = true)
   if el
     // for element tag name
-    {el}.fd
-    .fd.{el}
-      {block}
+    if parent
+      // with &
+      {el}&.fd
+      &.fd.{el}
+      .fd > {el}&
+      .fd > &.{el}
+        {block}
+    else
+      // no &
+      {el}.fd
+      .fd.{el}
+      .fd > {el}
+      .fd > .{el}
+        {block}
   else
     // for normal
     &.fd
@@ -120,8 +131,8 @@ gradient-point(prop, points)
 
 // icon class selector
 icon-class(prefix = "")
-  {prefix}[class^="icon-"]
-  {prefix}[class*=" icon-"]
+  {prefix}[class^=icon-]
+  {prefix}[class*= icon-]
     {block}
 
 // colorful styles selector

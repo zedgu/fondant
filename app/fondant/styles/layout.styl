@@ -9,7 +9,7 @@ clear()
 body
 .body
   & >
-    +fd(header)
+    +fd(header, 0)
       margin-bottom .4rem
       padding 0
       height 4rem
@@ -19,7 +19,7 @@ body
       &.fixed
         position fixed
         top 0
-    +fd(main)
+    +fd(main, 0)
       width 100%
       box-sizing border-box
       &:after
@@ -33,7 +33,7 @@ body
         .aside
           float right
           width 30%
-    +fd(footer)
+    +fd(footer, 0)
       width 100%
       margin .4rem 0
       box-sizing border-box

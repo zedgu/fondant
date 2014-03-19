@@ -1,14 +1,17 @@
 /***** Functions *****/
 // button selector
-buttons(flag = false)
-  if flag == 2
-    button
+btn(n = 3)
+  if n == 1
     .button
       {block}
-  else
-    button
+  else if n == 2
     .button
-    input[type="button"]
+    button
+      {block}
+  else
+    .button
+    button
+    input[type=button]
       {block}
 
 // colorful button
@@ -24,7 +27,7 @@ add-button-color(state)
     box-shadow: inset .05em .05em .8em .1em darken(darken(@background-color, state['mask']), 25%)
 
 /***** Styles *****/
-+buttons()
++btn()
   +fd()
     border-width 1px
     border-style solid
@@ -53,7 +56,7 @@ add-button-color(state)
       text-decoration none
       outline 0
     colorful(add-button-color, \&)
-+buttons(2)
++btn(2)
   +fd()
     +icon-class(\&)
       &:empty
@@ -94,11 +97,16 @@ add-button-color(state)
             line-height 2em
             border-left 1px solid rgba(dark-black, .17)
             margin 0 0 0 .8em
++btn(1)
+  +fd(img)
+    padding 0 !important
+    height 2em !important
+    width 2em !important
 
 .buttons
   +fd()
     display inline-block
-    +buttons()
+    +btn()
       border-radius 0
       border-left-width 0
       float left
@@ -110,7 +118,7 @@ add-button-color(state)
       &:last-child
         border-top-right-radius .2rem
         border-bottom-right-radius .2rem
-    +buttons(2)
+    +btn(2)
       &.toggle
         padding-left .6em
         padding-right .6em
@@ -129,23 +137,23 @@ add-button-color(state)
             content '%s' % icons['angle-down']
     .buttons
       float left
-      +buttons()
+      +btn()
         &:first-child
         &:last-child
           border-radius 0
           border-left-width 0
     &.s >
-      +buttons()
+      +btn()
         font-size .8rem
     &.m >
-      +buttons()
+      +btn()
         font-size 1rem
     &.l >
-      +buttons()
+      +btn()
         font-size 1.4rem
     &.xl >
-      +buttons()
+      +btn()
         font-size 1.6rem
     &.xxl >
-      +buttons()
+      +btn()
         font-size 1.8rem

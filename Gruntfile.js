@@ -169,8 +169,7 @@ module.exports = function (grunt) {
         html: '<%= yeoman.app %>/index.html',
         ignorePath: '<%= yeoman.app %>/',
         jsPattern: '<script src="/{{filePath}}"></script>',
-        cssPattern: '<link rel="stylesheet" href="/{{filePath}}" />',
-        exclude: [/rainbow/i, '/bower_components/rainbow/js/rainbow.min.js']
+        cssPattern: '<link rel="stylesheet" href="/{{filePath}}" />'
       }
     },
 
