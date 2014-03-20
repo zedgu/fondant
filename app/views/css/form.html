@@ -14,10 +14,6 @@
         <legend>Legend Text</legend>
         <p>Contents in fieldset.</p>
       </fieldset>
-      <fieldset class="fd">
-        <legend class="hr"><span>Legend Text</span></legend>
-        <p>Contents in fieldset.</p>
-      </fieldset>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
@@ -30,28 +26,37 @@
       <code>input</code>
     </div>
     <div class="usage">
-      <code>input[type="*"].fd</code>  or <code>.fd &gt; input[type="*"]</code>    
+      <ul class="fd">
+        <li><code>input[type="*"].fd</code> or <code>.fd &gt; input[type="*"]</code></li>
+        <li><span class="fd h6">6 sizes:</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">6 widths:</span> <code>.tight</code> <code>.narrow</code> default <code>.broad</code> <code>.wild</code> <code>.full</code></li>
+      </ul>
     </div>
     <div class="example">
       <fieldset class="fd">
-        <legend>Width modifiers</legend>
-        <p>
-          <code>.s</code> <code>.m</code> <code>.l</code> <code>.xl</code>
-        </p>
-        <div><input type="text" class="fd s" placeholder="Text 10"></div>
-        <div><input type="password" class="fd m" placeholder="Password 30"></div>
-        <div><input type="email" class="fd l" placeholder="Email 50"></div>
-        <div><input type="datetime" class="fd xl" placeholder="Datetime 70"></div>
-        <div><input type="url" class="fd" placeholder="http:// 100"></div>
+        <legend>different sizes</legend>
+        <p><input type="text" class="fd s" placeholder="Text in s size"></p>
+        <p><input type="number" class="fd" placeholder="Number in default size"></p>
+        <p><input type="password" class="fd m" placeholder="Password in m size"></p>
+        <p><input type="email" class="fd l" placeholder="Email in l size"></p>
+        <p><input type="search" class="fd xl" placeholder="Search in xl size"></p>
+        <p><input type="url" class="fd xxl" placeholder="URL in xxl size"></p>
+        <p><input type="tel" class="fd" placeholder="tel"></p>
+        <p><input type="time" class="fd" placeholder="time"></p>
+        <p><input type="date" class="fd" placeholder="date"></p>
+        <p><input type="datetime" class="fd" placeholder="datetime"></p>
+        <p><input type="datetime-local" class="fd" placeholder="datetime-local"></p>
+        <p><input type="week" class="fd" placeholder="week"></p>
+        <p><input type="month" class="fd" placeholder="month"></p>
       </fieldset>
       <fieldset class="fd">
-        <legend>Size modifiers</legend>
-        <p>
-          <code>.large</code> <code>.small</code>
-        </p>
-        <div><input type="text" class="fd l large" placeholder="large"></div>
-        <div><input type="text" class="fd l" placeholder="default"></div>
-        <div><input type="text" class="fd l small" placeholder="small"></div>
+        <legend>different width</legend>
+        <p><input type="text" class="fd tight" placeholder="width: 25% - tight"></p>
+        <p><input type="text" class="fd narrow" placeholder="width: 40% - narrow"></p>
+        <p><input type="text" class="fd" placeholder="width: 55% - default"></p>
+        <p><input type="text" class="fd broad" placeholder="width: 70% - broad"></p>
+        <p><input type="text" class="fd wild" placeholder="width: 85% - wild"></p>
+        <p><input type="text" class="fd full" placeholder="width: 100% - full"></p>
       </fieldset>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
@@ -60,41 +65,68 @@
 <section class="fd">
   <h3 class="hr">Radio &amp; Checkbox</h3>
   <div class="docs">
-    <div>如果想让选择框在一行显示，你可以加上<code>.form-inline</code> 如果你想自定义样式，可以加上<code>.radio</code>or<code>.checkbox</code>试试</div>
+    <p></p>
     <div class="tag">
-      <code>input[type="radio"]</code> , <code>input[type="checkbox"]</code>
+      <code>input[type="radio"]</code> <code>input[type="checkbox"]</code>
     </div>
     <div class="usage">
-      <code>input[type="radio"].fd</code>  or <code>.fd &gt; input[type="radio"]</code> ,
-      <code>input[type="checkbox"].fd</code> or <code>.fd &gt; input[type="checkbox"]</code>
+      <ul class="fd">
+        <li><code>input[type="radio"].fd</code> or <code>.fd &gt; input[type="radio"]</code></li>
+        <li><code>input[type="checkbox"].fd</code> or <code>.fd &gt; input[type="checkbox"]</code></li>
+        <li><span class="fd h6">6 sizes:</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+      </ul>
     </div>
-    <div class="example">
-      <fieldset class="fd">
-        <label class="fd">
-          <input type="radio" name="radio"> apple
-        </label>
-        <label class="fd">
-          <input type="radio" name="radio"> 苹果
-        </label> 
+    <div class="example fd">
+      <fieldset>
+        <legend>deprecated</legend>
+        <p class="fd">
+          <input type="radio" name="sex" value="male" id="male">
+          <label class="fd" for="male">male</label>
+          <input type="radio" name="sex" value="female" id="female">
+          <label class="fd" for="female">female</label>
+        </p>
+        <p class="fd">
+          <label class="fd" for="red">red</label>
+          <input type="checkbox" name="color" value="red" id="red">
+          <label class="fd" for="blue">blue</label>
+          <input type="checkbox" name="color" value="blue" id="blue">
+        </p>
       </fieldset>
-      <fieldset class="fd">
-        <label class="fd radio checkbox">
-          <input type="radio" name="radio"> <span class="box">apple</span>
-        </label>
-        <label class="fd radio checkbox">
-          <input type="radio" name="radio"> <span class="box">苹果</span>
-        </label> 
+      <fieldset>
+        <legend>default style</legend>
+        <p class="fd">
+          <label class="l">
+            <input type="radio" name="handed" value="left-handed" id="left-handed">
+            left-handed
+          </label>
+          <label class="xl">
+            <input type="radio" name="handed" value="right-handed" id="right-handed">
+            right-handed
+          </label>
+        </p>
+        <p class="fd">
+          <label class="fd s">
+            white
+            <input type="checkbox" name="color" value="white" id="white">
+          </label>
+          <label class="fd m">
+            black
+            <input type="checkbox" name="color" value="black" id="black">
+          </label>
+        </p>
       </fieldset>
-      <fieldset class="fd">
-        <label class="fd form-inline">
-          <input type="checkbox"> 苹果
-        </label>
-      
-        <label class="fd form-inline">
-          <input type="checkbox"> 桔子
-        </label>
+      <fieldset>
+        <legend>custom style</legend>
+        <p>
+          <label class="fd radio">
+            <input type="radio" name="radio"> <span class="box">apple</span>
+          </label>
+          <label class="fd radio">
+            <input type="radio" name="radio"> <span class="box">苹果</span>
+          </label> 
+        </p>
       </fieldset>
-      <fieldset class="fd">
+      <fieldset>
         <label class="fd checkbox">
           <input type="checkbox"> <span class="box">apple</span>
         </label>
@@ -102,17 +134,15 @@
           <input type="checkbox"> <span class="box">苹果</span>
         </label> 
       </fieldset>
-      <fieldset class="fd">
-        <p>
-          <label class="fd checkbox">
-          <input type="checkbox"> <span class="box">apple</span>
-        </label>
-        </p>
-        <p>
-          <label class="fd checkbox">
-          <input type="checkbox"> <span class="box">桔子</span>
-        </label>
-        </p>
+      <fieldset>
+        <label class="fd checkbox">
+        <input type="checkbox"> <span class="box">apple</span>
+      </label>
+      </fieldset>
+      <fieldset>
+        <label class="fd checkbox">
+        <input type="checkbox"> <span class="box">桔子</span>
+      </label>
       </fieldset>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
@@ -148,7 +178,7 @@
   <div>可根据需要改变 <code>rows</code> 属性</div>
   <div class="docs">
     <div class="example">
-      <textarea class="fd" rows="5"></textarea>
+      <textarea class="fd"></textarea>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
@@ -203,13 +233,21 @@
   </div>
 </section>
 <section class="fd">
-  <h3 class="hr">disabled</h3>
-  <div>input & fieldset <code>disabled</code></div>
+  <h3 class="hr">Unchangeable</h3>
+  <p>In case the input and fieldset is disabled or read only.</p>
   <div class="docs">
+    <div class="tag">
+      <code>input[disabled]</code> <code>input[readonly]</code> and <code>fieldset[disabled]</code>
+    </div>
     <div class="example">
-      <input type="text" class="fd" disabled="" placeholder="Disabled input here…">
-      <fieldset disabled="" class="fd">
-        <input type="text" class="fd" placeholder="Disabled input here…">        
+      <p class="fd">
+        <input type="text" class="fd" disabled placeholder="Disabled input here…">
+      </p>
+      <p class="fd">
+        <input type="text" class="fd" readonly placeholder="Read only input here…">
+      </p>
+      <fieldset disabled class="fd">
+        This fieldset is disabled.
       </fieldset>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>

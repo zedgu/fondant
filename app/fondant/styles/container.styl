@@ -24,6 +24,12 @@ section
   +fd()
     border 1px solid base-gray
 
+// inline block
+.inline
+  +fd()
+    display inline-block 
+    vertical-align middle
+
 // panel style
 div.panel
   +fd()
@@ -77,8 +83,7 @@ div.panel
   +fd()
     float right !important
 
-// cross banner boxes
-.cross
+// div in different widths
+div.panel
   +fd()
-    clear both
-    width 100%
+    widths()

@@ -131,8 +131,8 @@ gradient-point(prop, points)
 
 // icon class selector
 icon-class(prefix = "")
-  {prefix}[class^=icon-]
-  {prefix}[class*= icon-]
+  {prefix}[class^="icon-"]
+  {prefix}[class*=" icon-"]
     {block}
 
 // colorful styles selector
@@ -144,6 +144,26 @@ colorful(fn, prefix = "")
       key = '.' + key
     {prefix}{key}
       fn(state, key)
+
+// sizes
+size-labels = s '' m l xl xxl
+sizes(prefix=\&, selector='', fn=false)
+  for size, i in size-labels
+    if size
+      {prefix}.{size}{selector}
+        font-size unit((8 + 2*i)/10, em) !important
+        if fn
+          fn(i)
+
+widths-labels = tight narrow '' broad wild full
+widths(prefix=\&, selector='', inverse=0, step=15)
+  for width, i in widths-labels
+    if width
+      {prefix}.{width}{selector}
+        if inverse
+          width unit(inverse - step * i + 25, '%')
+        else
+          width unit(step * i + 25, '%')
 
 /***** Base Style Reset *****/
 html
@@ -158,7 +178,6 @@ body
   font-size base-size
 
 p
-  font-size 0.8rem
   line-height 1.8em
   margin .6em auto
 
@@ -192,22 +211,19 @@ br
       left 0
     &:after
       right 0
-    &.tight
-      &:before
-      &:after
-        width 45%
-    &.narrow
-      &:before
-      &:after
-        width 40%
-    &.broad
-      &:before
-      &:after
-        width 20%
-    &.wild
-      &:before
-      &:after
-        width 10%;
+    widths(\&, ':before', 22, 9)
+    widths(\&, ':after', 22, 9)
+
+// sizes
+p
+span
+li
+.li
+button
+.button
+input
+  +fd()
+    sizes()
 
 /***** Icons *****/
 icons = {

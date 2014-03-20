@@ -39,16 +39,37 @@
       <ul class="fd">
         <li><span class="fd h6">Solid underline:</span> <code>.hr</code></li>
         <li><span class="fd h6">Through line:</span> <code>.divider</code></li>
-        <li><span class="fd h6">Space sizes of the divider:</span> <code>.tight</code> <code>.narrow</code> default <code>broad</code> <code>.wild</code></li>
+        <li><span class="fd h6">Divider in different widths:</span> <code>.tight</code> <code>.narrow</code> default <code>.broad</code> <code>.wild</code> <code>full</code></li>
       </ul>
     </div>
     <div class="example">
       <p class="fd hr">container with .hr</p>
-      <div class="fd divider tight">or</div>
+      <div class="fd divider tight">tight</div>
       <p class="fd divider narrow">narrow divider</p>
       <h6 class="fd divider">default divider</h6>
-      <header class="fd divider broad">header container with a broad divider</header>
-      <p class="fd divider wild h1">h1 style container with a broad divider</p>
+      <article class="fd divider broad">header container with a broad divider</article>
+      <p class="fd divider wild h2">h2 style container with a wild divider</p>
+      <hgroup class="fd divider full"><h1>a full divider of heading group container</h1></hgroup>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="hr">Sizes</h3>
+  <div class="docs">
+    <div class="tag">
+      <code>p</code> <code>span</code> <code>li</code> <code>.li</code> <code>button</code> <code>.button</code> <code>input</code> <code>.buttons</code>
+    </div>
+    <div class="usage">
+      <span class="fd h6">6 sizes :</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code>
+    </div>
+    <div class="example">
+      <p class="fd s">small size</p>
+      <p class="fd">normal size</p>
+      <p class="fd m">medium size</p>
+      <p class="fd l">large size</p>
+      <p class="fd xl">extra large size</p>
+      <p class="fd xxl">xx-large size</p>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>

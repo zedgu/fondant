@@ -10,7 +10,7 @@
         <li><code>button.fd</code> or <code>.fd &gt; button</code></li>
         <li><code>a.fd.button</code> or <code>.fd &gt; a.button</code></li>
         <li><code>input[type="button"].fd</code> or <code>.fd &gt; input[type="button"]</code></li>
-        <li><span class="fd h6">6 sizes :</span> <code>.s</code> <code>.m</code> default <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">6 sizes :</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
         <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
         <li><span class="fd h6">on active :</span> <code>.active</code></li>
       </ul>
@@ -18,8 +18,8 @@
     <div class="example">
       <button class="fd s">Button</button>
       <a class="fd s button lowlight">Lowlight</a>
-      <input class="fd m highlight" value="Highlight" type="button" />
-      <span class="fd"><button class="ok active">Ok</button></span>
+      <input class="fd highlight" value="Highlight" type="button" />
+      <span class="fd"><button class="ok active m">Ok</button></span>
       <span class="fd"><a class="button l warning">Warning</a></span>
       <div class="fd button xl danger">Danger</div>
       <span class="fd button xxl info">Info</span>
@@ -43,8 +43,8 @@
     </div>
     <div class="example">
       <a class="fd button icon-weibo s"></a>
-      <button class="fd icon-weibo lowlight m">Weibo</button>
-      <div class="fd button icon-weibo toggle highlight">Weibo</div>
+      <button class="fd icon-weibo lowlight">Weibo</button>
+      <div class="fd button icon-weibo toggle highlight m">Weibo</div>
       <span class="fd"><a class="button icon-github ok l"></a></span>
       <span class="fd"><button class="icon-flickr warning xl">Flickr</button></span>
       <span class="fd button icon-facebook toggle info xxl">Facebook</span>
@@ -63,8 +63,8 @@
     </div>
     <div class="example">
       <img src="http://www.gravatar.com/avatar/ed3f2eabc3ee38ede847206252e1e9df?s=90" alt="avatar" class="fd button s">
-      <img src="http://www.gravatar.com/avatar/ed3f2eabc3ee38ede847206252e1e9df?s=90" alt="avatar" class="fd button m">
       <img src="http://www.gravatar.com/avatar/ed3f2eabc3ee38ede847206252e1e9df?s=90" alt="avatar" class="fd button">
+      <img src="http://www.gravatar.com/avatar/ed3f2eabc3ee38ede847206252e1e9df?s=90" alt="avatar" class="fd button m">
       <img src="http://www.gravatar.com/avatar/ed3f2eabc3ee38ede847206252e1e9df?s=90" alt="avatar" class="fd button l">
       <img src="http://www.gravatar.com/avatar/ed3f2eabc3ee38ede847206252e1e9df?s=90" alt="avatar" class="fd button xl">
       <img src="http://www.gravatar.com/avatar/ed3f2eabc3ee38ede847206252e1e9df?s=90" alt="avatar" class="fd button xxl">
@@ -87,8 +87,8 @@
     </div>
     <div class="example">
       <a class="fd button s icon-weibo labeled">Weibo</a>
-      <button class="fd m lowlight icon-weibo labeled toggle">Weibo</button>
-      <span class="fd"><a class="button highlight icon-weibo labeled">Weibo</a></span>
+      <button class="fd lowlight icon-weibo labeled toggle">Weibo</button>
+      <span class="fd"><a class="button highlight icon-weibo labeled m">Weibo</a></span>
       <span class="fd"><button class="l ok icon-weibo labeled toggle">Weibo</button></span>
       <div class="fd button xl warning icon-weibo labeled">Weibo</div>
       <span class="fd button xxl danger icon-weibo labeled toggle">Weibo</span>
@@ -130,12 +130,12 @@
         <a class="button active">Two</a>
         <a class="button">Three</a>
       </div>
-      <div class="fd buttons">
+      <div class="fd buttons m">
         <input type="button" value="One" class="active">
         <input type="button" value="Two">
         <input type="button" value="Three">
       </div>
-      <div class="fd buttons m">
+      <div class="fd buttons">
         <button class="icon-align-left"></button>
         <button class="icon-align-center"></button>
         <button class="icon-align-right"></button>

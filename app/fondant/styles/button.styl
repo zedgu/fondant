@@ -11,7 +11,7 @@ btn(n = 3)
   else
     .button
     button
-    input[type=button]
+    input[type="button"]
       {block}
 
 // colorful button
@@ -34,7 +34,7 @@ add-button-color(state)
     border-radius .2rem
     display inline-block
     font-family base-family
-    font-size 1.2rem
+    font-size 1em
     line-height 2em
     padding .1em .9em
     vertical-align middle
@@ -42,16 +42,6 @@ add-button-color(state)
     margin 2px
     user-select none
     white-space nowrap
-    &.s
-      font-size .8rem
-    &.m
-      font-size 1rem
-    &.l
-      font-size 1.4rem
-    &.xl
-      font-size 1.6rem
-    &.xxl
-      font-size 1.8rem
     &:focus
       text-decoration none
       outline 0
@@ -142,18 +132,6 @@ add-button-color(state)
         &:last-child
           border-radius 0
           border-left-width 0
-    &.s >
-      +btn()
-        font-size .8rem
-    &.m >
-      +btn()
-        font-size 1rem
-    &.l >
-      +btn()
-        font-size 1.4rem
-    &.xl >
-      +btn()
-        font-size 1.6rem
-    &.xxl >
-      +btn()
-        font-size 1.8rem
+    sizes(\&, ' > button')
+    sizes(\&, ' > .button')
+    sizes(\&, ' > input[type="button"]')
