@@ -50,9 +50,21 @@ ol
         +list-li()
           margin-right 1em
 
+// horizontal ul
++fd(ul)
+  &.h
+    margin 0
+    list-style-type none
+  &.h
+    .li
+    li
+      display inline-block
+      margin .4em
+
 .list
   +fd()
     list-style-type none
     margin 0
     li
+    .li
       margin .6em auto

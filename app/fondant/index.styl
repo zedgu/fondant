@@ -170,10 +170,44 @@ br
   width 100%
 
 /***** Common Styles *****/
-.divider
+.hr
   +fd()
     padding-bottom .2em
     border-bottom 1px solid dark-gray
+.divider
+  +fd()
+    text-align center
+    position relative
+    &:before
+    &:after
+      content " "
+      display table-cell
+      border-top 1px solid rgba(base-black, .3)
+      border-bottom 1px solid rgba(base-white, .8)
+      height 0
+      position absolute
+      top 50%
+      width 30%
+    &:before
+      left 0
+    &:after
+      right 0
+    &.tight
+      &:before
+      &:after
+        width 45%
+    &.narrow
+      &:before
+      &:after
+        width 40%
+    &.broad
+      &:before
+      &:after
+        width 20%
+    &.wild
+      &:before
+      &:after
+        width 10%;
 
 /***** Icons *****/
 icons = {

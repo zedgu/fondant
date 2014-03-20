@@ -1,35 +1,39 @@
-inputs-type = text password tel email url date number time datetime datetime-local month week search color
-
-inputs()
-  for i in inputs-type
-    input[type={i}]
-      {block}
-  for arg in arguments
-    {arg}
-      {block}
-
-.field
+/***** Styles *****/
+// base styles
+form
+fieldset
+textarea
+input:not([type=button])
+select
   +fd()
-   clear both
-   margin-bottom 1em
+    outline none
+    box-sizing border-box
+    vertical-align middle
+
+fieldset
+  +fd()
+    clear both
+    margin-bottom 1em
+    border none
+    padding 0
+    margin .4em 0
+    legend
+      font-size .8rem
+      padding 0
+      text-shadow 1px 1px 0 rgba(dark-black, .3)
+      &.divider
+      &.hr
+        margin 0 auto
+        min-width 100%
 
 label
   +fd()
     display block
     line-height 1.4rem
 
-form
-fieldset
-textarea
-input
 select
-  +fd()
-    font-size .9rem
-    outline none
-    box-sizing border-box
-    vertical-align middle
-
-+inputs(select textarea)
+textarea
+input:not([type=button]):not([type=radio]):not([type=checkbox]):not([type=file])
   +fd()
     margin 2px
     padding 4px 6px
@@ -98,11 +102,6 @@ input[type=file]
 textarea
   +fd()
     height auto
-
-fieldset
-    border 0
-    padding 0
-    margin 0
 
 input[disabled]
 input[readonly]

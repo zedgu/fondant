@@ -1,5 +1,5 @@
 <section class="fd">
-  <h3 class="divider">Bulleted</h3>
+  <h3 class="hr">Bulleted</h3>
   <div class="docs">
     <div class="tag">
       <code>ul</code>
@@ -30,7 +30,7 @@
   </div>
 </section>
 <section class="fd">
-  <h3 class="divider">Ordered</h3>
+  <h3 class="hr">Ordered</h3>
   <div class="docs">
     <div class="tag">
       <code>ol</code> or <em class="fd lowlight">any one you like</em>
@@ -99,10 +99,37 @@
   </div>
 </section>
 <section class="fd">
-  <h3 class="divider">List View</h3>
+  <h3 class="hr">Horizontal List</h3>
   <div class="docs">
     <div class="tag">
-      <code>ul</code> or <code>div</code> or <em class="fd lowlight">any one you like</em>
+      <code>ul</code> or <code>div</code>
+    </div>
+    <div class="usage">
+      <ul class="fd">
+        <li><code>ul.fd.h</code> or <code>.fd &gt; ul.h</code></li>
+        <li><code>.ul.fd.h</code> or <code>.fd &gt; .ul.h</code></li>
+      </ul>
+    </div>
+    <div class="example">
+      <ul class="fd h">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
+      <div class="fd ul h">
+        <div class="li">div item 1</div>
+        <div class="li">div item 2</div>
+        <div class="li">div item 3</div>
+      </div>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="hr">List View</h3>
+  <div class="docs">
+    <div class="tag">
+      <code>ul</code> or <code>div</code>
     </div>
     <div class="example">
       <ul class="fd list">
@@ -119,6 +146,20 @@
           <div>List Item Content 3</div>
         </li>
       </ul>
+      <div class="fd ul list h">
+        <div class="li">
+          <div class="fd h5">Item Header 1</div>
+          <div>List Item Content 1</div>
+        </div>
+        <div class="li">
+          <div class="fd h5">Item Header 2</div>
+          <div>List Item Content 2</div>
+        </div>
+        <div class="li">
+          <div class="fd h5">Item Header 3</div>
+          <div>List Item Content 3</div>
+        </div>
+      </div>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
