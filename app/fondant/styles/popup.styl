@@ -23,9 +23,9 @@
       z-index 2
       box-sizing border-box
       box-shadow 1px 1px 1px rgba(dark-black, .1)
-    &.bottom
+    &.bottoms
       margin .75em 0 0
-      &.center
+      &.centers
         &:before
           margin-left -.4em
           top -.4em
@@ -42,17 +42,17 @@
       &.warning
         &:before
           box-shadow: -1px -1px .1px states['warning']['border-color']
-    &.top
+    &.tops
       margin 0 0 .75em
-      &.center
+      &.centers
         &:before
           top auto
           right auto
           bottom -.4em
           left 50%
           margin-left -.4em
-    &.right
-      &.bottom
+    &.rights
+      &.bottoms
         margin-right -2em
         &:before
           top -.4em
@@ -70,7 +70,7 @@
       &.warning
           &:before
             box-shadow: 1px -1px .1px states['warning']['border-color']
-      &.center
+      &.centers
         margin 0 .75em 0 0
         &:before
           top 50%
@@ -88,7 +88,7 @@
         &.warning
           &:before
             box-shadow: 1px -1px .1px states['warning']['border-color']
-      &.top
+      &.tops
         margin-right -2em
         &:before
           bottom -.4em
@@ -105,8 +105,8 @@
         &.warning
           &:before
            box-shadow: 1px 1px .1px states['warning']['border-color']
-    &.left
-      &.bottom
+    &.lefts
+      &.bottoms
         margin-left -2em
         &:before
           top -.4em
@@ -124,7 +124,7 @@
         &.warning
           &:before
             box-shadow: -1px -1px .1px states['warning']['border-color']
-      &.top
+      &.tops
         margin-left -2em
         &:before
           bottom -.4em
@@ -132,7 +132,7 @@
           top auto
           right auto
           margin-left 0      
-      &.center
+      &.centers
         margin 0 0 0 .75em
         &:before
           top 50%
@@ -150,7 +150,7 @@
         &.warning
           &:before
             box-shadow: -1px 1px .1px states['warning']['border-color']
-    &.center
+    &.centers
       margin-left -1.25em
     &.s
       font-size .8rem
@@ -159,21 +159,21 @@
     &.ok
       background-color: states['ok']['color']
       border-color: states['ok']['border-color']
-      color: states['ok']['bg-color']      
+      color: states['ok']['bg-color'] !important    
       &:before
         box-shadow: 1px 1px .1px states['ok']['border-color']
         background-color: states['ok']['color']
     &.danger
       background-color: states['danger']['color']
       border-color: states['danger']['border-color']
-      color: states['danger']['bg-color']
+      color: states['danger']['bg-color'] !important 
       &:before
         box-shadow: 1px 1px .1px states['danger']['border-color']
         background-color: states['danger']['color']
     &.warning
       background-color: states['warning']['color']
       border-color: states['warning']['border-color']
-      color: states['warning']['bg-color']
+      color: states['warning']['bg-color'] !important 
       &:before
         box-shadow: 1px 1px .1px states['warning']['border-color']
         background-color: states['warning']['color']
