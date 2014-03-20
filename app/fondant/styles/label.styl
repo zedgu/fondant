@@ -41,25 +41,25 @@
         transition background 0.1s linear
     &.above
       &.label
-        margin-top 1em
+        margin-top .5em
         &:before
           margin-left -.3em
           top -.3em
           left 50%
-    &.left
+    &.lefts
       &.label
         margin-top 0em
-        margin-left 1em
+        margin-left .3em
         &:before
           margin-top -.3em
           bottom auto
           right auto
           top 50%
           left -.3em
-    &.right
+    &.rights
       &.label
         margin-top 0em
-        margin-right 1em
+        margin-right .3em
         &:before
           margin-top -.3em
           bottom auto
@@ -69,7 +69,7 @@
     &.below
       &.label
         margin-top 0em
-        margin-bottom 1em
+        margin-bottom .5em
         &:before
           margin-top -.3em
           bottom -.3em
@@ -79,16 +79,19 @@
     &.danger
       &.label
         background-color: states['danger']['color']
+        color base-white !important
         &:before
           background-color: states['danger']['color']
     &.warning
       &.label
         background-color: states['warning']['color']
+        color base-white !important
         &:before
           background-color: states['warning']['color']
     &.ok
       &.label
         background-color: states['ok']['color']
+        color base-white !important
         &:before
           background-color: states['ok']['color']
         
