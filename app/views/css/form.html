@@ -78,71 +78,94 @@
     </div>
     <div class="example fd">
       <fieldset>
-        <legend>deprecated</legend>
-        <p class="fd">
-          <input type="radio" name="sex" value="male" id="male">
-          <label class="fd" for="male">male</label>
-          <input type="radio" name="sex" value="female" id="female">
-          <label class="fd" for="female">female</label>
-        </p>
-        <p class="fd">
-          <label class="fd" for="red">red</label>
-          <input type="checkbox" name="color" value="red" id="red">
-          <label class="fd" for="blue">blue</label>
-          <input type="checkbox" name="color" value="blue" id="blue">
-        </p>
-      </fieldset>
-      <fieldset>
         <legend>default style</legend>
         <p class="fd">
+          <input class="s" type="radio" name="sex" value="male" id="male">
+          <label class="s" for="male">male</label>
+          <input class="m" type="radio" name="sex" value="female" id="female">
+          <label class="m" for="female">female</label>
+        </p>
+        <p>
+          <label class="fd" for="red">red</label>
+          <input class="fd" type="checkbox" name="color" value="red" id="red">
+          <label class="fd l" for="blue">blue</label>
+          <input class="fd l" type="checkbox" name="color" value="blue" id="blue">
+        </p>
+        <p class="fd">
           <label class="l">
-            <input type="radio" name="handed" value="left-handed" id="left-handed">
+            <input type="radio" name="handed" value="left-handed">
             left-handed
           </label>
           <label class="xl">
-            <input type="radio" name="handed" value="right-handed" id="right-handed">
+            <input type="radio" name="handed" value="right-handed">
             right-handed
           </label>
         </p>
-        <p class="fd">
+        <p>
           <label class="fd s">
             white
-            <input type="checkbox" name="color" value="white" id="white">
+            <input type="checkbox" name="color" value="white">
           </label>
           <label class="fd m">
             black
-            <input type="checkbox" name="color" value="black" id="black">
+            <input type="checkbox" name="color" value="black">
           </label>
         </p>
       </fieldset>
       <fieldset>
-        <legend>custom style</legend>
+        <legend>fondant style</legend>
         <p>
-          <label class="fd radio">
-            <input type="radio" name="radio"> <span class="box">apple</span>
+          <input class="fd option" type="radio" name="time" value="am" id="am">
+          <label class="fd highlight s" for="am">AM</label>
+          <span class="fd option warning m">
+            <input type="radio" name="time" value="pm" id="pm">
+            <label for="pm">PM</label>
+          </span>
+          <span class="fd option">
+            <input type="radio" name="time" value="24" id="h24" checked="">
+            <label for="h24">24:00</label>
+          </span>
+        </p>
+        <p class="fd">
+          <input class="option" type="checkbox" name="eat" value="breakfast" id="breakfast">
+          <label class="toggle lowlight l" for="breakfast">breakfast</label>
+          <span class="option toggle danger xl">
+            <input type="checkbox" name="eat" value="lunch" id="lunch">
+            <label for="lunch">lunch</label>
+          </span>
+          <span class="option toggle ok xxl">
+            <input type="checkbox" name="eat" value="dinner" id="dinner" checked="">
+            <label for="dinner">dinner</label>
+          </span>
+        </p>
+        <p>
+          <label class="fd option info s">
+            <input type="checkbox">
+            <span>Apple</span>
           </label>
-          <label class="fd radio">
-            <input type="radio" name="radio"> <span class="box">苹果</span>
+          <label class="fd option highlight m">
+            <input type="checkbox" checked>
+            <span>Google</span>
+          </label>
+          <label class="fd option ok">
+            <input type="checkbox">
+            <span>Lenovo</span>
+          </label>
+          <label class="fd option danger l">
+            <input type="checkbox">
+            <span>Microsoft</span>
           </label> 
         </p>
-      </fieldset>
-      <fieldset>
-        <label class="fd checkbox">
-          <input type="checkbox"> <span class="box">apple</span>
-        </label>
-        <label class="fd checkbox">
-          <input type="checkbox"> <span class="box">苹果</span>
-        </label> 
-      </fieldset>
-      <fieldset>
-        <label class="fd checkbox">
-        <input type="checkbox"> <span class="box">apple</span>
-      </label>
-      </fieldset>
-      <fieldset>
-        <label class="fd checkbox">
-        <input type="checkbox"> <span class="box">桔子</span>
-      </label>
+        <p class="fd">
+          <label class="option toggle lowlight xl">
+            <input type="radio" name="os" value="iOS">
+            <span>iOS</span>
+          </label>
+          <label class="option toggle xxl">
+            <input type="radio" name="os" value="Android" checked>
+            <span>Android</span>
+          </label>
+        </p>
       </fieldset>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
@@ -150,35 +173,38 @@
 </section>
 <section class="fd">
   <h3 class="hr">Select</h3>
-  <p>使用默认选项或添加<code>multiple</code>属性可以显示多个选项</p>
+  <p>Dropdown and multiple selector</p>
   <div class="docs">
     <div class="tag">
       <code>select</code>
     </div>
     <div class="example">
-      <select class="fd m">
-        <option selected="selected">Option 01</option>
-        <option>Option 02</option>
-        <option>Option 03</option>
-      </select> 
-      <select class="fd l" multiple="">
-        <option selected="selected">Option 01</option>
-        <option>Option 02</option>
-        <option>Option 03</option>
-        <option>Option 04</option>
-        <option>Option 05</option>
-      </select>
-
+      <p>
+        <select class="fd m">
+          <option selected="selected">Option 01</option>
+          <option>Option 02</option>
+          <option>Option 03</option>
+        </select>
+      </p>
+      <p class="fd">
+        <select class="xl wild" multiple="">
+          <option selected="selected">Option 01</option>
+          <option>Option 02</option>
+          <option>Option 03</option>
+          <option>Option 04</option>
+          <option>Option 05</option>
+        </select>
+      </p>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
 </section>
 <section class="fd">
   <h3 class="hr">Textarea</h3>
-  <div>可根据需要改变 <code>rows</code> 属性</div>
   <div class="docs">
     <div class="example">
       <textarea class="fd"></textarea>
+      <textarea class="fd narrow"></textarea>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>

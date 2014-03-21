@@ -1,9 +1,10 @@
 /***** Functions *****/
 input-sizes(i)
-  & > input[type="radio"]
-  & > input[type="checkbox"]
-    height unit((8 + 2 * i)/10, em)
-    width unit((8 + 2 * i)/10, em)
+  height unit((8 + 2 * i)/10, em)
+  width unit((8 + 2 * i)/10, em)
+input-colorful(state)
+  &:before
+    border-color: (lightness(state['color']) > 80% ? lighten(state['invert-color'], 20%) : state['color'])
 
 /***** Styles *****/
 // base styles
@@ -14,8 +15,8 @@ input:not([type="button"])
 select
   +fd()
     outline none
+
     box-sizing border-box
-    vertical-align middle
 
 // reset fieldset
 fieldset
@@ -85,36 +86,7 @@ input[type="month"]
       color: states['warning']['color']
     widths()
 
-// base radio and checkbox 
-label
-input[type="radio"]
-input[type="checkbox"]
-  +fd()
-    margin 0
-    cursor pointer
-    display inline-block
-    line-height 1.4em
-
-input[type="radio"]
-input[type="checkbox"]
-  +fd()
-    width 1em
-    height 1em
-
-// label in different sizes
-label
-  +fd()
-    sizes(\&, '', input-sizes)
-
-input[type="file"]
-  +fd()
-    display block
-
-textarea
-  +fd()
-    line-height 1.2em
-    height 6.6em
-
+// input fieldset disabled
 input[disabled]
 fieldset[disabled]
   +fd()
@@ -125,7 +97,138 @@ fieldset[disabled]
 input[readonly]
   +fd()
     cursor default
+
+// base radio and checkbox 
+label
+input[type="radio"]
+input[type="checkbox"]
+  +fd()
+    margin 0
+    cursor pointer
+    vertical-align middle
+
+// label > input
+label
+  +fd()
+    > input[type="radio"]
+    > input[type="checkbox"]
+      @extend label.fd
+      margin -.1em 0 0 0
+    sizes(\&, '> input[type="radio"]')
+    sizes(\&, '> input[type="checkbox"]')
+
+// file
+input[type="file"]
+  +fd()
+    display block
+
+// textarea
+textarea
+  +fd()
+    line-height 1.2em
+    height 6.6em
   
+// select
+select[multiple]
+select[size]
+  +fd()
+    height auto
+ 
+// fondant style radio and checkbox
+input[type="radio"]
+input[type="checkbox"]
+  &.fd.option
+  .fd.option > &
+  .fd > .option > &
+  .fd > &.option
+    display none
+input[type="radio"]
+input[type="checkbox"]
+  &.fd.option
+  .fd.option > &
+  .fd > .option > &
+  .fd > &.option
+    & + label
+      @extend label.fd
+      position relative
+      height 1em
+      line-height 1em
+      padding 0 0 0 1.4em
+      &:before
+        width 1.2em
+        height 1.2em
+        position absolute
+        left 0
+        top 0
+        line-height 1em
+        text-align center
+        background base-white
+        transition background-color .3s ease
+        box-sizing border-box
+        border-width .1em
+        border-style solid
+        box-shadow inset 0 .1em .2em 0 rgba(dark-black, .3), 0 .1em 0 0 rgba(base-white, .8)
+    & + label.toggle
+      padding 0 1.4em 0 0
+      &:before
+        right 0
+        left inherit
+  .fd.toggle.option > &
+  .fd > .option.toggle > &
+    & + label
+      @extend input[type="radio"].fd.option + label.toggle
+  .fd > & + label.toggle
+      @extend input[type="radio"].fd.option + label.toggle
+input[type="radio"]
+  &.fd.option
+  .fd.option > &
+  .fd > .option > &
+  .fd > &.option
+    & + label:before 
+      border-radius 50%
+      content ' '
+    &:checked + label:before
+      content '\2022'
+input[type="checkbox"]
+  &.fd.option
+  .fd.option > &
+  .fd > .option > &
+  .fd > &.option
+    & + label:before 
+      border-radius .2rem
+      content ' '
+    &:checked + label:before
+      content '\2713'
+
+label.option
+  +fd()
+    input[type="radio"]
+    input[type="checkbox"]
+      & + span
+        @extend input[type="radio"].fd.option + label
+    input[type="radio"]
+      & + span:before
+        @extend input[type="radio"].fd.option + label:before
+      &:checked + span:before
+        @extend input[type="radio"].fd.option:checked + label:before
+    input[type="checkbox"]
+      & + span:before
+        @extend input[type="checkbox"].fd.option + label:before
+      &:checked + span:before
+        @extend input[type="checkbox"].fd.option:checked + label:before
+label.option.toggle
+  +fd()
+    input[type="radio"]
+    input[type="checkbox"]
+      & + span
+        @extend input[type="radio"].fd.option + label.toggle
+
+label.fd.option
+  colorful(input-colorful, \&)
+.fd.option
+.fd > label.option
+label.fd.option > span
+
 .form-icon
   +fd()
     display inline-block
@@ -147,73 +250,6 @@ input[readonly]
         padding-left 25px
       &.small
         padding-left 25px
- 
-select[multiple]
-select[size]
-  height auto
-
-.checkbox
-  +fd()
-    position relative
-    min-width 1em
-    height 1.25em
-    line-height 1em
-    display inline-block
-    vertical-align middle
-    margin-right 1em
-    input
-      position absolute
-      top 0
-      left 0
-      opacity 0
-      &:checked + .box:after
-        opacity 1
-    .box
-      cursor pointer
-      padding-left 1.5em
-      &:before
-        position absolute
-        top 0
-        left 0
-        line-height 1
-        width 1em
-        height 1em
-        content ''
-        border-radius .2rem
-        background base-white
-        transition background-color .3s ease
-        box-shadow .3s ease
-        box-shadow 0em 0em 0em 1px rgba(dark-black, .3)
-      &:after
-        opacity 0
-        content ''
-        position absolute
-        background transparent
-        border .2em solid base-black
-        border-top none
-        border-right none
-        border-color: states['highlight']['color']
-        transform rotate(-45deg)
-        height .2em
-        left .2em
-        top .275em
-        width .5em
-    &.radio
-      >.box
-        &:before
-          min-width 1em
-          height 1em
-          border-radius 500px
-          transform none
-        &:after
-          border none
-          top .2em
-          left .2em
-          width .6em
-          height .6em
-          background-color: states['highlight']['color']
-          transform none
-          border-radius 500px
 
 .input-prepend
 .input-append

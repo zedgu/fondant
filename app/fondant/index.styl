@@ -136,7 +136,7 @@ icon-class(prefix = "")
     {block}
 
 // colorful styles selector
-colorful(fn, prefix = "")
+colorful(fn, prefix = '')
   for key, state in states
     if key == 'normal'
       key = ''
@@ -221,7 +221,9 @@ li
 .li
 button
 .button
-input
+input:not([type="file"])
+label
+select
   +fd()
     sizes()
 
