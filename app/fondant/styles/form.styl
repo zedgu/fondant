@@ -237,6 +237,7 @@ label.fd.option > span
     +icon-class(\>)
       position absolute
       text-align center
+      left 0
       top 50%
       margin-top -10px
       width 30px
@@ -246,10 +247,6 @@ label.fd.option > span
       &:focus ~ 
         +icon-class()
           color rgba(base-black, .9)
-      &.large
-        padding-left 25px
-      &.small
-        padding-left 25px
 
 .input-prepend
 .input-append
@@ -257,33 +254,25 @@ label.fd.option > span
     display inline-block
     vertical-align middle
     white-space nowrap
+    clear both
     .add
       background-color rgba(base-black, .1)
       border 1px solid rgba(dark-black, .15)
       display inline-block
       font-weight normal
       min-width 10px
-      height 20px
-      line-height 20px
-      padding 4px 6px
+      padding .34em .4em
       text-align center
       text-shadow 0 1px 0 base-white
       width auto
       vertical-align top
-      margin-top 2px
-    .large
-      font-size 1.2rem
-      height 30px
-      line-height 30px
-    .small
-      height 15px
-      line-height 15px
-      font-size .8rem
+      height 1.2em
+      line-height 1.2em
 
 .input-append
   +fd()
     .add
-      margin-left -.7rem
+      margin-left -.6rem
       border-top-right-radius .2rem
       border-bottom-right-radius .2rem
     input
@@ -296,7 +285,7 @@ label.fd.option > span
 .input-prepend
   +fd()
     .add
-      margin-right -.7rem
+      margin-right -.6rem
       border-top-left-radius .2rem
       border-bottom-left-radius .2rem
     input
