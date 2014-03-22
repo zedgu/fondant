@@ -1,74 +1,77 @@
-* + .progress
-  +fd()
-    margin-top 15px
+/***** Functions *****/
+progress-colorful(state)
+  c = lightness(state['color']) > 90% ? state['invert-color'] : state['color']
+  color: darken(state['color'], 30%) !important
+  &:before
+    background: linear-gradient(to bottom, c, state['border-color']) repeat scroll 0 0 c
 
+/***** Styles *****/
 .progress
   +fd()
-    border 1px solid rgba(dark-black, .1)
+    display block
+    border 1px solid dark-gray
     width 100%
-    height 30px
+    height 2em
+    line-height 1.6em
     background-color light-gray
     border-radius .2rem
-    padding 2px
+    padding .2em
     box-sizing border-box
-    .progress-bar
+    white-space nowrap
+    position relative
+    text-indent -4em
+    text-align right
+    text-shadow 1px 0 1px rgba(base-white, 1), 0 1px 1px rgba(base-white, 1), 0 -1px 1px rgba(base-white, 1), -1px 0 1px rgba(base-white, 1)
+    overflow hidden
+    &:before
+      content ' '
       float left
       height 100%
-      background: linear-gradient(to bottom, states['highlight']['color'], states['highlight']['border-color']) repeat scroll 0 0 states['highlight']['color']
       border-radius .2rem
       transition width 1s ease-in-out,background-color 1s ease-out
-      width 0
-      animation 10s ease-in-out 0s normal none infinite finish
-    &.active
-      .progress-bar
-        position relative
-        &:after
-          content ''
-          opacity 0
-          position absolute
-          top 0
-          left 0
-          right 0
-          bottom 0
-          background base-white
-          border-radius .2rem
-          animation progress-active 2s ease-out infinite
+      width 100%
+      margin-right .6em
+    &.animation
+      &:before
+        animation 10s ease-in-out 0s normal none infinite progressed
+    &.ing
+      &:after
+        content ' '
+        opacity 0
+        position absolute
+        top 0
+        left 0
+        right 0
+        bottom 0
+        background base-white
+        border-radius .2rem
+        animation progressing 2s ease-out infinite
+    colorful(progress-colorful)
     &.striped
-      .progress-bar
-        background-size 30px 30px
+      &:before
+        background-size 2em 2em
         background-image linear-gradient(-45deg, rgba(base-white, .15) 25%, rgba(dark-black, 0) 25%, rgba(dark-black, 0) 50%, rgba(base-white, .15) 50%, rgba(base-white, .15) 75%, rgba(dark-black, 0) 75%, rgba(dark-black, 0))
-      &.striped-active
-        .progress-bar
+      &.ing
+        &:before
           animation 2s linear 0s normal none infinite progress-striped
-    &.no
-      .progress-bar
-        animation none  
+        &:after
+          animation none
     &.xs
-      height 10px
+      height .6em
       padding 0
-    &.s
-      height 20px
-    &.ok
-      .progress-bar
-        background: linear-gradient(to bottom, states['ok']['color'], states['ok']['border-color']) repeat scroll 0 0 states['ok']['color']
-    &.warning
-      .progress-bar
-        background: linear-gradient(to bottom, states['warning']['color'], states['warning']['border-color']) repeat scroll 0 0 states['warning']['color']
-    &.danger
-      .progress-bar
-        background: linear-gradient(to bottom, states['danger']['color'], states['danger']['border-color']) repeat scroll 0 0 states['danger']['color']
+    > *
+      display block
+      background-color light-gray
+      position absolute
+      left 0
+      top 0
+      height 100%
+      width 100%
+      line-height 2em
+      text-align left
+      text-indent -3.4em
 
-@-webkit-keyframes progress-active
-  0%
-    opacity 0
-    width 0
-  50% 
-    opacity .3
-  100%
-    opacity 0
-    width 95%
-
-@keyframes progress-active
+@keyframes progressing
   0%
     opacity 0
     width 0
@@ -78,7 +81,7 @@
     opacity 0
     width 100%
 
-@keyframes finish
+@keyframes progressed
   0% 
     width 0
   40%
@@ -88,7 +91,7 @@
 
 @keyframes progress-striped
   0% 
-    background-position 0px 0
+    background-position 0 0
   100%
-    background-position 60px 0
+    background-position 8em 0
 

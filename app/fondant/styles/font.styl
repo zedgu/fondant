@@ -27,7 +27,7 @@
       text-transform none
       margin-left .4em
       margin-right .4em
-    &.toggle:before
+    &.after:before
       content ''!important
       width 0!important
       margin 0!important
@@ -37,5 +37,5 @@ for name, character in icons
   .fd.icon-
   .fd > .icon-
       &{name}:before
-      &{name}.toggle:after
+      &{name}.after:after
         content character

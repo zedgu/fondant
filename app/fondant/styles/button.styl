@@ -15,7 +15,7 @@ btn(n = 3)
       {block}
 
 // colorful button
-add-button-color(state)
+button-color(state)
   colorful-invert(state)
   &:hover
   &:focus
@@ -43,7 +43,7 @@ add-button-color(state)
     &:focus
       text-decoration none
       outline 0
-    colorful(add-button-color, \&)
+    colorful(button-color)
 +btn(2)
   +fd()
     +icon-class(\&)
@@ -73,7 +73,7 @@ add-button-color(state)
           border-right 1px solid rgba(dark-black, .17)
           line-height 2em
           margin 0
-        &.toggle
+        &.after
           padding-left .9em
           padding-right 3.3em
           &:after
@@ -107,7 +107,7 @@ add-button-color(state)
         border-top-right-radius .2rem
         border-bottom-right-radius .2rem
     +btn(2)
-      &.toggle
+      &.after
         padding-left .6em
         padding-right .6em
         +icon-class(\&)

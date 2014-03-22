@@ -6,77 +6,35 @@
       <code>.progress</code>
     </div>
     <div class="usage">
-      <code>.progress.fd</code> or <code>.fd &gt; .progress</code>
+      <ul class="fd">
+        <li><code>.progress.fd</code> or <code>.fd &gt; .progress</code></li>
+        <li><code>.progress.fd > *[style="width: n%"]</code> or <code>.fd &gt; .progress > *[style="width: n%"]</code></li>
+        <li><span class="fd h6">animation:</span> <code>.animation</code></li>
+        <li><span class="fd h6">progressing:</span> <code>.ing</code></li>
+        <li><span class="fd h6">striped:</span> <code>.striped</code></li>        
+        <li><span class="fd h6">6 sizes:</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
+      </ul>
     </div>
     <div class="example">
-      <div class="fd progress">
-        <div class="progress-bar"></div>
-      </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-</section>
-<section class="fd">
-  <h3 class="hr">States</h3>
-  <div class="fd docs">
-    <b>Active</b>
-    <p>A progress bar can show activity</p>
-    <p><code>.active</code></p>
-    <div class="example">
-      <div class="fd progress active">
-        <div class="progress-bar"></div>
-      </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-  <div class="fd docs">
-    <b>Size modifiers</b>
-    <p><code>.xs</code> <code>.s</code></p>
-    <div class="example">
-          <div class="fd progress xs">
-             <div class="progress-bar"></div>
-          </div>
-          <div class="fd progress s">
-             <div class="progress-bar"></div>
-          </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-   <div class="fd docs">
-    <b>Color modifiers</b>
-    <p><code>.ok</code> <code>.warning</code> <code>.danger</code></p>
-    <div class="example">
-          <div class="fd progress ok">
-             <div class="progress-bar"></div>
-          </div>
-          <div class="fd progress warning">
-             <div class="progress-bar"></div>
-          </div>
-          <div class="fd progress danger">
-             <div class="progress-bar"></div>
-          </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-</section>
-<section class="fd">
-  <h3 class="hr">Striped</h3>
-  <div class="fd docs">
-    <p>A progress bar can be striped</p>
-    <div class="tag">
-      <code>.striped</code>
-    </div>
-    <div class="example">
-      <div class="fd progress striped">
-        <div class="progress-bar"></div>
-      </div>
-      <p>You can even animate the striped bar. To do so, just add the <code>.active</code> class.</p>
-      <div class="fd progress active striped">
-        <div class="progress-bar"></div>
-      </div>
-      <div class="fd progress striped-active striped no">
-        <div class="progress-bar" style="width:60%"></div>
-      </div>
+      <p class="fd"><span class="progress xs animation tight"></span></p>
+      <p class="fd">
+        <span class="progress s lowlight">100%</span>
+      </p>
+      <p>
+        <span class="fd progress m animation highlight">80%</span>
+      </p>
+      <div class="fd progress ing ok"></div>
+      <p class="fd">
+        <span class="progress striped l warning">100%</span>
+      </p>
+      <p>
+        <span class="fd progress striped animation xl danger">80%</span>
+      </p>
+      <div class="fd progress striped ing xxl info"></div>
+      <p class="fd progress striped ing info">
+        <span style="margin-left:60%">60%</span>
+      </p>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>

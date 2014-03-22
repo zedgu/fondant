@@ -37,17 +37,30 @@
     <div class="usage">
       <ul class="fd">
         <li><span class="fd h6">only icon :</span> <code>.icon-*</code> <em>with empty content</em></li>
-        <li><span class="fd h6">on left :</span> <code>.icon-*</code></li>
-        <li><span class="fd h6">on right ( toggle side ) :</span> <code>.icon-*.toggle</code></li>
+        <li><span class="fd h6">before the content :</span> <code>.icon-*</code></li>
+        <li><span class="fd h6">after the content :</span> <code>.icon-*.after</code></li>
+        <li><span class="fd h6">both side :</span> <code>.fd.icon-*.after &gt; .icon-*</code> or <code>.fd &gt; .icon-*.after &gt; .icon-*</code></li>
       </ul>
     </div>
     <div class="example">
-      <a class="fd button icon-weibo s"></a>
-      <button class="fd icon-weibo lowlight">Weibo</button>
-      <div class="fd button icon-weibo toggle highlight m">Weibo</div>
-      <span class="fd"><a class="button icon-github ok l"></a></span>
-      <span class="fd"><button class="icon-flickr warning xl">Flickr</button></span>
-      <span class="fd button icon-facebook toggle info xxl">Facebook</span>
+      <div class="fd">
+        <a class="button icon-weibo s"></a>
+        <button class="icon-weibo lowlight">Weibo</button>
+        <div class="button icon-weibo after highlight m">Weibo</div>
+        <span class="fd"><a class="button icon-github ok l"></a></span>
+        <span class="fd"><button class="icon-flickr warning xl">Flickr</button></span>
+        <span class="button icon-facebook after info xxl">Facebook</span>
+      </div>
+      <p>
+        <button class="fd icon-angle-double-down after">
+          <span class="icon-folder">folder</span>
+        </button>
+        <span class="fd">
+          <a class="button icon-angle-double-up after">
+            <span class="fd icon-folder">folder</span>
+          </a>
+        </span>
+      </p>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
@@ -82,35 +95,16 @@
     <div class="usage">
       <ul class="fd">
         <li><span class="fd h6">on left :</span> <code>.labeled</code></li>
-        <li><span class="fd h6">on right :</span> <code>.labeled.toggle</code></li>
+        <li><span class="fd h6">on right :</span> <code>.labeled.after</code></li>
       </ul>
     </div>
     <div class="example">
       <a class="fd button s icon-weibo labeled">Weibo</a>
-      <button class="fd lowlight icon-weibo labeled toggle">Weibo</button>
+      <button class="fd lowlight icon-weibo labeled after">Weibo</button>
       <span class="fd"><a class="button highlight icon-weibo labeled m">Weibo</a></span>
-      <span class="fd"><button class="l ok icon-weibo labeled toggle">Weibo</button></span>
+      <span class="fd"><button class="l ok icon-weibo labeled after">Weibo</button></span>
       <div class="fd button xl warning icon-weibo labeled">Weibo</div>
-      <span class="fd button xxl danger icon-weibo labeled toggle">Weibo</span>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-</section>
-<section class="fd">
-  <h3 class="hr">Icon Button with Toggle</h3>
-  <div class="docs">
-    <div class="usage">
-      <code>.fd.icon-*.toggle &gt; .icon-*</code> or <code>.fd &gt; .icon-*.toggle &gt; .icon-*</code>
-    </div>
-    <div class="example">
-      <button class="fd icon-angle-double-down toggle">
-        <span class="icon-folder">folder</span>
-      </button>
-      <span class="fd">
-        <a class="button icon-angle-double-down toggle">
-          <span class="fd icon-folder">folder</span>
-        </a>
-      </span>
+      <span class="fd button xxl danger icon-weibo labeled after">Weibo</span>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
@@ -152,28 +146,28 @@
   </div>
 </section>
 <section class="fd">
-  <h3 class="hr">Button Group with Toggle</h3>
+  <h3 class="hr">Button Group with after</h3>
   <div class="docs">
     <div class="tag">
       <code>div</code> or <code>span</code> or <em class="fd lowlight">any one you like</em>
     </div>
     <div class="usage">
-      <code>.buttons &gt; button / .button + button.toggle / .button.toggle</code>
+      <code>.buttons &gt; button / .button + button.after / .button.after</code>
     </div>
     <div class="example">
       <div class="fd buttons">
         <a class="button icon-sort-alt-up"></a>
-        <button class="toggle"></button>
+        <button class="after"></button>
       </div>
       <div class="fd buttons">
         <button class="icon-bug"></button>
-        <a class="button toggle icon-angle-up"></a>
+        <a class="button after icon-angle-up"></a>
       </div>
       <div class="fd buttons">
         <button class="icon-mail">Inbox</button>
         <span class="fd buttons">
           <input type="button" class="icon-folder" value="Folder">
-          <button class="toggle"></button>
+          <button class="after"></button>
         </span>
         <button class="icon-trash">Trash</button>
       </div>

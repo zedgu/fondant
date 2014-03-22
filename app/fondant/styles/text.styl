@@ -1,9 +1,4 @@
 /***** Functions *****/
-// font colors
-add-text-color(state)
-  +fd()
-    color (lightness(state['color']) > 80% ? state['invert-color'] : state['color']) !important
-
 // h1-h6 function
 h(n)
   fr((n - 2 * i) / 10)
@@ -11,9 +6,6 @@ h(n)
   {block}
 
 /***** Styles *****/
-// colorful text
-colorful(add-text-color)
-
 // default link
 a
   color color-a
@@ -108,6 +100,7 @@ kbd
   white-space nowrap
   box-shadow 0.1em 0.2em 0.2em dark-gray
 
+// base text style
 .bold
   +fd()
    font-weight bold
@@ -121,3 +114,18 @@ kbd
 .align-center
   +fd()
     text-align center
+
+// text in label
+.label
+  +fd()
+    display inline-block
+    vertical-align middle
+    border-width 1px
+    border-style solid
+    padding .4em .8em
+    color rgba(base-black, .65)
+    font-weight normal
+    border-radius .2rem
+    box-sizing border-box
+    margin 0 .2em
+  colorful(colorful-invert)

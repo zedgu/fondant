@@ -136,7 +136,7 @@ icon-class(prefix = "")
     {block}
 
 // colorful styles selector
-colorful(fn, prefix = '')
+colorful(fn, prefix = '&')
   for key, state in states
     if key == 'normal'
       key = ''
@@ -148,6 +148,10 @@ colorful-invert(state)
   color: state['invert-color'] !important
   background-color: state['color']
   border-color: darken(state['border-color'], 10%)
+
+// font colors
+text-color(state)
+  color (lightness(state['color']) > 80% ? state['invert-color'] : state['color']) !important
 
 // sizes
 size-labels = s '' m l xl xxl
@@ -220,20 +224,11 @@ br
     widths(\&, ':before', 22, 9)
     widths(\&, ':after', 22, 9)
 
-// sizes
-p
-span
-li
-.li
-button
-.button
-input:not([type="file"])
-label
-select
-textarea
-.pointing
-  +fd()
-    sizes()
+// global colors, sizes
++fd()
+  colorful(text-color)
+  sizes()
+  // p, span, li, .li, button, .button, input:not([type="file"]), label, select, textarea, .pointing, .label
 
 /***** Icons *****/
 icons = {
