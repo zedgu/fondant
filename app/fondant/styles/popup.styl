@@ -1,179 +1,107 @@
-.popup
+/***** Functions *****/
+pointing-colorful(state)
+  colorful-invert(state)
+  box-shadow: 0px 1px 2px rgba(state['border-color'], .8)
+  &:before
+    background-color: state['color']
+    box-shadow: 1px 1px 0 rgba(state['border-color'], 1)
+
+/***** Styles *****/
+// tips
+.pointing
   +fd()
+    display block
     position relative
-    border 1px solid rgba(dark-black, .1)
-    max-width 250px
-    background-color base-white
-    padding .8em 1.2em
-    font-size 0.875rem
-    font-weight normal
-    font-style normal
-    color rgba(dark-black, .7)
+    border-width 1px
+    border-style solid
+    padding 1em
     border-radius .2rem
-    box-shadow 0px 1px 2px rgba(dark-black, .1)
-    margin 0
+    margin 1em
     &:before
       position absolute
-      content ""
-      width .75em
-      height .75rem
+      width 1em
+      height 1em
       background-image none
-      background-color base-white
-      transform rotate(45deg)
       z-index 2
       box-sizing border-box
-      box-shadow 1px 1px 1px rgba(dark-black, .1)
-    &.bottoms
-      margin .75em 0 0
-      &.centers
-        &:before
-          margin-left -.4em
-          top -.4em
-          left 50%
-          right auto
-          bottom auto
-          box-shadow -1px -1px 1px rgba(dark-black, .2)
-      &.ok
-        &:before
-          box-shadow: -1px -1px .1px states['ok']['border-color']
-      &.danger
-        &:before
-          box-shadow: -1px -1px .1px states['danger']['border-color']
-      &.warning
-        &:before
-          box-shadow: -1px -1px .1px states['warning']['border-color']
-    &.tops
-      margin 0 0 .75em
-      &.centers
-        &:before
-          top auto
-          right auto
-          bottom -.4em
-          left 50%
-          margin-left -.4em
-    &.rights
-      &.bottoms
-        margin-right -2em
-        &:before
-          top -.4em
-          right 1em
-          bottom auto
-          left auto
-          margin-left 0
-          box-shadow -1px -1px .1px rgba(dark-black, .2)
-      &.ok
-        &:before
-          box-shadow: -1px -1px .1px states['ok']['border-color']
-      &.danger
-        &:before
-          box-shadow: -1px -1px .1px states['danger']['border-color']
-      &.warning
-          &:before
-            box-shadow: 1px -1px .1px states['warning']['border-color']
-      &.centers
-        margin 0 .75em 0 0
-        &:before
-          top 50%
-          right -.35em
-          bottom auto
-          left auto
-          margin-top -.4em
-          box-shadow 1px -1px 1px rgba(dark-black, .2)
-        &.ok
-          &:before
-            box-shadow: 1px -1px .1px states['ok']['border-color']
-        &.danger
-          &:before
-            box-shadow: 1px -1px .1px states['danger']['border-color']
-        &.warning
-          &:before
-            box-shadow: 1px -1px .1px states['warning']['border-color']
-      &.tops
-        margin-right -2em
-        &:before
-          bottom -.4em
-          right 1em
-          top auto
-          left auto
-          margin-left 0
-        &.ok
-          &:before
-           box-shadow: 1px 1px .1px states['ok']['border-color']
-        &.danger
-          &:before
-           box-shadow: 1px 1px .1px states['danger']['border-color']
-        &.warning
-          &:before
-           box-shadow: 1px 1px .1px states['warning']['border-color']
-    &.lefts
-      &.bottoms
+    &.south
+      &:before
+        content ""
+        bottom -.5em
+        margin-left -.5em
+        left 50%
+        transform rotate(45deg) !important
+      &.east:before
         margin-left -2em
-        &:before
-          top -.4em
-          left 1em
-          right auto
-          bottom auto
-          margin-left 0
-          box-shadow -1px -1px 1px rgba(dark-black, .2)
-        &.ok
-          &:before
-            box-shadow: -1px -1px .1px states['ok']['border-color']
-        &.danger
-          &:before
-            box-shadow: -1px -1px .1px states['danger']['border-color']
-        &.warning
-          &:before
-            box-shadow: -1px -1px .1px states['warning']['border-color']
-      &.tops
-        margin-left -2em
-        &:before
-          bottom -.4em
-          left 1em
-          top auto
-          right auto
-          margin-left 0      
-      &.centers
-        margin 0 0 0 .75em
-        &:before
-          top 50%
-          left -.35em
-          bottom auto
-          right auto
-          margin-top -.4em
-          box-shadow -1px 1px 1px rgba(dark-black, .2)
-        &.ok
-          &:before
-            box-shadow: -1px 1px .1px states['ok']['border-color']
-        &.danger
-          &:before
-            box-shadow: -1px 1px .1px states['danger']['border-color']
-        &.warning
-          &:before
-            box-shadow: -1px 1px .1px states['warning']['border-color']
-    &.centers
-      margin-left -1.25em
-    &.s
-      font-size .8rem
-    &.l
-      font-size 1rem
-    &.ok
-      background-color: states['ok']['color']
-      border-color: states['ok']['border-color']
-      color: states['ok']['bg-color'] !important    
+      &.west:before
+        left 1.5em
+    &.north
       &:before
-        box-shadow: 1px 1px .1px states['ok']['border-color']
-        background-color: states['ok']['color']
-    &.danger
-      background-color: states['danger']['color']
-      border-color: states['danger']['border-color']
-      color: states['danger']['bg-color'] !important 
-      &:before
-        box-shadow: 1px 1px .1px states['danger']['border-color']
-        background-color: states['danger']['color']
-    &.warning
-      background-color: states['warning']['color']
-      border-color: states['warning']['border-color']
-      color: states['warning']['bg-color'] !important 
-      &:before
-        box-shadow: 1px 1px .1px states['warning']['border-color']
-        background-color: states['warning']['color']
+        content ""
+        top -.48em
+        left 50%
+        transform rotate(225deg) !important
+      &.east:before
+        @extend .pointing.fd.south.east:before
+      &.west:before
+        left 1em
+    &.east:before
+      content ""
+      left 100%
+      margin-left -.5em
+      transform rotate(-45deg)
+    &.west:before
+      content ""
+      left -.47em
+      transform rotate(135deg)
+    colorful(pointing-colorful, \&)
+    widths()
+
+.modal
+  +fd()
+    text-align left
+    width 90%
+    background-color base-white
+    border: 1px solid dark-gray
+    border-radius 5px
+    user-select text
+    .close
+      float right
+      font-size 1.2rem
+      line-height 1
+      text-shadow 0 1px 0 base-white
+      opacity .2
+      font-style normal
+      cursor pointer
+      position relative
+      right .8em
+      top .8em
+      &:hover
+        opacity 1
+    >.header
+      margin 0
+      padding 1.5rem 2rem
+      font-size 1.2em
+      font-weight 700
+      border-radius .325em .325em 0 0
+      line-height 1
+    >.content
+      display table
+      width 100%
+      position relative
+      padding 2em
+      background-color light-gray
+      box-sizing border-box
+      >.left
+        display table-cell
+        padding-right 1.5%
+        min-width 25%
+      >.right
+        display table-cell
+        padding-left 1.5%
+        vertical-align top
+        .header
+          font-size 1.2em
+    >.actions
+      padding .8rem .8rem
+      text-align right

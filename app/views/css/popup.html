@@ -1,111 +1,93 @@
 <section class="fd">
-  <h3 class="hr">Popup</h3>
+  <h3 class="hr">Tips</h3>
   <div class="fd docs">
-    <p>A Popup</p>
+    <div class="usage">
+      <ul class="fd">
+        <li><code>.fd.pointing</code> or <code>.fd &gt; .pointing</code></li>
+        <li><span class="fd h6">Directions:</span> <code>.south</code> <code>.north</code> <code>.east</code> <code>.west</code></li>
+        <li><span class="fd h6">6 sizes:</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
+      </ul>
+    </div>
+    <div class="example">
+      <div class="fd pointing s">
+        Pointing nowhere.
+      </div>
+      <div class="fd pointing north m">
+        Pointing north.
+      </div>
+      <div class="fd pointing north east">
+        Pointing northeast.
+      </div>
+      <div class="fd pointing east l lowlight tight">
+        Pointing east.
+      </div>
+      <div class="fd pointing south xl highlight narrow">
+        Pointing south.
+      </div>
+      <div class="fd pointing south east xxl ok">
+        Pointing southeast.
+      </div>
+      <div class="fd pointing south west warning broad">
+        Pointing southwest.
+      </div>
+      <p class="fd pointing west danger wild">
+        Pointing west.
+      </p>
+      <span class="fd pointing north west info full">
+        Pointing northwest.
+      </span>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="hr">Modal</h3>
+  <div class="fd docs">
+    <p>A base modal</p>
     <div class="tag">
-      <code>.popup</code>
+      <code>.modal</code>
     </div>
     <div class="usage">
-      <code>.popup.fd</code> or <code>.fd &gt; .popup</code>
+      <code>.modal.fd</code> or <code>.fd &gt; .modal</code>
     </div>
-    <p><code>.bottoms</code> <code>.centers</code></p>
     <div class="example">
-        <div class="fd popup bottoms centers">
-          I'm a popup
-        </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-    <p><code>.bottoms</code> <code>.lefts</code></p>
-    <div class="example">
-        <div class="fd popup bottoms lefts">
-          I'm a popup
-        </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-    <p><code>.bottoms</code> <code>.rights</code></p>
-    <div class="example">
-        <div class="fd popup bottoms rights">
-          I'm a popup
-        </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-    <p><code>.tops</code> <code>.centers</code></p>
-    <div class="example">
-        <div class="fd popup tops centers">
-          I'm a popup
-        </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-    <p><code>.tops</code> <code>.lefts</code></p>
-    <div class="example">
-        <div class="fd popup tops lefts">
-          I'm a popup
-        </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-    <p><code>.tops</code> <code>.rights</code></p>
-    <div class="example">
-        <div class="fd popup tops rights">
-          I'm a popup
+        <div class="fd modal">
+          <i class="close">X</i>
+          <div class="header">Changing Your Thing</div>
+          <div class="content">Do you want to change that thing to something else?</div>
+          <div class="actions"><span class="fd button info">Close</span></div>
         </div>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
 </section>
 <section class="fd">
-  <h3 class="hr">Different Color</h3>
+  <h3 class="hr">Standard Modal</h3>
   <div class="fd docs">
+    <p>A standard modal</p>
+    <div class="tag">
+      <code>.modal</code>
+    </div>
     <div class="usage">
-      <code>.ok</code>
+      <code>.modal.fd</code> or <code>.fd &gt; .modal</code>
     </div>
     <div class="example">
-        <div class="fd popup tops centers ok">
-          I'm a popup
-        </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-    <div class="usage">
-      <code>.warning</code>
-    </div>
-    <div class="example">
-        <div class="fd popup tops centers warning">
-          I'm a popup
-        </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-    <div class="usage">
-      <code>.danger</code>
-    </div>
-    <div class="example">
-        <div class="fd popup tops centers danger">
-          I'm a popup
+        <div class="fd modal">
+          <i class="close">X</i>
+          <div class="header">Changing Your Thing</div>
+          <div class="content">
+            <div class="left"><img class="fd s" src="https://www.google.com.hk/images/srpr/logo11w.png"></div>
+            <div class="right">
+              <div class="header">Are you sure you want to upload that?</div>
+              <p>I mean it's not really the best profile photo.</p>
+              <p>It's resampled to like two times the size it's suppose to be. Our image detection software also says it might even be inappropriate.</p>
+            </div>
+          </div>
+          <div class="actions"><span class="fd button info">Close</span></div>
         </div>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
 </section>
-<section class="fd">
-  <h3 class="hr">Different Size</h3>
-  <div class="fd docs">
-    <div class="usage">
-      <code>.s</code>
-    </div>
-    <div class="example">
-        <div class="fd popup tops centers s">
-          I'm a popup
-        </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-    <div class="usage">
-      <code>.l</code>
-    </div>
-    <div class="example">
-        <div class="fd popup tops centers l">
-          I'm a popup
-        </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-</section>
-
 

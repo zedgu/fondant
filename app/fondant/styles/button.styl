@@ -16,9 +16,7 @@ btn(n = 3)
 
 // colorful button
 add-button-color(state)
-  color: state['invert-color'] !important
-  background-color: state['color']
-  border-color: darken(state['border-color'], 10%)
+  colorful-invert(state)
   &:hover
   &:focus
   &.active

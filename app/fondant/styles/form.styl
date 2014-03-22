@@ -2,9 +2,15 @@
 input-sizes(i)
   height unit((8 + 2 * i)/10, em)
   width unit((8 + 2 * i)/10, em)
-input-colorful(state)
+input-before-colorful(state)
   &:before
-    border-color: (lightness(state['color']) > 80% ? lighten(state['invert-color'], 20%) : state['color'])
+    background-color: state['bg-color']
+    border-color: state['border-color']
+input-colorful(state)
+    background-color: state['bg-color']
+    border-color: state['border-color']
+    &:focus:not([readonly])
+      box-shadow: 0 0 .1em .1em rgba(state['border-color'], .4)
 
 /***** Styles *****/
 // base styles
@@ -67,23 +73,14 @@ input[type="month"]
     border 1px solid rgba(dark-black, .15)
     border-radius .2rem
     color rgba(dark-black, .7)
-    width 55%
     font-size 1em
     transition all 0.2s linear 0s
-    &:focus:not([readonly])
-      border-color: states['highlight']['border-color']
-    &.danger
-      background-color: states['danger']['bg-color']
-      border-color: states['danger']['border-color']
-      color: states['danger']['color']
-    &.ok
-      background-color: states['ok']['bg-color']
-      border-color: states['ok']['border-color']
-      color: states['ok']['color']
-    &.warning
-      background-color: states['warning']['bg-color']
-      border-color: states['warning']['border-color']
-      color: states['warning']['color']
+    colorful(input-colorful, \&)
+
+select
+textarea
+input
+  +fd()
     widths()
 
 // input fieldset disabled
@@ -99,20 +96,23 @@ input[readonly]
     cursor default
 
 // base radio and checkbox 
-label
 input[type="radio"]
 input[type="checkbox"]
+label
   +fd()
     margin 0
-    cursor pointer
     vertical-align middle
+    cursor pointer
+label
+  +fd()
+    display inline-block
 
 // label > input
 label
   +fd()
     > input[type="radio"]
     > input[type="checkbox"]
-      @extend label.fd
+      @extend input[type="checkbox"].fd
       margin -.1em 0 0 0
     sizes(\&, '> input[type="radio"]')
     sizes(\&, '> input[type="checkbox"]')
@@ -149,7 +149,8 @@ input[type="checkbox"]
   .fd > .option > &
   .fd > &.option
     & + label
-      @extend label.fd
+      @extend input[type="checkbox"].fd
+      display inline
       position relative
       height 1em
       line-height 1em
@@ -224,27 +225,24 @@ label.option.toggle
         @extend input[type="radio"].fd.option + label.toggle
 
 label.fd.option
-  colorful(input-colorful, \&)
+  colorful(input-before-colorful, \&)
 
 // icon for input
-.form-icon
++icon-class('.inside')
   +fd()
-    display inline-block
-    max-width 100%
     position relative
-    +icon-class(\>)
+    &:before
       position absolute
-      text-align center
       left 0
-      top 50%
-      margin-top -10px
-      width 30px
-      color rgba(base-black, .5)
-    .icon
-      padding-left 25px !important
-      &:focus ~ 
-        +icon-class()
-          color rgba(base-black, .9)
+      top .5em
+    > input
+      padding-left 1.8em !important
+    &.toggle
+      &:after
+        margin-left -2.1em
+      > input
+        padding-left .4em !important
+        padding-right 1.8em !important
 
 .input-prepend
 .input-append

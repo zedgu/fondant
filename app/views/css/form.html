@@ -30,6 +30,7 @@
         <li><code>input[type="*"].fd</code> or <code>.fd &gt; input[type="*"]</code></li>
         <li><span class="fd h6">6 sizes:</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
         <li><span class="fd h6">6 widths:</span> <code>.tight</code> <code>.narrow</code> default <code>.broad</code> <code>.wild</code> <code>.full</code></li>
+        <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
       </ul>
     </div>
     <div class="example">
@@ -41,12 +42,12 @@
         <p><input type="email" class="fd l" placeholder="Email in l size"></p>
         <p><input type="search" class="fd xl" placeholder="Search in xl size"></p>
         <p><input type="url" class="fd xxl" placeholder="URL in xxl size"></p>
-        <p><input type="tel" class="fd" placeholder="tel"></p>
-        <p><input type="time" class="fd" placeholder="time"></p>
-        <p><input type="date" class="fd" placeholder="date"></p>
-        <p><input type="datetime" class="fd" placeholder="datetime"></p>
-        <p><input type="datetime-local" class="fd" placeholder="datetime-local"></p>
-        <p><input type="week" class="fd" placeholder="week"></p>
+        <p><input type="tel" class="fd lowlight" placeholder="tel"></p>
+        <p><input type="time" class="fd highlight" placeholder="time"></p>
+        <p><input type="date" class="fd ok" placeholder="date"></p>
+        <p><input type="datetime" class="fd warning" placeholder="datetime"></p>
+        <p><input type="datetime-local" class="fd danger" placeholder="datetime-local"></p>
+        <p><input type="week" class="fd info" placeholder="week"></p>
         <p><input type="month" class="fd" placeholder="month"></p>
       </fieldset>
       <fieldset class="fd">
@@ -73,12 +74,14 @@
       <ul class="fd">
         <li><code>input[type="radio"].fd</code> or <code>.fd &gt; input[type="radio"]</code></li>
         <li><code>input[type="checkbox"].fd</code> or <code>.fd &gt; input[type="checkbox"]</code></li>
+        <li><code>.option</code> for Fondant Style</li>
         <li><span class="fd h6">6 sizes:</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
       </ul>
     </div>
     <div class="example fd">
       <fieldset>
-        <legend>default style</legend>
+        <legend>Default Style</legend>
         <p class="fd">
           <input class="s" type="radio" name="sex" value="male" id="male">
           <label class="s" for="male">male</label>
@@ -113,7 +116,7 @@
         </p>
       </fieldset>
       <fieldset>
-        <legend>fondant style</legend>
+        <legend>Fondant Style</legend>
         <p>
           <input class="fd option" type="radio" name="time" value="am" id="am">
           <label class="fd highlight s" for="am">AM</label>
@@ -178,6 +181,9 @@
     <div class="tag">
       <code>select</code>
     </div>
+    <div class="usage">
+      <code>select.fd</code> or <code>.fd &gt; select</code>
+    </div>
     <div class="example">
       <p>
         <select class="fd m">
@@ -202,9 +208,20 @@
 <section class="fd">
   <h3 class="hr">Textarea</h3>
   <div class="docs">
+    <div class="usage">
+      <ul class="fd">
+        <li><code>textarea.fd</code> or <code>.fd &gt; textarea</code></li>
+        <li><span class="fd h6">6 sizes:</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
+      </ul>
+    </div>
     <div class="example">
-      <textarea class="fd"></textarea>
-      <textarea class="fd narrow"></textarea>
+      <p>
+        <textarea class="fd"></textarea>
+      </p>
+      <p class="fd">
+        <textarea class="xxl narrow highlight"></textarea>
+      </p>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
@@ -222,48 +239,18 @@
   </div>
 </section>
 <section class="fd">
-  <h3 class="hr">Validation states</h3>
-  <div class="docs">
-    <div class="example">
-      <input type="text" class="fd warning" value="warning">
-      <input type="text" class="fd ok" value="ok" >
-      <input type="text" class="fd danger" value="danger">
-      <p>Message block ,do any one you like</p>
-      <div class="field fd">
-        <input type="text" class="danger" value="danger">
-        <div class="pointing danger label above">
-          Enter your username
-        </div>
-      </div>
-      <div class="field fd">
-        <input type="text" class="fd danger l">
-        <div class="pointing danger label lefts">
-          Enter your username
-        </div>
-      </div>
-      <div class="field fd">
-        <div class="pointing ok label rights">
-          Enter your username
-        </div>
-        <input type="text" class="fd ok l">
-      </div>
-      <div class="field fd">
-        <div class="pointing warning label below">
-          Enter your username
-        </div>
-        <input type="text" class="fd warning">
-      </div>
-
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-</section>
-<section class="fd">
   <h3 class="hr">Unchangeable</h3>
   <p>In case the input and fieldset is disabled or read only.</p>
   <div class="docs">
     <div class="tag">
       <code>input[disabled]</code> <code>input[readonly]</code> and <code>fieldset[disabled]</code>
+    </div>
+    <div class="usage">
+      <ul class="fd">
+        <li><code>input[disabled].fd</code> or <code>.fd &gt; input[disabled]</code></li>
+        <li><code>input[readonly].fd</code> or <code>.fd &gt; input[readonly]</code></li>
+        <li><code>fieldset[disabled].fd</code> or <code>.fd &gt; fieldset[disabled]</code></li>
+      </ul>
     </div>
     <div class="example">
       <p class="fd">
@@ -280,22 +267,32 @@
   </div>
 </section>
 <section class="fd">
-  <h3 class="hr">Form and icons</h3>
-  <div>This is an example of how to add an icon from the Icon component to a form</div>
+  <h3 class="hr">Input fields with icons</h3>
+  <div>Support outside icons by default and use the <q>inside</q> class to make the icons be inside of the input fields.</div>
   <div class="docs">
+    <div class="usage">
+      <ul class="fd">
+        <li><code>.fd.icon-* > input</code> or <code>.fd > .icon-* > input</code></li>
+        <li><code>.fd.icon-*.inside > input</code> or <code>.fd > .icon-*.inside > input</code></li>
+      </ul>
+    </div>
     <div class="example">
-      <div class="fd form-icon">
-        <input type="text" class="fd icon s" placeholder="">
-        <i class="icon-help"></i>
-      </div>
-      <div class="fd form-icon">
-        <input type="text" class="fd icon" placeholder="">
-        <i class="icon-calendar"></i>
-      </div>
-      <div class="fd form-icon">
-        <input type="text" class="fd icon l" placeholder="">
-        <i class="icon-star"></i>
-      </div>
+      <label class="fd icon-mobile">
+        phone number
+        <input type="text" class="s narrow" placeholder="">
+      </label>
+      <p class="fd icon-calendar toggle">
+        <input type="text" class="icon" placeholder="">
+        YY/MM
+      </p>
+      <p class="fd">
+        <label class="icon-star inside l">
+          <input type="text" class="fd icon" placeholder="">
+        </label>
+      </p>
+      <p class="fd icon-code inside toggle">
+        <input type="text" class="icon" placeholder="">
+      </p>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>

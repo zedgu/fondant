@@ -144,6 +144,10 @@ colorful(fn, prefix = '')
       key = '.' + key
     {prefix}{key}
       fn(state, key)
+colorful-invert(state)
+  color: state['invert-color'] !important
+  background-color: state['color']
+  border-color: darken(state['border-color'], 10%)
 
 // sizes
 size-labels = s '' m l xl xxl
@@ -159,11 +163,14 @@ widths-labels = tight narrow '' broad wild full
 widths(prefix=\&, selector='', inverse=0, step=15)
   for width, i in widths-labels
     if width
-      {prefix}.{width}{selector}
-        if inverse
-          width unit(inverse - step * i + 25, '%')
-        else
-          width unit(step * i + 25, '%')
+      width = '.' + width
+    else
+      width = ''
+    {prefix}{width}{selector}
+      if inverse
+        width unit(inverse - step * i + 25, '%') !important
+      else
+        width unit(step * i + 25, '%') !important
 
 /***** Base Style Reset *****/
 html
@@ -206,7 +213,6 @@ br
       height 0
       position absolute
       top 50%
-      width 30%
     &:before
       left 0
     &:after
@@ -224,6 +230,8 @@ button
 input:not([type="file"])
 label
 select
+textarea
+.pointing
   +fd()
     sizes()
 
