@@ -1,28 +1,8 @@
-@media screen and (-webkit-min-device-pixel-ratio:0)
-  .fd
-    button&
-    & > button
-    .button&
-    & > .button
-      &[class^="icon-"]
-      &[class*=" icon-"]
-        > span
-          margin auto -.3em
-
 @-moz-document url-prefix()
   button
     +fd()
-      &.labeled
-        &:before
-          height 2.1em
-          padding .1em 0
-        &:after
-          padding .1em 0
-        &.after
-          &:before
-            left -10em
-          &:after
-            height 2.1em
+      &.labeled.after:after
+        height 2.1em
   .progress
     +fd()
       text-align center !important
