@@ -59,49 +59,33 @@ pointing-colorful(state)
 
 .modal
   +fd()
-    text-align left
-    width 90%
     background-color base-white
     border: 1px solid dark-gray
     border-radius 5px
     user-select text
-    .close
-      float right
-      font-size 1.2rem
-      line-height 1
-      text-shadow 0 1px 0 base-white
-      opacity .2
-      font-style normal
-      cursor pointer
-      position relative
-      right .8em
-      top .8em
-      &:hover
-        opacity 1
-    >.header
+    position relative
+    >.title
       margin 0
-      padding 1.5rem 2rem
+      padding 1.5em 2em
       font-size 1.2em
-      font-weight 700
-      border-radius .325em .325em 0 0
       line-height 1
     >.content
-      display table
       width 100%
-      position relative
       padding 2em
       background-color light-gray
       box-sizing border-box
-      >.left
-        display table-cell
-        padding-right 1.5%
-        min-width 25%
-      >.right
-        display table-cell
-        padding-left 1.5%
-        vertical-align top
-        .header
-          font-size 1.2em
-    >.actions
+    >.tools
       padding .8rem .8rem
       text-align right
+      .close
+        &:before
+          @extend [class^="icon-"].fd:before
+          @extend .fd.icon-cancel:before
+          opacity .2
+          color base-black
+          margin 0
+          position absolute
+          top 1em
+          right 1em
+        &:hover:before
+          opacity 1

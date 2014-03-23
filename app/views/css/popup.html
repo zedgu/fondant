@@ -44,50 +44,38 @@
 <section class="fd">
   <h3 class="hr">Modal</h3>
   <div class="fd docs">
-    <p>A base modal</p>
-    <div class="tag">
-      <code>.modal</code>
-    </div>
     <div class="usage">
-      <code>.modal.fd</code> or <code>.fd &gt; .modal</code>
+      <ul class="fd">
+        <li><code>.modal.fd</code> or <code>.fd &gt; .modal</code></li>
+        <li><span class="fd h6">Title:</span> <code>.modal > .title</code></li>
+        <li><span class="fd h6">Content:</span> <code>.modal > .content</code></li>
+        <li><span class="fd h6">Tools:</span> <code>.modal > .tools</code></li>
+      </ul>
     </div>
     <div class="example">
-        <div class="fd modal">
-          <i class="close">X</i>
-          <div class="header">Changing Your Thing</div>
-          <div class="content">Do you want to change that thing to something else?</div>
-          <div class="actions"><span class="fd button info">Close</span></div>
-        </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-</section>
-<section class="fd">
-  <h3 class="hr">Standard Modal</h3>
-  <div class="fd docs">
-    <p>A standard modal</p>
-    <div class="tag">
-      <code>.modal</code>
-    </div>
-    <div class="usage">
-      <code>.modal.fd</code> or <code>.fd &gt; .modal</code>
-    </div>
-    <div class="example">
-        <div class="fd modal">
-          <i class="close">X</i>
-          <div class="header">Changing Your Thing</div>
-          <div class="content">
-            <div class="left"><img class="fd s" src="https://www.google.com.hk/images/srpr/logo11w.png"></div>
-            <div class="right">
-              <div class="header">Are you sure you want to upload that?</div>
-              <p>I mean it's not really the best profile photo.</p>
-              <p>It's resampled to like two times the size it's suppose to be. Our image detection software also says it might even be inappropriate.</p>
-            </div>
+      <div class="fd modal">
+        <div class="title">Titling words here...</div>
+        <div class="content">Do you want to change that thing to something else?</div>
+        <div class="tools"><a href="#ok" class="fd button">Yes</a> <a herf="#close" class="fd button lowlight close">No</a></div>
+      </div>
+      <div class="fd divider">Title Less</div>
+      <div class="fd modal">
+        <div class="content">Do you want to change that thing to something else?</div>
+        <div class="tools"><a href="#ok" class="fd button">Yes</a> <a herf="#close" class="fd button lowlight close">No</a></div>
+      </div>
+      <div class="fd divider">Modified</div>
+      <div class="fd modal">
+        <div class="title danger">Be careful, your data will be completely removed !</div>
+        <div class="content row">
+          <div class="col two"><h3 class="fd highlight">Fondant</h3></div>
+          <div class="col ten">
+            <h5 class="fd">Are you sure you want to ...?</h5>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
           </div>
-          <div class="actions"><span class="fd button info">Close</span></div>
         </div>
+        <div class="tools align-center"><a href="#ok" class="fd button ok">Sure</a><span class="fd button lowlight close">Close</span></div>
+      </div>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
 </section>
-
