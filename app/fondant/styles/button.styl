@@ -33,13 +33,15 @@ button-color(state)
     display inline-block
     font-family base-family
     font-size 1em
-    line-height 2em
-    padding .1em .9em
+    line-height 2.2em
+    padding 0 .9em
     vertical-align middle
     cursor pointer
     margin 2px
     user-select none
     white-space nowrap
+    height 2.2em
+    box-sizing border-box
     &:focus
       text-decoration none
       outline 0
@@ -48,8 +50,7 @@ button-color(state)
   +fd()
     +icon-class(\&)
       &:empty
-        padding-left .6em
-        padding-right .6em
+        padding 0 .6em
         &:before
           margin auto .2em
       &:before
@@ -61,28 +62,30 @@ button-color(state)
           margin-left 0
       &.labeled
         position relative
-        padding 0 .91em 0 3.3em
+        padding 0 .9em 0 3.3em
+        box-sizing content-box
         &:before
-          clear both
+        &.after:after
           position absolute
           top 0
-          left 0
           width 2.4em
           background-color rgba(dark-black, .15)
+          line-height 2.2em
+          height 2.2em
+          display inline-block
+          overflow hidden
+        &:before
+          left 0
           border-right 1px solid rgba(dark-black, .17)
-          line-height 2em
-          margin 0
         &.after
-          padding-left .9em
-          padding-right 3.3em
+          padding 0 3.3em 0 .9em
+          &:before
+            width 0
+            border-width 0
           &:after
-            position absolute
-            top 0
             right 0
-            width 2.4em
-            background-color rgba(dark-black, .15)
-            line-height 2em
             border-left 1px solid rgba(dark-black, .17)
+
 +btn(1)
   +fd(img)
     padding 0 !important
