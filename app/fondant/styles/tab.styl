@@ -1,0 +1,156 @@
+/***** Functions *****/
+tab-colorful(state)
+  border-bottom-color: state['border-color']
+tab-right-colorful(state)
+  border-right-color: state['border-color']
+tab-left-colorful(state)
+  border-left-color: state['border-color']
+tab-active-colorful(state)
+  border-top-color: state['border-color']
+  border-left-color: state['border-color']
+  border-right-color: state['border-color']
+tab-hover-colorful(state)
+  background: state['border-color']
+  border-color: state['border-color']
+  color: state['invert-color']
+
+/***** Styles *****/
+.tab
+  +fd()
+    margin 0
+    padding 0
+    list-style none
+    border-bottom-style solid
+    border-bottom-width 1px
+    colorful(tab-colorful)
+    &:before,&:after
+      display table
+      content ""
+    &:after
+      clear both
+    >li
+      margin-bottom -1px
+      float left
+      position relative
+      >a
+        display block
+        padding 8px 12px
+        border 1px solid transparent
+        border-width 1px 1px 0
+        text-decoration none
+        border-radius 4px 4px 0 0
+        text-shadow 0 1px 0 #fff
+        &:hover,&:focus
+          outline none
+          colorful(tab-hover-colorful)  
+      &:nth-child(n+2)
+        >a
+          margin-left 5px      
+      &.active
+        >a
+          background base-white
+          colorful(tab-active-colorful)
+      &:not(.active)
+        >a
+          &:hover,&:focus
+            margin-bottom 1px
+            padding-bottom 7px
+      &.disabled
+        >a
+          color dark-gray
+          cursor auto
+          &:hover,&focus
+            background none
+            border-color rgba(dark-black, 0)
+    &.tab-flip
+      >li
+        float right
+        &:nth-child(n+2)
+          >a
+            margin-left 0
+            margin-right 5px
+    &.tab-left
+      border-right-width 1px
+      border-right-style solid
+      colorful(tab-right-colorful)
+      border-bottom 0
+      >li
+        margin-right -1px
+        float none
+        margin-bottom 0
+        &.active
+          >a
+            border-right-color rgba(dark-black, 0)
+            colorful(tab-colorful)
+        >a
+          border-radius 4px 0 0 4px
+          border-bottom-width 1px
+          border-right-width 0
+          padding-bottom 8px
+          padding-top 8px
+        &:not(.active)
+          >a
+            &:hover,&:focus
+              margin-bottom 0
+              margin-right 1px
+              padding-bottom 8px
+              padding-right 11px
+        &:nth-child(n+2)
+          >a
+            margin-left 0
+            margin-top 5px
+    &.tab-right
+      border-left-width 1px
+      border-left-style solid
+      colorful(tab-left-colorful)
+      border-bottom 0
+      >li
+        margin-left -1px
+        float none
+        margin-bottom 0
+        &.active
+          >a
+            border-left-color rgba(dark-black, 0)
+            colorful(tab-colorful)
+        >a
+          border-radius 0 4px 4px 0
+          border-bottom-width 1px
+          border-left-width 0
+          padding-bottom 8px
+          padding-top 8px
+        &:not(.active)
+          >a
+            &:hover,&:focus
+              margin-bottom 0
+              margin-left 1px
+              padding-bottom 8px
+              padding-left 11px
+        &:nth-child(n+2)
+          >a
+            margin-left 0
+            margin-top 5px
+
+.tab-center
+  +fd()
+    border-bottom-width 1px
+    border-bottom-style solid
+    colorful(tab-colorful)           
+    &:before,&:after
+      display table
+      content ""
+    &:after
+      clear both
+    .tab
+      border 0
+      float left
+      left 50%
+      position relative
+      >li
+        left -50%
+        position relative
+        >a
+          text-align center
+
+        
+
+      
