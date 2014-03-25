@@ -1,88 +1,28 @@
 <section class="fd">
-  <h3 class="hr">Standard</h3>
+  <h3 class="hr">Breadcrumb</h3>
   <div class="docs">
-    <p>Step</p>
+    <p>A simple breadcrumb</p>
     <div class="tag">
-      <code>.step</code>
+      <code>ol</code> <code>ul</code> and <code>div</code>
     </div>
     <div class="usage">
-      <code>.step.fd</code> or <code>.fd &gt; .step</code>
+      <code>.breadcrumb.fd</code> or <code>.fd &gt; .breadcrumb</code>
     </div>
     <div class="example">
-      <div class="fd steps">
-        <div class="fd step">
-          Shipping
-        </div>
-      </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-</section>
-<section class="fd">
-  <h3 class="hr">Groups</h3>
-  <div class="docs">
-    <p>Steps</p>
-    <div class="tag">
-      <code>.steps</code>
-    </div>
-    <div class="usage">
-      <code>.steps.fd</code> or <code>.fd &gt; .steps</code>
-    </div>
-
-    <div class="example">
-      <div class="fd steps">
-        <div class="before step"> Shipping </div>
-        <div class="before step"> Billing </div>
-        <div class="active step"> Confirm Order </div>
-        <div class="disabled step"> Complete </div>
-      </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-</section>
-<section class="fd">
-  <h3 class="hr">Vertical</h3>
-  <div class="docs">
-    <p>Vertical steps display each step stacked vertically</p>
-    <div class="example">
-      <div class="fd vertical steps">
-        <div class="fd before step"> Shipping </div>
-        <div class="fd before step"> Billing </div>
-        <div class="fd active step"> Confirm Order </div>
-        <div class="fd disabled step"> Complete </div>
-      </div>
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-</section>
-<section class="fd">
-  <h3 class="hr">Variations</h3>
-  <div class="docs">
-    <b>Size</b>
-    <p>Steps can have different sizes</p>
-    <p><code>.large</code> <code>.small</code></p>
-    <div class="example">
-      <div class="fd steps large">
-        <div class="before step"> Shipping </div>
-        <div class="before step"> Billing </div>
-        <div class="active step"> Confirm Order </div>
-        <div class="disabled step"> Complete </div>
-      </div>
-      <br />
-      <br />
-      <div class="fd steps">
-        <div class="before step"> Shipping </div>
-        <div class="before step"> Billing </div>
-        <div class="active step"> Confirm Order </div>
-        <div class="disabled step"> Complete </div>
-      </div>
-      <br />
-      <br />
-      <div class="fd steps small">
-        <div class="before step"> Shipping </div>
-        <div class="before step"> Billing </div>
-        <div class="active step"> Confirm Order </div>
-        <div class="disabled step"> Complete </div>
+      <ol class="fd breadcrumb">
+        <li><a href="#">Food</a></li>
+        <li><a href="#">Fruit</a></li>
+        <li>Apples</li>
+      </ol>
+      <ul class="fd breadcrumb">
+        <li><a href="#">Food</a></li>
+        <li><a href="#">Fruit</a></li>
+        <li>Apples</li>
+      </ul>
+      <div class="fd breadcrumb">
+        <div><a href="#">Food</a></div>
+        <div><a href="#">Fruit</a></div>
+        <div>Apples</div>
       </div>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
@@ -91,15 +31,76 @@
 <section class="fd">
   <h3 class="hr">Step</h3>
   <div class="docs">
-    <p>Steps can be divided evenly inside their parent</p>
+    <p>Step</p>
+    <div class="tag">
+      <code>ol</code> <code>ul</code> and <code>div</code>
+    </div>
+    <div class="usage">
+      <ul class="fd">
+        <li><code>.step.fd</code> or <code>.fd &gt; .step</code></li>
+        <li><span class="fd h6">current step in sequence:</span> <code>.current</code></li>
+        <li><span class="fd h6">active step:</span> <code>.active</code></li>
+        <li><span class="fd h6">6 sizes:</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+      </ul>
+    </div>
     <div class="example">
-      <div class="fd steps">
-        <div class="fd active step"> Shipping </div>
-        <div class="fd disabled step"> Billing </div>
-        <div class="fd disabled step"> Confirm Order </div>
-        <div class="fd disabled step"> Complete </div>
-        <div class="fd disabled step"> Food </div>
+      <ol class="fd step s">
+        <li>Stop 1</li>
+      </ol>
+      <ul class="fd step">
+        <li><a href="">1st.</a></li>
+      </ul>
+      <div class="fd step m">
+        <div class="current">1st.</div>
+        <div>2nd.</div>
+        <div>3rd.</div>
+        <div>4th.</div>
       </div>
+      <div class="fd step l">
+        <div><a href="">1st.</a></div>
+        <div class="current"><a href="">2nd.</a></div>
+        <div>3rd.</div>
+        <div>4th.</div>
+      </div>
+      <ol class="fd step xl">
+        <li>1st.</li>
+        <li>2nd.</li>
+        <li class="current"><a href="">3rd.</a></li>
+        <li>4th.</li>
+      </ol>
+      <ol class="fd step xxl">
+        <li>1st.</li>
+        <li><a href="">2nd.</a></li>
+        <li class="active"><a href="">3rd.</a></li>
+        <li>4th.</li>
+      </ol>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="hr">Vertical Step</h3>
+  <div class="docs">
+    <p>Vertical step display each step stacked vertically</p>
+    <div class="example">
+      <div class="fd v step">
+        <div class="current">1st.</div>
+        <div>2nd.</div>
+        <div>3rd.</div>
+        <div>4th.</div>
+      </div>
+      <div class="fd v step">
+        <div>1st.</div>
+        <div>2nd.</div>
+        <div class="current"><a href="">3rd.</a></div>
+        <div>4th.</div>
+      </div>
+      <ul class="fd v step">
+        <li><a href="">1st.</a></li>
+        <li><a href="">2nd.</a></li>
+        <li class="current"><a href="">3rd.</a></li>
+        <li>4th.</li>
+      </ul>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
