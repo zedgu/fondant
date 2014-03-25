@@ -147,24 +147,27 @@
       <code>ANY</code>
     </div>
     <div class="usage">
-      <span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code>
+      <ul class="fd">
+        <li><span class="fd h6">6 sizes:</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
+      </ul>
     </div>
     <div class="example">
       <ul class="fd">
         <li>default text color</li>
-        <li class="lowlight">lowlight text color</li>
+        <li class="lowlight s">lowlight text color</li>
         <li class="highlight">highlight text color</li>
-        <li class="ok">ok text color</li>
-        <li class="warning">warning text color</li>
-        <li class="danger">danger text color</li>
-        <li class="info">info text color</li>
+        <li class="ok m">ok text color</li>
+        <li class="warning l">warning text color</li>
+        <li class="danger xl">danger text color</li>
+        <li class="info xxl">info text color</li>
       </ul>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
 </section>
 <section class="fd">
-  <h3 class="hr">Colorful Label</h3>
+  <h3 class="hr">Colorful badge</h3>
   <div class="docs">
     <div class="usage">
       <ul class="fd">
@@ -182,6 +185,30 @@
         <li class="fd"><span class="label warning xl">warning label</span></li>
         <li class="fd"><span class="label danger xxl">danger label</span></li>
         <li class="fd"><span class="label info">info label</span></li>
+      </ul>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="hr">Colorful Badge</h3>
+  <div class="docs">
+    <div class="usage">
+      <ul class="fd">
+        <li><code>.fd.badge</code> or <code>.fd > .badge</code></li>
+        <li><span class="fd h6">6 sizes:</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
+      </ul>
+    </div>
+    <div class="example">
+      <ul class="fd">
+        <li><span class="fd badge s">s</span></li>
+        <li><span class="fd badge lowlight m">m</span></li>
+        <li><span class="fd badge highlight">11</span></li>
+        <li><span class="fd badge ok l">ok</span></li>
+        <li class="fd"><span class="badge warning xl">2</span></li>
+        <li class="fd"><span class="badge danger xxl">!</span></li>
+        <li class="fd"><span class="badge info">?</span></li>
       </ul>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>

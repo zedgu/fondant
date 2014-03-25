@@ -117,15 +117,26 @@ kbd
 
 // text in label
 .label
+.badge
   +fd()
     display inline-block
     vertical-align middle
     border-width 1px
     border-style solid
-    padding .4em .8em
     color rgba(base-black, .65)
     font-weight normal
-    border-radius .2rem
     box-sizing border-box
     margin 0 .2em
+    padding .2em .8em
+    vertical-align middle
   colorful(colorful-invert)
+.label
+  +fd()
+    border-radius .2rem
+
+.badge
+  +fd()
+    line-height 1.4em
+    height 1.4em
+    border-radius .7em
+    padding 0 .4em
