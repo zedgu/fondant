@@ -28,8 +28,8 @@
     <div class="usage">
       <ul class="fd">
         <li><code>input[type="*"].fd</code> or <code>.fd &gt; input[type="*"]</code></li>
-        <li><span class="fd h6">6 sizes:</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
-        <li><span class="fd h6">6 widths:</span> <code>.tight</code> <code>.narrow</code> default <code>.broad</code> <code>.wild</code> <code>.full</code></li>
+        <li><span class="fd h6">6 sizes :</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">6 widths :</span> <code>.tight</code> <code>.narrow</code> default <code>.broad</code> <code>.wild</code> <code>.full</code></li>
         <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
       </ul>
     </div>
@@ -75,7 +75,7 @@
         <li><code>input[type="radio"].fd</code> or <code>.fd &gt; input[type="radio"]</code></li>
         <li><code>input[type="checkbox"].fd</code> or <code>.fd &gt; input[type="checkbox"]</code></li>
         <li><code>.option</code> for Fondant Style</li>
-        <li><span class="fd h6">6 sizes:</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">6 sizes :</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
         <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
       </ul>
     </div>
@@ -175,6 +175,62 @@
   </div>
 </section>
 <section class="fd">
+  <h3 class="hr">Switch</h3>
+  <div class="docs">
+    <div class="usage">
+      <ul class="fd">
+        <li><span class="fd h6">switch:</span> <code>.fd.switch > input[type="checkbox"] + *</code> or <code>.fd > .switch > input[type="checkbox"] + *</code></li>
+        <li><span class="fd h6">slider:</span> <code>.fd.slider > input[type="checkbox"] + *</code> or <code>.fd > .slider > input[type="checkbox"] + *</code></li>
+        <li><span class="fd h6">default wording :</span> <code>*</code> <em>any inline text element</em> <strong>- " ON / OFF "</strong></li>
+        <li><span class="fd h6">custom wording :</span> <code>*.on + *.off</code></li>
+        <li><span class="fd h6">6 sizes :</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
+      </ul>
+    </div>
+    <div class="example">
+      <label class="fd switch s">
+        <input type="checkbox">
+        <em></em>
+      </label>
+      <label class="fd switch lowlight">
+        <input type="checkbox">
+        <span class="on"></span>
+        <span class="off"></span>
+      </label>
+      <label class="fd switch m highlight">
+        <input type="checkbox">
+        <span class="icon-circle-empty off">NO</span>
+        <span class="icon-dot-circled on">OK</span>
+      </label>
+      <label class="fd slider l ok">
+        <input type="checkbox" checked="">
+        <span class="off"></span>
+        <span class="on"></span>
+      </label>
+      <label class="fd slider xl warning">
+        <input type="checkbox" checked="">
+        <strong class="on"><span class="fd icon-folder-open">Opened</span></strong>
+        <strong class="off"><span class="fd icon-folder">Closed</span></strong>
+      </label>
+      <label class="fd slider xxl danger">
+        <input type="checkbox">
+        <span class="off">PM</span>
+        <span class="on">AM</span>
+      </label>
+      <label class="fd switch info" lang="zh">
+        <input type="checkbox">
+        <span></span>
+      </label>
+      <label class="fd slider" lang="zh">
+        <input type="checkbox">
+        <span class="on"></span>
+        <span class="off"></span>
+      </label>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
   <h3 class="hr">Select</h3>
   <p>Dropdown and multiple selector</p>
   <div class="docs">
@@ -211,7 +267,7 @@
     <div class="usage">
       <ul class="fd">
         <li><code>textarea.fd</code> or <code>.fd &gt; textarea</code></li>
-        <li><span class="fd h6">6 sizes:</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">6 sizes :</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
         <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
       </ul>
     </div>
