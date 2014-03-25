@@ -80,8 +80,7 @@ button-color(state)
         &.after
           padding 0 3.3em 0 .9em
           &:before
-            width 0
-            border-width 0
+            display none
           &:after
             right 0
             border-left 1px solid rgba(dark-black, .17)
@@ -119,10 +118,11 @@ button-color(state)
             font-family "fontello"
             font-style normal
             font-weight normal
+            font-variant normal
             speak none
             width .6em
             line-height 1em
-            text-decoration inherit
+            text-decoration none
             content '%s' % icons['angle-down']
     .buttons
       float left
