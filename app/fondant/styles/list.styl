@@ -1,3 +1,12 @@
+/***** Functions *****/
+list-li()
+  list-style-type none
+  &:before
+    counter-increment ordered
+    content counters(ordered, ".")
+    {block}
+
+/***** Styles *****/
 dl
   +fd()
     font-size .8rem
@@ -5,16 +14,6 @@ dl
       margin .4em auto
     dd
       margin .4em auto .4em 2em
-
-list-ol()
-  counter-reset ordered
-  list-style-type none
-list-li()
-  list-style-type none
-  &:before
-    counter-increment ordered
-    content counters(ordered, ".")
-    {block}
 
 // basic style for ul, ol
 ul
@@ -30,7 +29,7 @@ ol
       margin .4em 0
 
 // list order
-ol
+ol.ordered
   +fd()
     &
     ol
@@ -41,11 +40,11 @@ ol
           margin-left -2em
           margin-right 1.5em
           display inline-block
-.ol
+.ol.ordered
   +fd()
     &
     .ol
-      list-ol()
+      @extend ol.ordered.fd ol
       .li
         +list-li()
           margin-right 1em
