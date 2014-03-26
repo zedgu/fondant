@@ -1,25 +1,113 @@
 <section class="fd">
-  <h3 class="hr">Article</h3>
+  <h3 class="hr">Container</h3>
   <div class="docs">
     <div class="tag">
-      <code>section</code> <code>article</code> <code>div</code>
+      <code>aside</code>
+      <code>header</code>
+      <code>section</code>
+      <code>article</code>
+      <code>nav</code>
+      <code>footer</code>
+      <code>div</code>
     </div>
     <div class="usage">
       <ul class="fd">
-        <li><code>section</code></li>
-        <li><code>article</code></li>
-        <li><code>aside</code></li>
-        <li><code>div.</code></li>
+        <li><span class="fd h6">base white background :</span> <code>.light</code></li>
+        <li><span class="fd h6">light gray background :</span> <code>.dark</code></li>
       </ul>
     </div>
     <div class="example">
-      <article class="fd dark">
-        <section class="fd light">
+      <article class="fd" style="background:papayawhip">
+        <header class="fd light">
           <div class="fd article dark">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</div>
-          <div class="fd section">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</div>
-        </section>
+          <div class="fd">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</div>
+        </header>
+        <footer>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        </footer>
       </article>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="hr">Border Box</h3>
+  <p>Container in 1px width border, box-sizing is border-box.</p>
+  <div class="docs">
+    <div class="tag">
+      <code>ANY</code>
+    </div>
+    <div class="usage">
+      <ul class="fd">
+        <li><span class="fd h6">border :</span> <code>.border</code></li>
+        <li><span class="fd h6">rounded border :</span> <code>.border.rounded</code></li>
+      </ul>
+    </div>
+    <div class="example">
+      <div class="fd border">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</div>
+      <div><p>border-radius: 0.3rem</p></div>
+      <div class="fd border rounded">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</div>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="hr">Section</h3>
+  <p>Section container in 0.4 rem padding.</p>
+  <div class="docs">
+    <div class="usage">
+      <ul class="fd">
+        <li><code>section.fd</code> or <code>.fd > section</code></li>
+        <li><code>.fd.section</code> or <code>.fd > .section</code></li>
+      </ul>
+    </div>
+    <div class="example">
+      <section class="fd dark">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</section>
+      <div class="fd section border dark">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</div>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="hr">Panel</h3>
+  <div class="docs">
+    <div class="usage">
+      <ul class="fd">
+        <li><code>.fd.panel > header / .header + .content</code> or <code>.fd > .panel > header / .header + .content</code></li>
+        <li><span class="fd h6">6 sizes :</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">6 widths :</span> <code>.tight</code> <code>.narrow</code> default <code>.broad</code> <code>.wild</code> <code>.full</code></li>
+        <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
+      </ul>
+    </div>
+    <div class="example">
+      <div class="fd panel s tight">
+        <header>Header of the Panel</header>
+        <div class="content">the content</div>
+      </div>
+      <div class="fd panel lowlight narrow">
+        <header>Header of the Panel</header>
+        <div class="content">the content</div>
+      </div>
+      <div class="fd panel highlight m">
+        <header>Header of the Panel</header>
+        <div class="content">the content</div>
+      </div>
+      <div class="fd panel ok l broad">
+        <header>Header of the Panel</header>
+        <div class="content">the content</div>
+      </div>
+      <div class="fd panel warning xl wild">
+        <header>Header of the Panel</header>
+        <div class="content">the content</div>
+      </div>
+      <div class="fd panel danger xxl full">
+        <header>Header of the Panel</header>
+        <div class="content">the content</div>
+      </div>
+      <div class="fd panel info">
+        <header>Header of the Panel</header>
+        <div class="content">the content</div>
+      </div>
+    </div>
   </div>
 </section>

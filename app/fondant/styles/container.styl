@@ -1,3 +1,12 @@
+/***** Functions *****/
+colorful-panel(state)
+  border-color: lightness(state['border-color']) > 80% ? state['border-color'] : lighten(state['border-color'], 60%)
+  color base-black !important
+  >
+    header
+    .header
+      colorful-light(state)
+
 /***** Styles *****/
 // base boxes
 aside
@@ -13,16 +22,21 @@ div
     &.dark
       background-color light-gray
 
+// base border
+.border
+  +fd()
+    border 1px solid dark-gray
+    box-sizing border-box
+.border.rounded
+  +fd()
+    border-radius .4rem
+
 // default section
 section
 .section
   +fd()
-    padding .4rem
+    padding .3rem
 
-// base border
-.border
-  +fd()
-    border 1px solid base-gray
 
 // inline block
 .inline
@@ -30,24 +44,33 @@ section
     display inline-block 
     vertical-align middle
 
+// box float
+.left
+  +fd()
+    float left !important
+.right
+  +fd()
+    float right !important
+
 // panel style
-div.panel
+.panel
   +fd()
     background-color base-white
-    border 1px solid dark-gray
+    border-width 1px
+    border-style solid
     border-radius .4em
     margin-bottom 1rem
-    > header
-    > .header
-      background-color light-gray
-      border-bottom 1px solid dark-gray
-      border-radius .4em .4em 0 0
-      > *
-        padding 0 .8rem
-        margin 0
+    >
+      header
+      .header
+        border-bottom-width 1px
+        border-bottom-style solid
+        border-radius .4em .4em 0 0
         line-height 2em
-    > .content
-      padding .8rem
+        padding .4em .8em
+      .content
+        padding .8em
+    colorful(colorful-panel)
 // div.segment
 //   background-color base-white
 //   border 1px solid dark-gray
@@ -57,31 +80,6 @@ div.panel
 //   line-height 1.6em
 //   margin .8em 0
 
-// box be center
-.mid
-  +fd()
-    margin auto
-    max-width 96%
-@media (min-width: 768px)
-  .mid
-    +fd()
-      width 756px
-@media (min-width: 992px)
-  .mid
-    +fd()
-      width 960px
-@media (min-width: 1200px)
-  .mid
-    +fd()
-      width 1176px
-
-// box float
-.left
-  +fd()
-    float left !important
-.right
-  +fd()
-    float right !important
 
 // div in different widths
 div.panel

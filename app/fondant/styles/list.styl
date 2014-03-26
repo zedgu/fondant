@@ -58,12 +58,22 @@ ol.ordered
     .li
     li
       display inline-block
-      margin .4em
 
 .list
   +fd()
     list-style-type none
-    margin 0
-    li
+    margin .3em 0
     .li
-      margin .6em auto
+    li
+      margin 0
+      padding .3em .4em
+    &.border
+      @extend .border.rounded.fd
+      .li + .li
+      li + li
+        border-top 1px solid dark-gray
+      &.h
+        .li + .li
+        li + li
+          border-top none
+          border-left 1px solid dark-gray
