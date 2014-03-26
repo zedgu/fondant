@@ -56,12 +56,12 @@
       <div class="fd modal">
         <div class="title">Titling words here...</div>
         <div class="content">Do you want to change that thing to something else?</div>
-        <div class="tools"><a href="#ok" class="fd button">Yes</a> <a herf="#close" class="fd button lowlight close">No</a></div>
+        <div class="tools"><a href="#ok" class="fd button">Yes</a> <a href="#abc" class="close">No</a></div>
       </div>
       <div class="fd divider">Title Less</div>
       <div class="fd modal">
         <div class="content">Do you want to change that thing to something else?</div>
-        <div class="tools"><a href="#ok" class="fd button">Yes</a> <a herf="#close" class="fd button lowlight close">No</a></div>
+        <div class="tools"><a href="#ok" class="fd button">Yes</a> <a href="#close" class="fd button lowlight close">No</a></div>
       </div>
       <div class="fd divider">Modified</div>
       <div class="fd modal">
@@ -81,47 +81,45 @@
 </section>
 <section class="fd">
   <div class="fd docs">
-    <p>Defines styles for success, warning and error messages</p>
+    <h3 class="hr">Alert</h3>
     <div class="tag">
-      <code>.prompt</code>
+      <code>.alert</code>
     </div>
     <div class="usage">
-      <span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code>
+      <ul class="fd">
+        <li><code>.fd.alert > * + .tools</code> or <code>.fd > .alert >  * + .tools</code></li>
+        <li><span class="fd h6">6 sizes :</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
+      </ul>
     </div>
     <div class="example">
-      <div class="fd modal prompt">
-        <div class="prompt">Do you want to change that thing to something else?</div>
-        <div class="tools"><span class="fd close"></span></div>
+      <div class="fd alert s">
+        <div>Do you want to change that thing to something else?</div>
+        <div class="tools"><a href="#ok" class="fd button ok">OK</a><a href="#no" class="fd button">NO</a><a href="" class="close"></a></div>
       </div>
-      <div class="fd divider">lowlight</div>
-      <div class="fd modal prompt lowlight">
-        <div class="prompt">Do you want to change that thing to something else?</div>
-        <div class="tools"><span class="fd close"></span></div>
+      <div class="fd alert lowlight">
+        <div>Do you want to change that thing to something else?</div>
+        <div class="tools"><a href="#ok" class="fd button ok">OK</a><a href="" class="fd button lowlight close">Cancel</a></div>
       </div>
-      <div class="fd divider">hightlight</div>
-      <div class="fd modal prompt hightlight">
-        <div class="prompt">Do you want to change that thing to something else?</div>
-        <div class="tools"><span class="fd close"></span></div>
+      <div class="fd alert highlight m">
+        <div>Do you want to change that thing to something else?</div>
+        <div class="tools"><a href="text">see normal alert in text section</a><a href="" class="close"></a></div>
       </div>
-      <div class="fd divider">ok</div>
-      <div class="fd modal prompt ok">
-        <div class="prompt">Do you want to change that thing to something else?</div>
-        <div class="tools"><span class="fd close"></span></div>
+      <div class="fd alert ok l">
+        <div>Do you want to change that thing to something else?</div>
+        <div class="tools"><a href="" class="close"></a></div>
       </div>
-      <div class="fd divider">warning</div>
-      <div class="fd modal prompt warning">
-        <div class="prompt">Do you want to change that thing to something else?</div>
-        <div class="tools"><span class="fd close"></span></div>
+      <div class="fd alert warning xl">
+        <div>Do you want to change that thing to something else?</div>
+        <div class="tools"><a href="" class="close"></a></div>
       </div>
-      <div class="fd divider">danger</div>
-      <div class="fd modal prompt danger">
-        <div class="prompt">Do you want to change that thing to something else?</div>
-        <div class="tools"><span class="fd close"></span></div>
+      <div class="fd alert danger xxl">
+        <div>Do you want to change that thing to something else?</div>
+        <div class="tools"><a href="" class="close"></a></div>
       </div>
-      <div class="fd divider">info</div>
-      <div class="fd modal prompt info">
-        <div class="prompt">Do you want to change that thing to something else?</div>
-        <div class="tools"><span class="fd close"></span></div>
+      <div class="fd alert info">
+        <div>Do you want to change that thing to something else?</div>
+        <div class="tools"><a href="" class="close"></a></div>
       </div>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>

@@ -5,6 +5,7 @@ pointing-colorful(state)
   &:before
     background-color: state['color']
     box-shadow: 1px 1px 0 rgba(state['border-color'], 1)
+
 /***** Styles *****/
 // tips
 .pointing
@@ -56,6 +57,7 @@ pointing-colorful(state)
     colorful(pointing-colorful)
     widths()
 
+// modal
 .modal
   +fd()
     background-color base-white
@@ -63,36 +65,60 @@ pointing-colorful(state)
     border-radius 5px
     user-select text
     position relative
-    >.title
-      margin 0
-      padding 1.5em 2em
-      font-size 1.2em
-      line-height 1
-    >.content
-      width 100%
-      padding 2em
-      background-color light-gray
-      box-sizing border-box
-    &.prompt
-      colorful(pointing-colorful)
-    >.prompt
-      padding .8rem 1rem 0
-      +.tools
-        padding-bottom .5rem
-        padding-top .5rem
-    >.tools
-      padding .8rem .8rem
-      text-align right
-      .close
-        &:before
-          @extend [class^="icon-"].fd:before
-          @extend .fd.icon-cancel:before
-          opacity .2
-          color base-black
-          margin 0
-          position absolute
-          top 1em
-          right 1em
-          cursor pointer
-        &:hover:before
-          opacity 1
+    >
+      .title
+        margin 0
+        padding 1.5em 2em
+        font-size 1.2em
+        line-height 1
+      .content
+        width 100%
+        padding 2em
+        background-color light-gray
+        box-sizing border-box
+      .tools
+        padding .8rem .8rem
+        text-align right
+        .close
+          &:before
+            @extend [class^="icon-"].fd:before
+            @extend .fd.icon-cancel:before
+            opacity .2
+            color base-black
+            margin 0
+            position absolute
+            top 1em
+            right 1em
+            cursor pointer
+          &:hover:before
+            opacity 1
+
+.alert
+  +fd()
+    position relative
+    white-space nowrap
+    margin-bottom .8em
+    overflow hidden
+    >
+      *:first-child
+        padding .4em 0
+      .tools
+        position absolute
+        height 100%
+        top 0
+        right 2em
+        > *
+          line-height 2.2em
+        .close
+          &:before
+            @extend [class^="icon-"].fd:before
+            @extend .fd.icon-cancel:before
+            opacity .2
+            color base-black
+            margin 0
+            position absolute
+            top .7em
+            right -1.5em
+            cursor pointer
+          &:hover:before
+            opacity 1
