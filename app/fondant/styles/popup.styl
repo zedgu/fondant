@@ -5,7 +5,6 @@ pointing-colorful(state)
   &:before
     background-color: state['color']
     box-shadow: 1px 1px 0 rgba(state['border-color'], 1)
-
 /***** Styles *****/
 // tips
 .pointing
@@ -74,6 +73,13 @@ pointing-colorful(state)
       padding 2em
       background-color light-gray
       box-sizing border-box
+    &.prompt
+      colorful(pointing-colorful)
+    >.prompt
+      padding .8rem 1rem 0
+      +.tools
+        padding-bottom .5rem
+        padding-top .5rem
     >.tools
       padding .8rem .8rem
       text-align right
@@ -87,5 +93,6 @@ pointing-colorful(state)
           position absolute
           top 1em
           right 1em
+          cursor pointer
         &:hover:before
           opacity 1
