@@ -1,136 +1,47 @@
 <section class="fd">
-  <h3 class="hr">Circle Loader</h3>
+  <h3 class="hr">Circle loading</h3>
   <div class="fd docs">
-    <p>A circle Loader</p>
+    <p>A circle loading</p>
     <div class="tag">
-      <code>.loader</code>
+      <code>.loading</code>
     </div>
     <div class="usage">
-      <code>.loader.fd</code> or <code>.fd &gt; .loader</code>
+      <ul class="fd">
+        <li><code>.loading.fd &gt; *</code> or <code>.fd &gt; .loading &gt; *</code></li>
+        <li><span class="fd h6">* :</span> <code>.circle</code> <code>.point</code></li>
+        <li><span class="fd h6">mask :</span> <code>.mask</code></li>
+      </ul>
     </div>
     <div class="example">
-      <div class="loader fd">
-        <div class="loader-container container1">
-          <span class="circle1"></span>
-          <span class="circle2"></span>
-          <span class="circle3"></span>
-          <span class="circle4"></span>
-        </div>
-        <div class="loader-container container2">
-          <span class="circle1"></span>
-          <span class="circle2"></span>
-          <span class="circle3"></span>
-          <span class="circle4"></span>
-        </div>
-        <div class="loader-container container3">
-          <span class="circle1"></span>
-          <span class="circle2"></span>
-          <span class="circle3"></span>
-          <span class="circle4"></span>
-        </div>
-      </div>    
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-    <p>Size</p>
-    <p><code>.l</code> <code>.xl</code></p>
-    <div class="example">
-      <div class="loader fd l">
-        <div class="loader-container container1">
-          <span class="circle1"></span>
-          <span class="circle2"></span>
-          <span class="circle3"></span>
-          <span class="circle4"></span>
-        </div>
-        <div class="loader-container container2">
-          <span class="circle1"></span>
-          <span class="circle2"></span>
-          <span class="circle3"></span>
-          <span class="circle4"></span>
-        </div>
-        <div class="loader-container container3">
-          <span class="circle1"></span>
-          <span class="circle2"></span>
-          <span class="circle3"></span>
-          <span class="circle4"></span>
+      <div style="width: 100%; height: 10em; position: relative;">
+        <p class="fd">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        <p class="fd">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        <div class="fd loading">
+          <div class="circle"></div>
         </div>
       </div>
-      <div class="loader fd xl">
-        <div class="loader-container container1">
-          <span class="circle1"></span>
-          <span class="circle2"></span>
-          <span class="circle3"></span>
-          <span class="circle4"></span>
+      <div style="width: 100%; height: 10em; position: relative;">
+        <p class="fd">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        <p class="fd">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        <div class="fd loading mask">
+          <div class="circle"></div>
         </div>
-        <div class="loader-container container2">
-          <span class="circle1"></span>
-          <span class="circle2"></span>
-          <span class="circle3"></span>
-          <span class="circle4"></span>
+      </div>
+      <div style="width: 100%; height: 10em; position: relative;">
+        <p class="fd">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        <p class="fd">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        <div class="fd loading">
+          <div class="point"></div>
         </div>
-        <div class="loader-container container3">
-          <span class="circle1"></span>
-          <span class="circle2"></span>
-          <span class="circle3"></span>
-          <span class="circle4"></span>
+      </div>
+      <div style="width: 100%; height: 10em; position: relative;">
+        <p class="fd">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        <p class="fd">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        <div class="fd loading mask">
+          <div class="point"></div>
         </div>
-      </div>       
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-</section>
-
-<section class="fd">
-  <h3 class="hr">Time Loader</h3>
-  <div class="fd docs">
-    <p>A time Loader</p>
-    <div class="tag">
-      <code>.timeloader</code>
-    </div>
-    <div class="usage">
-      <code>.loading.fd .timeloader</code> or <code>.fd &gt; .loading .timeloader</code>
-    </div>
-    <div class="example">
-      <div class="loading fd">
-            <div class="timeloader"></div>
       </div>    
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
 </section>
-<section class="fd">
-  <h3 class="hr">point Loader</h3>
-  <div class="fd docs">
-    <p>A point Loader</p>
-    <div class="tag">
-      <code>.pointloader</code>
-    </div>
-    <div class="usage">
-      <code>.loading.fd .pointloader</code> or <code>.fd &gt; .loading .pointloader</code>
-    </div>
-    <div class="example">
-      <div class="loading fd">
-            <div class="pointloader"></div>
-      </div>    
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-</section>
-<section class="fd">
-  <h3 class="hr">battery Loader</h3>
-  <div class="fd docs">
-    <p>A battery Loader</p>
-    <div class="tag">
-      <code>.batteryloader</code>
-    </div>
-    <div class="usage">
-      <code>.loading.fd .batteryloader</code> or <code>.fd &gt; .loading .batteryloader</code>
-    </div>
-    <div class="example">
-      <div class="loading fd">
-            <div class="batteryloader"></div>
-      </div>    
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-</section>
-
