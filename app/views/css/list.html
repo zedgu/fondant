@@ -37,8 +37,8 @@
     </div>
     <div class="usage">
       <ul class="fd">
-        <li><span class="fd h6">normal :</span> <code>ol.fd</code> or <code>.fd > ol</code></li>
-        <li><span class="fd h6">nested :</span> <code>ol.fd.ordered</code> or <code>.fd > ol.ordered</code> and <code>.fd.ol.ordered .li</code> or <code>.fd > .ol.ordered .li</code></li>
+        <li><span class="fd h6">normal :</span> <code>ol.fd</code> or <code>.fd &gt; ol</code></li>
+        <li><span class="fd h6">nested :</span> <code>ol.fd.ordered</code> or <code>.fd &gt; ol.ordered</code> and <code>.fd.ol.ordered .li</code> or <code>.fd &gt; .ol.ordered .li</code></li>
         <li>
           <p> To avoid the bug of <code>counter-reset</code>, make sure that the code structure isnested like <code>ol>(li>ol)+li</code> when you use any other tag but not <code>ol</code>.</p>
           <p>非 <code>ol</code> 标签使用时，须完成类 <code>ol>(li>ol)+li</code> 的嵌套，以避免 <code>counter-reset</code> 错误。详见下面示例：</p>
