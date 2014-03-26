@@ -164,7 +164,7 @@ sizes(prefix=\&, selector='', fn=false)
           fn(i)
 
 widths-labels = tight narrow '' broad wild full
-widths(prefix=\&, selector='', inverse=0, step=15)
+widths(prefix=\&, selector='', inverse=0, step=15, start=25, u='%')
   for width, i in widths-labels
     if width
       width = '.' + width
@@ -172,9 +172,9 @@ widths(prefix=\&, selector='', inverse=0, step=15)
       width = ''
     {prefix}{width}{selector}
       if inverse
-        width unit(inverse - step * i + 25, '%') !important
+        width unit(inverse - step * i + start, u) !important
       else
-        width unit(step * i + 25, '%') !important
+        width unit(step * i + start, u) !important
 
 /***** Base Style Reset *****/
 html

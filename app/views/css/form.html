@@ -181,7 +181,7 @@
       <ul class="fd">
         <li><span class="fd h6">switch:</span> <code>.fd.switch > input[type="checkbox"] + *</code> or <code>.fd > .switch > input[type="checkbox"] + *</code></li>
         <li><span class="fd h6">slider:</span> <code>.fd.slider > input[type="checkbox"] + *</code> or <code>.fd > .slider > input[type="checkbox"] + *</code></li>
-        <li><span class="fd h6">default wording :</span> <code>*</code> <em>any inline text element</em> <strong>- " ON / OFF "</strong></li>
+        <li><span class="fd h6">default wording :</span> <code>*</code> <em>any inline element</em> <strong>- " ON / OFF "</strong></li>
         <li><span class="fd h6">custom wording :</span> <code>*.on + *.off</code></li>
         <li><span class="fd h6">6 sizes :</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
         <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
@@ -354,23 +354,58 @@
   </div>
 </section>
 <section class="fd">
-  <h3 class="hr">Prepended and appended inputs</h3>
+  <h3 class="hr">Input Group</h3>
   <div>Add text or buttons before or after any text-based input.</div>
   <div class="docs">
+    <div class="usage">
+      <ul class="fd">
+        <li><code>.fd.group > * + input + *</code> or <code>.fd > .group > * + input + *</code></li>
+        <li><code>.fd.group > input + * + input</code> or <code>.fd > .group > input + * + input</code></li>
+        <li><span class="fd h6">6 sizes :</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
+        <li><span class="fd h6">6 widths :</span> <code>.tight</code> <code>.narrow</code> default <code>.broad</code> <code>.wild</code> <code>.full</code></li>
+        <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
+      </ul>
+    </div>
     <div class="example">
-      <div class="fd input-prepend">
-        <label class="add">@</label>
-        <input type="text" class="fd" placeholder="">
-      </div>
-      <div class="fd input-append">
-        <input type="text" class="fd" placeholder="">
-        <label class="add">.00</label>
-      </div>
-      <div class="fd input-append input-prepend">
-        <label class="add">@</label>
-        <input type="text" class="fd" placeholder="">
-        <label class="add">.00</label>
-      </div>
+      <p>
+        <label class="fd group s tight">
+          <input type="text" placeholder="left">
+          <sapn>px</sapn>
+        </label>
+        <label class="fd group lowlight narrow">
+          <em>%</em>
+          <input type="text" placeholder="percent">
+        </label>
+        <label class="fd group m highlight">
+          <input type="text" placeholder="username">
+          <strong>@</strong>
+          <input type="text" placeholder="example.com">
+        </label>
+      </p>
+      <p class="fd">
+        <span class="fd group info broad">
+          <label for="words" class="icon-phone"></label>
+          <input type="text">
+        </span>
+        <label class="group l ok wild">
+          <span>$</span>
+          <input type="text" placeholder="00">
+          <span>.00</span>
+        </label>
+      </p>
+      <p class="fd">
+        <label class="group xl warning full">
+          <span><input type="checkbox"></span>
+          <input type="text">
+          <span>.00</span>
+        </label>
+      </p>
+      <p>
+        <label class="fd group xxl danger">
+          <input type="text">
+          <span><input type="radio"></span>
+        </label>
+      </p>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
