@@ -5,6 +5,11 @@ h(n)
   margin 0 auto .4em auto
   {block}
 
+colorful-alert(state)
+  color: darken(state['color'], 30%) !important
+  background-color: lighten(state['color'], 70%)
+  border-color: lighten(state['border-color'], 60%)
+
 /***** Styles *****/
 // default link
 a
@@ -36,8 +41,6 @@ for i in 2 3 4 5 6
 p
   +fd()
     font-size .8rem
-strong
-  color base-black
 
 code
   color color-code
@@ -115,7 +118,16 @@ kbd
   +fd()
     text-align center !important
 
-// text in label
+// alert
+.alert
+  +fd()
+    padding .2em .8em
+    border-width 1px
+    border-style solid
+    border-radius .2rem
+    colorful(colorful-alert)
+
+// text in label / badge style
 .label
 .badge
   +fd()
@@ -123,7 +135,6 @@ kbd
     vertical-align middle
     border-width 1px
     border-style solid
-    color rgba(base-black, .65)
     font-weight normal
     box-sizing border-box
     margin 0 .2em
