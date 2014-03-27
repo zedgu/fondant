@@ -6,8 +6,12 @@ input-before-colorful(state)
 input-colorful(state)
   background-color: state['bg-color']
   border-color: state['border-color']
-  &:focus:not([readonly])
+  &:focus
     box-shadow: 0 0 .1em .1em rgba(state['border-color'], .4)
+input-icon-colorful(state)
+  > input
+    color: state['color']
+    input-colorful(state)
 switch-colorful(state)
   background-color: state['color']
   border-color: state['border-color']
@@ -26,7 +30,7 @@ group-colorful(state)
       border-color: state['border-color']
     input
       text-color(state)
-      &:focus:not([readonly])
+      &:focus
         box-shadow: 0 0 .1em .1em rgba(state['border-color'], .4)
 
 /***** Styles *****/
@@ -348,6 +352,8 @@ label.slider
       > input
         padding-left .4em !important
         padding-right 1.8em !important
++icon-class()
+  colorful(input-icon-colorful)
 
 .group
   +fd()
