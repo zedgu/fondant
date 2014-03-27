@@ -283,18 +283,6 @@
   </div>
 </section>
 <section class="fd">
-  <h3 class="hr">File</h3>
-  <div class="docs">
-    <div class="tag">
-      <code>input[type="file"]</code>
-    </div>
-    <div class="example">
-      <input type="file">
-    </div>
-    <div class="markup" fd-code hljs language="html" source="code"></div>
-  </div>
-</section>
-<section class="fd">
   <h3 class="hr">Unchangeable</h3>
   <p>In case the input and fieldset is disabled or read only.</p>
   <div class="docs">
@@ -413,15 +401,33 @@
         <label class="group xl warning full">
           <span><input type="checkbox"></span>
           <input type="text">
-          <span>.00</span>
+          <a href="" class="fd button">Submit</a>
         </label>
       </p>
       <p>
         <label class="fd group xxl danger">
+          <input type="button" value="OK">
           <input type="text">
           <span><input type="radio"></span>
         </label>
       </p>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
+  <h3 class="hr">File</h3>
+  <div class="docs">
+    <div class="tag">
+      <code>input[type="file"]</code>
+    </div>
+    <div class="usage">
+      <code>.fd.filefield &gt; input[type="file"] + *</code> or <code>.fd &gt; .filefield &gt; input[type="file"] + *</code>
+    </div>
+    <div class="example">
+      <span class="fd filefield"><input type="file"><span class="group"><button class="fd">Upload</button><input type="text"></span></span>
+      <div class="fd filefield"><input type="file"><span class="group highlight"><input type="text"><a class="fd button">Browse</a></span></div>
+      <span class="fd filefield"><input type="file"><button class="info">Upload</button></span>
     </div>
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
