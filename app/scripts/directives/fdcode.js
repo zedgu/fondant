@@ -16,6 +16,8 @@ angular.module('siteApp')
             code = code.replace(new RegExp(replaceWords[0].replace(/''/g, '"')), replaceWords[1]);
           }
         }
+        code = code.replace(/\ ?ng-[\w-]*/g, '');
+        code = code.replace(/\ ?class=""/g, '');
         $scope.code = code;
       }
     };

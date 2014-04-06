@@ -13,8 +13,8 @@
 
 +icon-class()
   +fd()
-    &:before
-    &:after
+    &:not(.after):before
+    &.after:after
       font-family "fontello"
       font-style normal
       font-weight normal
@@ -27,12 +27,10 @@
       text-transform none
       margin-left .4em
       margin-right .4em
-    &.after:before
-      display none
 
 for name, character in icons
   .fd.icon-
   .fd > .icon-
-      &{name}:before
+      &{name}:not(.after):before
       &{name}.after:after
         content character

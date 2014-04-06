@@ -71,17 +71,13 @@ section
       .content
         padding .8em
     colorful(colorful-panel)
-// div.segment
-//   background-color base-white
-//   border 1px solid dark-gray
-//   border-radius .4em
-// // p&
-// & > p
-//   line-height 1.6em
-//   margin .8em 0
-
-
-// div in different widths
-div.panel
+.panel
   +fd()
     widths()
+
+// fixed block
+.fixed
+  +fd()
+    position relative
+    > *
+      position fixed

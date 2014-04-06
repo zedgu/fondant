@@ -1,19 +1,24 @@
 <div class="fd cross">
   <div class="mid row">
-    <span class="fd h1 col three" ng-bind="category | uppercase"></span>
+    <span class="fd h1 col three"></span>
     <span class="fd h2 sub col nine" ng-bind="detail | uppercase"></span>
   </div>
 </div>
 <div class="fd mid row">
   <aside class="col">
-    <section ng-repeat="(sort, detail) in data">
-      <h3>{{sort}}</h3>
-      <ul>
-        <li ng-repeat="item in detail"><a href="/docs/css/{{item | lowercase}}">{{item}}</a></li>
+    <section class="fd fixed">
+      <ul class="fd list m">
+        <li ng-repeat="item in data">
+          <a href="/docs/{{item | lowercase}}" ng-bind="item"></a>
+          <ul class="fd" ng-if="(item | lowercase) === detail">
+            <li ng-repeat="el in subTitles" class="s"><a ng-click="goAnchor(el)" ng-bind="el.innerText" class="fd pointer"></a></li>
+          </ul>
+        </li>
+        <li><a ng-click="goAnchor()" class="fd s lowlight icon-up after">Top</a></li>
       </ul>
     </section>
   </aside>
   <article class="col">
-    <div ng-include="include"></div>
+    <div ng-include="include" onload="submenu()" autoscroll id="main"></div>
   </article>
 </div>

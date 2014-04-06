@@ -2,8 +2,8 @@
 colorful-menu(state)
   &
   > * > *
-  .dropdown .menu
-  .dropdown .menu > * > *
+  .submenu .menu
+  .submenu .menu > * > *
     text-color(state)
 
 /***** Styles *****/
@@ -44,6 +44,11 @@ colorful-menu(state)
           a
             padding .8em 1em
             display inline-block
+            +icon-class(\&)
+              &:before
+                margin-left 0
+              &:after
+                margin-right 0
           a:hover
             cursor pointer
             background-color light-gray
@@ -75,6 +80,16 @@ colorful-menu(state)
             a
               width 100%
               box-sizing border-box
+              +icon-class(\&)
+                &:after
+                  float right
+              > kbd
+                float right
+                background none
+                border none
+                box-shadow none
+                color dark-gray
+                text-shadow 1px 1px 1px light-gray
         .item ~ .item
         li ~ li
           border-top 1px solid dark-gray
@@ -90,15 +105,28 @@ colorful-menu(state)
     colorful(colorful-menu)
 .menu
   +fd()
-    > .dropdown
+    > .submenu
       position relative
-      z-index 999
-      > .menu
-        position absolute
-        top 90%
-        width auto !important
+      >
+        span
+        a
+          &:after
+            @extend [class^="icon-"].fd.after:after
+            @extend .fd.icon-angle-down.after:after
+            margin-right 0
+        .menu
+          position absolute
+          top 90%
+          display none
+          z-index 999
     &.v
-      > .dropdown
-        > .menu
-          left 95%
-          top 0
+      > .submenu
+        >
+          span
+          a
+            &:after
+              @extend .fd.icon-angle-right.after:after
+              float right
+          .menu
+            left 95%
+            top 0

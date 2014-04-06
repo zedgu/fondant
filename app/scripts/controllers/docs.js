@@ -1,25 +1,32 @@
 'use strict';
 
 angular.module('siteApp')
-  .controller('DocsCtrl', function ($scope, $routeParams, $location) {
-    $scope.menuData = {
-      'css': {
-        'Base CSS': ['Text', 'Layout', 'Button', 'Container', 'List', 'Form', 'Image', 'Icon','Step','Progress','Loader','Menu','Popup','Tab']
-      }
-    };
-    $scope.category = $routeParams.category;
+  .controller('DocsCtrl', ['$scope', '$routeParams', '$location', '$anchorScroll', function ($scope, $routeParams, $location, $anchorScroll) {
+    $scope.menuData = ['Global', 'Text', 'Layout', 'Button', 'Container', 'List', 'Form', 'Image', 'Icon','Step','Progress','Loader','Menu','Popup','Tab'];
     $scope.detail = $routeParams.detail;
-    $scope.data = $scope.menuData[$scope.category];
-    $scope.include = '/views/' + $scope.category + '/' + ($scope.detail || 'index') + '.html';
+    $scope.data = $scope.menuData;
     if ($scope.data) {
       if(!$scope.detail) {
-        $location.path('/docs/' + $scope.category);
+        $location.path('/docs/global');
         return;
       }
     } else {
       $location.path('/');
       return;
     }
+    $scope.include = '/views/components/' + $scope.detail + '.html';
+    $scope.submenu = function() {
+      $scope.subTitles = angular.element(document.getElementById('main').getElementsByTagName('h3'));
+      angular.forEach($scope.subTitles, function(item) {
+        angular.element(item).prepend('<a id="' + item.innerText + '">');
+      });
+    };
+    $scope.goAnchor = function(el) {
+      var hash = el ? el.innerText : 'top';
+      $location.hash(hash);
+      $anchorScroll();
+      return false;
+    };
     $scope.icons = {
       'spin3': '\\e8ae',
       'windows': '\\e8a3',
@@ -197,4 +204,4 @@ angular.module('siteApp')
       'tumblr': '\\e8ab',
       'weibo': '\\e8ac'
     };
-  });
+  }]);

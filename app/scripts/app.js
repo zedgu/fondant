@@ -5,7 +5,8 @@ angular.module('siteApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'hljs'
+  'hljs',
+  'fondant'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -13,7 +14,7 @@ angular.module('siteApp', [
         templateUrl: '/views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/docs/:category/:detail?', {
+      .when('/docs/:detail?', {
         templateUrl: '/views/docs.html',
         controller: 'DocsCtrl'
       })
