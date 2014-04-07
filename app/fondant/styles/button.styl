@@ -53,9 +53,9 @@ button-color(state)
         padding 0 .6em
         &:before
           margin auto .2em
-      &:before
+      &:not(.after):before
         margin-left 0
-      &:after
+      &.after:after
         margin-right 0
       +icon-class(\>)
         &:before
