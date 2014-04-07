@@ -46,10 +46,12 @@ angular.module('fondant', [])
   Group.prototype.target = function(index) {
     return this.get('target', index);
   };
-  Group.prototype.rotate = function(index, className, type) {
+  Group.prototype.rotate = function(index, type, className) {
     className = className || 'show';
     type = type || 'target';
-
+    if (this.current() === null) {
+      this.current(0);
+    }
     if (index !== this.current()) {
       this.get(type, this.current()).removeClass(className);
     }
@@ -92,6 +94,12 @@ angular.module('fondant', [])
   };
 }])
 
+.directive('fd', [function(){
+  return {
+    scope: true,
+    restrict: 'A'
+  };
+}])
 .directive('filefield', [function(){
   return {
     restrict: 'C',
@@ -203,36 +211,29 @@ angular.module('fondant', [])
 //     }
 //   };
 // }])
-.directive('fdTab', ['fondantGroup', '$timeout', '$document', function(fondantGroup, $timeout, $document) {
-  var types = ['toggle', 'content']
-    , events = {hover: 'mouseenter', click: 'click', hold: 'mouseenter'};
+.directive('fdTab', ['fondantGroup', function(fondantGroup) {
+  var events = {hover: 'mouseenter', click: 'click', hold: 'mouseenter'};
   return {
+    scope: true,
+    restrict: 'A',
+    requrie: '^fd',
     controller: function($scope, $element, $attrs){
-      var group = fondantGroup.get($attrs.faTab)
-        , type = $attrs.fdType || types[0]
-        , bindEvent = events[$attrs.fdEvent] || events.hover
+      console.log($scope);
+      $scope.groupName = $attrs.faTab || '$$' + $scope.$parent.$id + '.tab';
+      var group = fondantGroup.get($scope.groupName)
+        , type = $attrs.fdType || 'trigger'
+        , bindEvent = events[$attrs.fdEvent] || events.click
         , index = group.add(type, $element[0]);
-
-      group.set('closeMenu', angular.noop);
-
-      if (type === 'toggle') {
+      if (type === 'trigger') {
+        if ($element.hasClass('active')) {
+          group.current(index);
+        }
         $element.bind(bindEvent, function(event) {
           event.preventDefault();
           event.stopPropagation();
           if (group.current() !== index) {
             if (!$element.hasClass('disabled') && !$element.prop('disabled')) {
-              group.set('closeMenu', function() {
-                $document.unbind('click', group.get('closeMenu'));
-                group.get('content', group.current()).removeClass('show');
-                group.set('closeMenu', angular.noop);
-              });
-
-              if (group.current() !== null) {
-                group.get('closeMenu')();
-              }
-              group.get('content', index).addClass('show');
-              group.current(index);
-              $document.bind('click', group.get('closeMenu'));
+              group.rotate(index, 'trigger', 'active');
             }
           }
         });
