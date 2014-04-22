@@ -11,7 +11,7 @@
         <li ng-repeat="item in data">
           <a href="/docs/{{item | lowercase}}" ng-bind="item"></a>
           <ul class="fd" ng-if="(item | lowercase) === detail">
-            <li ng-repeat="el in subTitles" class="s"><a ng-click="goAnchor(el)" ng-bind="el.innerText" class="fd pointer"></a></li>
+            <li ng-repeat="el in subTitles" class="s"><a ng-click="goAnchor(el)" ng-bind="el.textContent" class="fd pointer"></a></li>
           </ul>
         </li>
         <li><a ng-click="goAnchor()" class="fd s lowlight icon-up after pointer">Top</a></li>

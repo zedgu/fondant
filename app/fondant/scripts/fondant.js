@@ -97,13 +97,16 @@ angular.module('fondant', [])
 .directive('fd', [function(){
   return {
     scope: true,
-    restrict: 'A'
+    restrict: 'A',
+    controller: function($scope, $element) {
+      $element.css('position', 'relative');
+    }
   };
 }])
 .directive('filefield', [function(){
   return {
     restrict: 'C',
-    scope: {},
+    scope: true,
     link: function(scope, element) {
       var inputs = element.find('input')
         , file
@@ -122,95 +125,96 @@ angular.module('fondant', [])
   };
 }])
 
-// .directive('fdDropdown', ['$document', '$timeout', function($document, $timeout) {
-//   var openElement = null
-//     , closeMenu = angular.noop
-//     , handler = {};
-//   handler.mouseenter = function(scope, element) {
-//     element.bind('mouseenter', function(event) {
-//       // scope.isOpened 
-//       event.preventDefault();
-//       event.stopPropagation();
+.directive('fdDropdown', ['$document', '$timeout', 'fondantGroup', function($document, $timeout, fondantGroup) {
+  return {
+    restrict: 'A',
+    scope: {
+      ev: '@fdDropdown',
+      group: '@'
+    },
+    controller: function($scope, $element, $attrs) {
+      $scope.groupName = $attrs.fdDropdown || '$$' + $scope.$parent.$id + '.dropdown';
+      var group = fondantGroup.get($scope.groupName)
+        , type = $element.hasClass('dropdown') ? 'target' : 'trigger'
+        // , bindEvent = events[$attrs.fdEvent] || events.click
+        , index = group.add(type, $element[0]);
 
-//       if (scope.isOpened) {
-//         $timeout.cancel(scope.timeout);
-//       } else {
-//         if (!element.hasClass('disabled') && !element.prop('disabled')) {
-//           closeMenu = function() {
-//             $document.unbind('click', closeMenu);
-//             element.next().removeClass('show');
-//             closeMenu = angular.noop;
-//             scope.isOpened = false;
-//           };
+      $scope.$watch('$location.path', group.off());
 
-//           element.next().addClass('show');
-//           scope.isOpened = true;
-//           $document.bind('click', closeMenu);
-//         }
-//       }
-//     });
-//   };
-//   return {
-//     restrict: 'A',
-//     scope: {
-//       ev: '@fdDropdown',
-//       group: '@'
-//     },
-//     link: function(scope, element) {
-//       var ev = scope.ev || 'mouseenter';
+      if (type === 'trigger') {
+        $element.bind('mouseenter', function(event) {
+          // $scope.isOpened 
+          event.preventDefault();
+          event.stopPropagation();
 
-//       scope.$watch('$location.path', function() { closeMenu(); });
+          if ($scope.isOpened) {
+            $timeout.cancel($scope.timeout);
+          } else {
+            if (!$element.hasClass('disabled') && !$element.prop('disabled')) {
+              group.off(function() {
+                $document.unbind('click', group.off());
+                group.target(index).removeClass('show');
+                group.off(angular.noop);
+                $scope.isOpened = false;
+              });
+              console.log(group);
 
-//       handler.mouseenter(scope, element);
+              group.target(index).addClass('show');
+              $scope.isOpened = true;
+              $document.bind('click', group.off());
+            }
+          }
+        });
+      }
 
-//       // element.bind(ev, function (event) {
+      // element.bind(ev, function (event) {
 
-//       //   scope.isOpened = (element === openElement);
+      //   scope.isOpened = (element === openElement);
 
-//       //   event.preventDefault();
-//       //   event.stopPropagation();
+      //   event.preventDefault();
+      //   event.stopPropagation();
 
-//       //   if (scope.isOpened) {
-//       //     $timeout.cancel(scope.timeout);
-//       //     return;
-//       //   }
-//       //   // if (!!openElement) {
-//       //   //   closeMenu();
-//       //   // }
+      //   if (scope.isOpened) {
+      //     $timeout.cancel(scope.timeout);
+      //     return;
+      //   }
+      //   // if (!!openElement) {
+      //   //   closeMenu();
+      //   // }
 
-//       //   if (!scope.isOpened && !element.hasClass('disabled') && !element.prop('disabled')) {
-//       //     element.next().addClass('show');
-//       //     openElement = element;
-//       //     closeMenu = function (event) {
-//       //       if (event) {
-//       //         event.preventDefault();
-//       //         event.stopPropagation();
-//       //       }
-//       //       $document.unbind('click', closeMenu);
-//       //       if (ev === 'mouseenter') {
-//       //         element.unbind('mouseenter', closeMenu);
-//       //       }
-//       //       element.next().removeClass('show');
-//       //       closeMenu = angular.noop;
-//       //       openElement = null;
-//       //     };
-//       //     $document.bind('click', closeMenu);
-//       //   }
-//       // });
-//       // if (ev === 'mouseenter') {
-//       //   element.next().bind('mouseenter', function() {
-//       //     $timeout.cancel(scope.timeout);
-//       //   });
-//       //   element.next().bind('mouseleave', function() {
-//       //     scope.timeout = $timeout(closeMenu, 150);
-//       //   });
-//       //   element.bind('mouseleave', function() {
-//       //     scope.timeout = $timeout(closeMenu, 150);
-//       //   });
-//       // }
-//     }
-//   };
-// }])
+      //   if (!scope.isOpened && !element.hasClass('disabled') && !element.prop('disabled')) {
+      //     element.next().addClass('show');
+      //     openElement = element;
+      //     closeMenu = function (event) {
+      //       if (event) {
+      //         event.preventDefault();
+      //         event.stopPropagation();
+      //       }
+      //       $document.unbind('click', closeMenu);
+      //       if (ev === 'mouseenter') {
+      //         element.unbind('mouseenter', closeMenu);
+      //       }
+      //       element.next().removeClass('show');
+      //       closeMenu = angular.noop;
+      //       openElement = null;
+      //     };
+      //     $document.bind('click', closeMenu);
+      //   }
+      // });
+      // if (ev === 'mouseenter') {
+      //   element.next().bind('mouseenter', function() {
+      //     $timeout.cancel(scope.timeout);
+      //   });
+      //   element.next().bind('mouseleave', function() {
+      //     scope.timeout = $timeout(closeMenu, 150);
+      //   });
+      //   element.bind('mouseleave', function() {
+      //     scope.timeout = $timeout(closeMenu, 150);
+      //   });
+      // }
+    }
+  };
+}])
 .directive('fdTab', ['fondantGroup', function(fondantGroup) {
   var events = {hover: 'mouseenter', click: 'click', hold: 'mouseenter'};
   return {
@@ -218,7 +222,6 @@ angular.module('fondant', [])
     restrict: 'A',
     requrie: '^fd',
     controller: function($scope, $element, $attrs){
-      console.log($scope);
       $scope.groupName = $attrs.faTab || '$$' + $scope.$parent.$id + '.tab';
       var group = fondantGroup.get($scope.groupName)
         , type = $attrs.fdType || 'trigger'
