@@ -14,5 +14,32 @@
   "devDependencies": {
     "angular-mocks": "1.2.6",
     "angular-scenario": "1.2.6"
-  }
+  },
+  "homepage": "https://github.com/zedgu/fondant",
+  "authors": [
+    "zedgu <heartcpu@gmail.com>"
+  ],
+  "description": "A CSS3 UI Framework",
+  "main": "app/fondant.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "html5",
+    "css3",
+    "ui",
+    "framework",
+    "js",
+    "angular"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
 }
