@@ -167,14 +167,10 @@ sizes(prefix=\&, selector='', fn=false)
         if fn
           fn(i)
 
-widths-labels = tight narrow '' broad wild full
+widths-labels = tight narrow half broad wide full
 widths(prefix=\&, selector='', inverse=0, step=15, start=25, u='%')
   for width, i in widths-labels
-    if width
-      width = '.' + width
-    else
-      width = ''
-    {prefix}{width}{selector}
+    {prefix}.{width}{selector}
       if inverse
         width unit(inverse - step * i + start, u) !important
       else
@@ -233,6 +229,7 @@ br
 +fd()
   colorful(text-color)
   sizes()
+  widths()
   // p, span, li, .li, button, .button, input:not([type="file"]), label, select, textarea, .pointing, .label
 
 .hide

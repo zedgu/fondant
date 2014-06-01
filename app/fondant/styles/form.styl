@@ -101,12 +101,6 @@ input[type="month"]
     transition all 0.2s linear 0s
     colorful(input-colorful)
 
-select
-textarea
-input:not([type="button"]):not([type="radio"]):not([type="checkbox"]):not([type="file"])
-  +fd()
-    widths()
-
 // input fieldset disabled
 input[disabled]
 fieldset[disabled]
@@ -381,6 +375,7 @@ label.slider
     display inline-block
     vertical-align middle
     white-space nowrap
+    width: auto!important;
     >
       *
         float left

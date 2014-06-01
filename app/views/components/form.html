@@ -29,7 +29,7 @@
       <ul class="fd">
         <li><code>input[type="*"].fd</code> or <code>.fd &gt; input[type="*"]</code></li>
         <li><span class="fd h6">6 sizes :</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
-        <li><span class="fd h6">6 widths :</span> <code>.tight</code> <code>.narrow</code> default <code>.broad</code> <code>.wild</code> <code>.full</code></li>
+        <li><span class="fd h6">6 widths :</span> <code>.tight</code> <code>.narrow</code> <code>.half</code> <code>.broad</code> <code>.wide</code> <code>.full</code></li>
         <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
       </ul>
     </div>
@@ -54,9 +54,9 @@
         <legend>different width</legend>
         <p><input type="text" class="fd tight" placeholder="width: 25% - tight"></p>
         <p><input type="text" class="fd narrow" placeholder="width: 40% - narrow"></p>
-        <p><input type="text" class="fd" placeholder="width: 55% - default"></p>
+        <p><input type="text" class="fd half" placeholder="width: 55% - half"></p>
         <p><input type="text" class="fd broad" placeholder="width: 70% - broad"></p>
-        <p><input type="text" class="fd wild" placeholder="width: 85% - wild"></p>
+        <p><input type="text" class="fd wide" placeholder="width: 85% - wide"></p>
         <p><input type="text" class="fd full" placeholder="width: 100% - full"></p>
       </fieldset>
     </div>
@@ -249,7 +249,7 @@
         </select>
       </p>
       <p class="fd">
-        <select class="xl wild" multiple="">
+        <select class="xl wide" multiple="">
           <option selected="selected">Option 01</option>
           <option>Option 02</option>
           <option>Option 03</option>
@@ -311,7 +311,7 @@
         </select>
       </p>
       <p class="fd">
-        <select class="xl wild" multiple="" disabled>
+        <select class="xl wide" multiple="" disabled>
           <option selected="selected">Option 01</option>
           <option>Option 02</option>
           <option>Option 03</option>
@@ -366,7 +366,7 @@
         <li><code>.fd.group &gt; * + input + *</code> or <code>.fd &gt; .group &gt; * + input + *</code></li>
         <li><code>.fd.group &gt; input + * + input</code> or <code>.fd &gt; .group &gt; input + * + input</code></li>
         <li><span class="fd h6">6 sizes :</span> <code>.s</code> default <code>.m</code> <code>.l</code> <code>.xl</code> <code>.xxl</code></li>
-        <li><span class="fd h6">6 widths :</span> <code>.tight</code> <code>.narrow</code> default <code>.broad</code> <code>.wild</code> <code>.full</code></li>
+        <li><span class="fd h6">6 widths :</span> <code>.tight</code> <code>.narrow</code> <code>.half</code> <code>.broad</code> <code>.wide</code> <code>.full</code></li>
         <li><span class="fd h6">7 colors :</span> default <code>.lowlight</code> <code>.highlight</code> <code>.ok</code> <code>.warning</code> <code>.danger</code> <code>.info</code></li>
       </ul>
     </div>
@@ -380,7 +380,7 @@
           <em>%</em>
           <input type="text" placeholder="percent">
         </label>
-        <label class="fd group m highlight">
+        <label class="fd group m highlight half">
           <input type="text" placeholder="username">
           <strong>@</strong>
           <input type="text" placeholder="example.com">
@@ -391,7 +391,7 @@
           <label for="words" class="icon-phone"></label>
           <input type="text">
         </span>
-        <label class="group l ok wild">
+        <label class="group l ok wide">
           <span>$</span>
           <input type="text" placeholder="00">
           <span>.00</span>
