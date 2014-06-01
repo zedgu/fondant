@@ -232,11 +232,17 @@ br
   widths()
   // p, span, li, .li, button, .button, input:not([type="file"]), label, select, textarea, .pointing, .label
 
-.hide
-.dropdown
-  display none
-.show
-  display block !important
+.fd
+  .hide
+  .dropdown
+    display none
+  .show
+    display block !important
+  .disabled
+  [disabled]
+    &
+    & > *
+      cursor not-allowed
 /***** Icons *****/
 icons = {
     'spin3': '\e8ae'

@@ -54,8 +54,14 @@ angular.module('fondant', [])
     }
     if (index !== this.current()) {
       this.get(type, this.current()).removeClass(className);
+      if (type !== 'target' ) {
+        this.get('target', this.current()).removeClass('show');
+      }
     }
     this.get(type, index).addClass(className);
+    if (type !== 'target') {
+      this.get('target', index).addClass('show');
+    }
     this.current(index);
   };
   // Group.prototype.open = function(index, className, type) {
@@ -222,9 +228,9 @@ angular.module('fondant', [])
     restrict: 'A',
     requrie: '^fd',
     controller: function($scope, $element, $attrs){
-      $scope.groupName = $attrs.faTab || '$$' + $scope.$parent.$id + '.tab';
+      $scope.groupName = $attrs.fdTab || '$$' + $scope.$parent.$id + '.tab';
       var group = fondantGroup.get($scope.groupName)
-        , type = $attrs.fdType || 'trigger'
+        , type = $attrs.fdContent === undefined ? 'trigger' : 'target'
         , bindEvent = events[$attrs.fdEvent] || events.click
         , index = group.add(type, $element[0]);
       if (type === 'trigger') {
@@ -244,6 +250,18 @@ angular.module('fondant', [])
     }
   };
 }])
+// .directive('fdContent', ['fondantGroup', function(fondantGroup) {
+//   return {
+//     scope: true,
+//     restrict: 'A',
+//     requrie: '^fd',
+//     controller: function($scope, $element, $attrs) {
+//       $scope.groupName = $attrs.fdContent || '$$' + $scope.$parent.$id + '.content';
+//       var group = fondantGroup.get($scope.groupName)
+//         , type = $attrs.fdType || 'trigger'
+//     }
+//   };
+// }]);
 .directive('fdMenu', ['fondantGroup', '$document', function(fondantGroup, $document) {
   return {
     scope: true,

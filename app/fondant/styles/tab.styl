@@ -28,7 +28,7 @@ tab-hover-colorful(state)
       content ""
     &:after
       clear both
-    >li
+    .item
       margin-bottom -1px
       float left
       position relative
@@ -58,7 +58,6 @@ tab-hover-colorful(state)
       &.disabled
         >a
           color dark-gray
-          cursor auto
           &:hover,&focus
             background none
             border-color rgba(dark-black, 0)
@@ -129,6 +128,13 @@ tab-hover-colorful(state)
           >a
             margin-left 0
             margin-top 5px
+
+.tab-content
+  +fd()
+    border 1px solid dark-gray
+    border-top none
+    .item
+      display none
 
 .tab-center
   +fd()

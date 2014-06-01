@@ -9,15 +9,18 @@
       <code>.tab.fd</code> or <code>.fd &gt; .tab</code>
     </div>
     <div class="example">
-      <div class="fd">
-        <ul class="tab">
-          <li class="active"><a href="">Active</a></li>
-          <li><a href="">item</a></li>
-          <li><a href="">item</a></li>
-          <li class="disabled"><a href="">disabled</a></li>
-        </ul>
-        <div class="tab-content">
-          <div class=""></div>
+      <ul class="fd tab">
+        <li class="item active" fd-tab><a href="">Active</a></li>
+        <li class="item" fd-tab><a href="">item</a></li>
+        <li class="item disabled"><a href="">disabled</a></li>
+        <li><a href="">item</a></li>
+      </ul>
+      <div class="fd tab-content">
+        <div class="item show" fd-tab fd-content>
+          a
+        </div>
+        <div class="item" fd-tab fd-content>
+          b
         </div>
       </div>
     </div>
