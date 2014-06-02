@@ -296,7 +296,7 @@ module.exports = function (grunt) {
       fonts: {
         expand: true,
         cwd: '<%= yeoman.app %>/fondant/fonts',
-        dest: '.tmp/styles/fonts/',
+        dest: '.tmp/fonts/',
         src: '*'
       }
     },
