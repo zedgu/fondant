@@ -214,7 +214,6 @@ pip-log.txt
 .mr.developer.cfg
 
 # Font Files
-*.ttf
 *.ttc
 
 ## Node.JS
