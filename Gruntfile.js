@@ -174,10 +174,6 @@ module.exports = function (grunt) {
       }
     },
 
-
-
-
-
     // Renames files for browser caching purposes
     rev: {
       dist: {
@@ -275,16 +271,14 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           dot: true,
-          cwd: '<%= yeoman.app %>',
+          cwd: '<%= yeoman.app %>/fondant',
           dest: '<%= yeoman.dist %>',
           src: [
             '*.{ico,png,txt}',
-            '.htaccess',
             '*.html',
-            'views/{,*/}*.html',
-            'bower_components/**/*',
+            // 'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
-            'fonts/*'
+            'fonts/fondant.*'
           ]
         }, {
           expand: true,
@@ -313,7 +307,7 @@ module.exports = function (grunt) {
       ],
       dist: [
         'stylus',
-        'copy:styles',
+        // 'copy:styles',
         'imagemin',
         'svgmin'
       ]
@@ -403,7 +397,7 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    'rev',
+    // 'rev',
     'usemin',
     'htmlmin'
   ]);

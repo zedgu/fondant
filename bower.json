@@ -20,7 +20,10 @@
     "zedgu <heartcpu@gmail.com>"
   ],
   "description": "A CSS3 UI Framework",
-  "main": "app/fondant/scripts/fondant.js",
+  "main": [
+    "dist/scripts/fondant.js",
+    "dist/styles/fondant.css"
+  ],
   "moduleType": [
     "node"
   ],
@@ -39,6 +42,9 @@
     "bower_components",
     "app/bower_components",
     "test",
-    "tests"
+    "tests",
+    "app",
+    "*.js"
+    "package.json"
   ]
 }
