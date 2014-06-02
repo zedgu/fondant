@@ -22,7 +22,11 @@
   "description": "A CSS3 UI Framework",
   "main": [
     "dist/scripts/fondant.js",
-    "dist/styles/fondant.css"
+    "dist/styles/fondant.css",
+    "dist/fonts/fondant.svg",
+    "dist/fonts/fondant.eot",
+    "dist/fonts/fondant.ttf",
+    "dist/fonts/fondant.woff"    
   ],
   "moduleType": [
     "node"
@@ -44,7 +48,8 @@
     "test",
     "tests",
     "app",
-    "*.js",
+    "Gruntfile.js",
+    "*.conf.js",
     "package.json"
   ]
 }
