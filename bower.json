@@ -44,7 +44,7 @@
     "test",
     "tests",
     "app",
-    "*.js"
+    "*.js",
     "package.json"
   ]
 }
