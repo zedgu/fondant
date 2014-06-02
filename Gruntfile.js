@@ -292,6 +292,12 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      fonts: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/fondant/fonts',
+        dest: '.tmp/styles/fonts/',
+        src: '*'
       }
     },
 
@@ -299,7 +305,8 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'stylus',
-        'copy:styles'
+        'copy:styles',
+        'copy:fonts'
       ],
       test: [
         'stylus',
