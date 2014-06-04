@@ -51,6 +51,5 @@
     "Gruntfile.js",
     "*.conf.js",
     "package.json"
-  ],
-  "directory": "./bower_components"
+  ]
 }

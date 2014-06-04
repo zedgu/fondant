@@ -178,6 +178,10 @@ module.exports = function (grunt) {
             }
           }
         }
+      },
+      dist: {
+        src: '<%= yeoman.app %>/index.html',
+        ignorePath: '<%= yeoman.app %>/'
       }
     },
 
@@ -378,7 +382,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'wiredep',
+      'wiredep:app',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -401,7 +405,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'wiredep',
+    'wiredep:dist',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
