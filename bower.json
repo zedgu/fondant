@@ -2,10 +2,10 @@
   "name": "fondant",
   "version": "0.0.2",
   "dependencies": {
-    "angular": "1.2.6"
+    "angular": "~1.2.18",
+    "angular-file-upload": "~0.5.7"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "homepage": "https://github.com/zedgu/fondant",
   "authors": [
     "zedgu <heartcpu@gmail.com>"
@@ -17,7 +17,7 @@
     "dist/fonts/fondant.svg",
     "dist/fonts/fondant.eot",
     "dist/fonts/fondant.ttf",
-    "dist/fonts/fondant.woff"    
+    "dist/fonts/fondant.woff"
   ],
   "moduleType": [
     "node"
