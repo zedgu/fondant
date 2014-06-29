@@ -368,7 +368,8 @@ module.exports = function (grunt) {
       compile: {
         files: {
           '.tmp/styles/stylus.css': ['<%= yeoman.app %>/styles/index.styl'],
-          '.tmp/styles/fondant.css': ['<%= yeoman.app %>/fondant/index.styl']
+          '.tmp/styles/fondant.css': ['<%= yeoman.app %>/fondant/index.styl'],
+          '.tmp/styles/fondant-ie8.css': ['<%= yeoman.app %>/fondant/ie8.styl']
         }
       }
     }
