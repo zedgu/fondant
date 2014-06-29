@@ -209,6 +209,7 @@ br
     text-align center
     position relative
     margin 1em 0
+    width 100%
     &:before
     &:after
       content " "
@@ -222,8 +223,11 @@ br
       left 0
     &:after
       right 0
-    widths(\&, ':before', 22, 9)
-    widths(\&, ':after', 22, 9)
+    widths(\&, ':before', 25, 7, 20)
+    widths(\&, ':after', 25, 7, 20)
+    for width in widths-labels
+      &.{width}
+        width 100% !important;
 
 // global colors, sizes
 +fd()
