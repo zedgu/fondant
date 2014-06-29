@@ -432,3 +432,22 @@
     <div class="markup" fd-code hljs language="html" source="code"></div>
   </div>
 </section>
+<section class="fd">
+  <h3 class="hr">Multiple Files Uploader</h3>
+  <div class="docs">
+    <div class="tag">
+      <code>input[type="file"][multiple]</code>
+    </div>
+    <div class="usage">
+      <code>.fd.filefield &gt; input[type="file"] + *</code> or <code>.fd &gt; .filefield &gt; input[type="file"] + *</code>
+    </div>
+    <div class="example">
+      <div class="fd filefield">
+        <div class="dropzone" fd-multiple-drop>Drop Files Here to Upload</div>
+      </div>
+      <div class="fd filefield"><input type="file"><span class="group highlight"><input type="text"><a class="fd button">Browse</a></span></div>
+      <span class="fd filefield"><input type="file"><button class="info">Upload</button></span>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>

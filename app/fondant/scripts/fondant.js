@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fondant', [])
+angular.module('fondant', ['angularFileUpload'])
 
 .factory('fondantGroup', [function(){
   var groups = {}
@@ -100,12 +100,14 @@ angular.module('fondant', [])
   };
 }])
 
-.directive('fd', [function(){
+.directive('fd', ['$q', function($q){
   return {
     scope: true,
-    restrict: 'A',
-    controller: function($scope, $element) {
-      $element.css('position', 'relative');
+    restrict: 'C',
+    controller: function($scope, $element, $attrs) {
+      this.q = $q.defer();
+      this.a = $attrs;
+      // $element.css('position', 'relative');
     }
   };
 }])
@@ -113,20 +115,21 @@ angular.module('fondant', [])
   return {
     restrict: 'C',
     scope: true,
-    link: function(scope, element) {
-      var inputs = element.find('input')
-        , file
-        , show;
-      for (var i = 0; i < inputs.length; i++) {
-        if (inputs[i].type === 'file') {
-          file = inputs.eq(i);
-        } else {
-          show = inputs.eq(i);
+    require: '^fd',
+    controller: function($scope, $element) {
+      angular.forEach($element.find('input'), function(input) {
+        var s = this;
+        if (input.type === 'file') {
+          this.fileInput = angular.element(input);
+          if (angular.isUndefined(this.fileInput.attr('fd-multiple'))) {
+            angular.element(input).bind('change', function() {
+              s.inputForShow.val(this.value.split('\\').pop());
+            });
+          }
+        } else if (input.type === 'text'){
+          this.inputForShow = angular.element(input);
         }
-      }
-      file.bind('change', function() {
-        show.val(this.value.split('\\').pop());
-      });
+      }, $scope);
     }
   };
 }])
@@ -226,7 +229,7 @@ angular.module('fondant', [])
   return {
     scope: true,
     restrict: 'A',
-    requrie: '^fd',
+    require: '^fd',
     controller: function($scope, $element, $attrs){
       $scope.groupName = $attrs.fdTab || '$$' + $scope.$parent.$id + '.tab';
       var group = fondantGroup.get($scope.groupName)
@@ -250,11 +253,47 @@ angular.module('fondant', [])
     }
   };
 }])
+.directive('fdMultiple', ['fondantGroup', function() {
+  return {
+    scope: true,
+    restrict: 'A',
+    require: '^fd',
+    controller: function($scope, $element, $attrs){
+      console.log($scope);
+      if ($element[0].tagName === 'INPUT') {
+        console.log($attrs);
+        $element.attr('multiple', 'multiple');
+        $element.on('change', function(event) {
+          var files = event.target.files;
+          for (var i = files.length - 1, f = files[i]; i >= 0; i--) {
+            console.log(f);
+          }
+        });
+      }
+    }
+  };
+}])
+.directive('fdMultipleDrop', ['$fileUploader', '$compile', function($fileUploader, $compile) {
+  return {
+    scope: true,
+    restrict: 'A',
+    require: '^fd',
+    controller: function($scope, $element, $attrs){
+      $compile('<div ng-file-drop><div ng-file-over>' + $element.text() + '</div><output><ul><li ng-repeat="item in uploader.queue"><div>Name: {{ item.file.name }}</div><div>Size: {{ item.file.size/1024/1024|number:2 }} Mb</div></li></ul></output></div>')($scope, function(clonedElement, scope) {
+        $element.empty().append(clonedElement);
+      });
+      $scope.uploader = $fileUploader.create({
+        scope: $scope,
+        url: $attrs.fdAction || ''
+      });
+    }
+  }
+}])
 // .directive('fdContent', ['fondantGroup', function(fondantGroup) {
 //   return {
 //     scope: true,
 //     restrict: 'A',
-//     requrie: '^fd',
+//     require: '^fd',
 //     controller: function($scope, $element, $attrs) {
 //       $scope.groupName = $attrs.fdContent || '$$' + $scope.$parent.$id + '.content';
 //       var group = fondantGroup.get($scope.groupName)
