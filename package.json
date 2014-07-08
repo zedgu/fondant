@@ -1,6 +1,6 @@
 {
   "name": "fondant",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "dependencies": {},
   "devDependencies": {
     "connect-modrewrite": "^0.6.3-pre",
