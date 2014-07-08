@@ -95,22 +95,19 @@ angular.module('fondant', ['angularFileUpload'])
     }
   };
 }])
-.factory('fondant', [function(){
-  return {
-  };
-}])
 
 .directive('fd', ['$q', function($q){
   return {
     scope: true,
     restrict: 'C',
     controller: function($scope, $element, $attrs) {
-      this.q = $q.defer();
-      this.a = $attrs;
+      // this.q = $q.defer();
+      // this.a = $attrs;
       // $element.css('position', 'relative');
     }
   };
 }])
+
 .directive('filefield', [function(){
   return {
     restrict: 'C',
@@ -253,7 +250,7 @@ angular.module('fondant', ['angularFileUpload'])
     }
   };
 }])
-.directive('fdMultiple', ['fondantGroup', function() {
+.directive('fdMultiple', [function() {
   return {
     scope: true,
     restrict: 'A',
@@ -279,7 +276,7 @@ angular.module('fondant', ['angularFileUpload'])
     restrict: 'A',
     require: '^fd',
     controller: function($scope, $element, $attrs){
-      $compile('<div ng-file-drop><div ng-file-over>' + $element.text() + '</div><output><ul><li ng-repeat="item in uploader.queue"><div>Name: {{ item.file.name }}</div><div>Size: {{ item.file.size/1024/1024|number:2 }} Mb</div></li></ul></output></div>')($scope, function(clonedElement, scope) {
+      $compile('<div ng-file-drop><div ng-file-over>' + $element.text() + '</div><output><ul><li ng-repeat="item in uploader.queue"><div>Name: {{ item.file.name }}</div><div>Size: {{ item.file.size/1024/1024|number:2 }} Mb</div></li></ul></output></div>')($scope, function(clonedElement) {
         $element.empty().append(clonedElement);
       });
       $scope.uploader = $fileUploader.create({
@@ -287,7 +284,7 @@ angular.module('fondant', ['angularFileUpload'])
         url: $attrs.fdAction || ''
       });
     }
-  }
+  };
 }])
 // .directive('fdContent', ['fondantGroup', function(fondantGroup) {
 //   return {
