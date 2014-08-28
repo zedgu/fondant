@@ -20,14 +20,15 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: {
       // configurable paths
-      app: require('./bower.json').appPath || 'app',
-      dist: 'dist'
+      app: 'docs',
+      dist: 'dist',
+      lib: 'lib'
     },
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js', '<%= yeoman.app %>/fondant/scripts/{,*/}*.js'],
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.js', '<%= yeoman.lib %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -42,7 +43,7 @@ module.exports = function (grunt) {
         tasks: ['newer:copy:styles', 'autoprefixer']
       },
       stylus: {
-        files: ['<%= yeoman.app %>/styles/{,*/}{,*/}*.styl', '<%= yeoman.app %>/fondant/{,*/}{,*/}*.styl'],
+        files: ['<%= yeoman.app %>/styles/**/*.styl', '<%= yeoman.lib %>/**/*.styl'],
         tasks: ['stylus', 'autoprefixer']
       },
       gruntfile: {
@@ -53,7 +54,7 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= yeoman.app %>/{,*/}{,*/}*.html',
+          '<%= yeoman.app %>/**/*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
@@ -93,7 +94,8 @@ module.exports = function (grunt) {
           open: true,
           base: [
             '.tmp',
-            '<%= yeoman.app %>'
+            '<%= yeoman.app %>',
+            '<%= yeoman.lib %>'
           ]
         }
       },
@@ -103,7 +105,8 @@ module.exports = function (grunt) {
           base: [
             '.tmp',
             'test',
-            '<%= yeoman.app %>'
+            '<%= yeoman.app %>',
+            '<%= yeoman.lib %>'
           ]
         }
       },
@@ -124,7 +127,7 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/scripts/{,*/}*.js',
-        '<%= yeoman.app %>/fondant/scripts/{,*/}*.js'
+        '<%= yeoman.lib %>/scripts/{,*/}*.js'
       ],
       test: {
         options: {
@@ -199,16 +202,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Reads HTML for usemin blocks to enable smart builds that automatically
-    // concat, minify and revision files. Creates configurations in memory so
-    // additional tasks can operate on them
-    useminPrepare: {
-      html: '<%= yeoman.app %>/index.html',
-      options: {
-        dest: '<%= yeoman.dist %>'
-      }
-    },
-
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
@@ -269,20 +262,13 @@ module.exports = function (grunt) {
       }
     },
 
-    // Replace Google CDN references
-    cdnify: {
-      dist: {
-        html: ['<%= yeoman.dist %>/*.html']
-      }
-    },
-
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
         files: [{
           expand: true,
           dot: true,
-          cwd: '<%= yeoman.app %>/fondant',
+          cwd: '<%= yeoman.lib %>',
           dest: '<%= yeoman.dist %>',
           src: [
             '*.{ico,png,txt}',
@@ -306,7 +292,7 @@ module.exports = function (grunt) {
       },
       fonts: {
         expand: true,
-        cwd: '<%= yeoman.app %>/fondant/fonts',
+        cwd: '<%= yeoman.lib %>/fonts',
         dest: '.tmp/fonts/',
         src: '*'
       }
@@ -368,8 +354,8 @@ module.exports = function (grunt) {
       compile: {
         files: {
           '.tmp/styles/stylus.css': ['<%= yeoman.app %>/styles/index.styl'],
-          '.tmp/styles/fondant.css': ['<%= yeoman.app %>/fondant/index.styl'],
-          '.tmp/styles/fondant-ie8.css': ['<%= yeoman.app %>/fondant/ie8.styl']
+          '.tmp/styles/fondant.css': ['<%= yeoman.lib %>/index.styl'],
+          '.tmp/styles/fondant-ie8.css': ['<%= yeoman.lib %>/ie8.styl']
         }
       }
     }
@@ -413,7 +399,6 @@ module.exports = function (grunt) {
     'concat',
     'ngmin',
     'copy:dist',
-    // 'cdnify',
     'cssmin',
     'uglify',
     // 'rev',

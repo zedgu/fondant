@@ -1,0 +1,79 @@
+/**
+ * Fondant UI System
+ * Global File
+ */
+@import 'variables'
+@import 'functions'
+
+html
+body
+  padding 0
+  margin 0
+
+body
+  background-color base-white
+  color lighten(base-black, 15%)
+  font-family base-family
+  font-size base-size
+
+p
+  line-height 1.8em
+  margin .6em auto
+
+br
+  content ""
+  display block
+  height .2em
+  line-height .2em
+  width 100%
+
+/***** Common Styles *****/
+.hr
+  +fd()
+    padding-bottom .2em
+    border-bottom 1px solid dark-gray
+.divider
+  +fd()
+    text-align center
+    position relative
+    margin 1em 0
+    width 100%
+    &:before
+    &:after
+      content " "
+      display table-cell
+      border-top 1px solid rgba(base-black, .3)
+      border-bottom 1px solid rgba(base-white, .8)
+      height 0
+      position absolute
+      top 50%
+    &:before
+      left 0
+    &:after
+      right 0
+    widths(\&, ':before', 25, 7, 20)
+    widths(\&, ':after', 25, 7, 20)
+    for width in widths-labels
+      &.{width}
+        width 100% !important;
+
+// global colors, sizes
++fd()
+  colorful(text-color)
+  sizes()
+  widths()
+  // p, span, li, .li, button, .button, input:not([type="file"]), label, select, textarea, .pointing, .label
+
+.fd
+  .hide
+  .dropdown
+    display none
+  .show
+    display block !important
+  .disabled
+  [disabled]
+    &
+    & > *
+      cursor not-allowed
+
+@import 'styles/*'

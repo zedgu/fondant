@@ -1,0 +1,85 @@
+// fd namespace
+fd(el = false, parent = true)
+  if el
+    // for element tag name
+    if parent
+      // with &
+      {el}&.fd
+      &.fd.{el}
+      .fd > {el}&
+      .fd > &.{el}
+        {block}
+    else
+      // no &
+      {el}.fd
+      .fd.{el}
+      .fd > {el}
+      .fd > .{el}
+        {block}
+  else
+    // for normal
+    &.fd
+    .fd > &
+      {block}
+
+// rem font-size setting
+fr(n)
+  font-size unit(n, rem)
+
+// gradient
+gradient(prop, args...)
+  background-image gradient-point(prop, args) % args
+
+gradient-point(prop, points)
+  $t = prop + '-gradient(%s'
+  for i, index in points
+    if index > 0
+      $t += ', %s'
+  return $t += ')'
+
+// icon class selector
+icon-class(prefix = "")
+  {prefix}[class^="icon-"]
+  {prefix}[class*=" icon-"]
+    {block}
+
+// colorful styles selector
+colorful(fn, prefix = '&')
+  for key, state in states
+    if key == 'normal'
+      key = ''
+    else
+      key = '.' + key
+    {prefix}{key}
+      fn(state, key)
+colorful-invert(state)
+  color: state['invert-color'] !important
+  background-color: state['color']
+  border-color: darken(state['border-color'], 10%)
+colorful-light(state)
+  color: lightness(state['color']) > 80% ? state['invert-color'] : darken(state['color'], 30%) !important
+  background-color: lightness(state['color']) > 80% ? lighten(state['invert-color'], 90%) : lighten(state['color'], 70%)
+  border-color: lightness(state['border-color']) > 80% ? state['border-color'] : lighten(state['border-color'], 60%)
+
+// font colors
+text-color(state)
+  color (lightness(state['color']) > 80% ? state['invert-color'] : state['color']) !important
+
+// sizes
+size-labels = s '' m l xl xxl
+sizes(prefix=\&, selector='', fn=false)
+  for size, i in size-labels
+    if size
+      {prefix}.{size}{selector}
+        font-size unit((8 + 2*i)/10, em) !important
+        if fn
+          fn(i)
+
+widths-labels = tight narrow half broad wide full
+widths(prefix=\&, selector='', inverse=0, step=15, start=25, u='%')
+  for width, i in widths-labels
+    {prefix}.{width}{selector}
+      if inverse
+        width unit(inverse - step * i + start, u) !important
+      else
+        width unit(step * i + start, u) !important
