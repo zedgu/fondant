@@ -83,3 +83,10 @@ widths(prefix=\&, selector='', inverse=0, step=15, start=25, u='%')
         width unit(inverse - step * i + start, u) !important
       else
         width unit(step * i + start, u) !important
+
+clearfix()
+  content ""
+  clear both
+  height 0
+  display table
+  overflow hidden

@@ -2,8 +2,8 @@
 list-li()
   list-style-type none
   &:before
-    counter-increment ordered
-    content counters(ordered, ".")
+    counter-increment section
+    content counters(section, ".")
     {block}
 
 /***** Styles *****/
@@ -22,9 +22,8 @@ ol
     &
     ul
     ol
-      padding-left 0
+      padding-left 1.5em
       list-style-position outside
-      margin .8em auto auto 2em
     li
       margin .4em 0
 
@@ -33,6 +32,7 @@ ol.ordered
   +fd()
     &
     ol
+      counter-reset: section;
       list-ol()
       li
         +list-li()
@@ -52,7 +52,9 @@ ol.ordered
 // horizontal ul
 +fd(ul)
   &.h
-    margin 0
+  &.row
+  &.menu
+    padding-left 0
     list-style-type none
   &.h
     .li
@@ -61,6 +63,7 @@ ol.ordered
 
 .list
   +fd()
+    padding-left 0
     list-style-type none
     margin .3em 0
     .li

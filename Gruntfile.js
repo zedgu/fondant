@@ -204,8 +204,7 @@ module.exports = function (grunt) {
 
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
-      html: ['<%= yeoman.dist %>/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+      css: ['.tmp/styles/**/*.css'],
       options: {
         assetsDirs: ['<%= yeoman.dist %>']
       }
@@ -249,19 +248,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Allow the use of non-minsafe AngularJS files. Automatically makes it
-    // minsafe compatible so Uglify does not destroy the ng references
-    ngmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/concat/scripts',
-          src: '*.js',
-          dest: '.tmp/concat/scripts'
-        }]
-      }
-    },
-
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -271,17 +257,8 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.lib %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            '*.{ico,png,txt}',
-            '*.html',
-            // 'views/{,*/}*.html',
-            'images/{,*/}*.{webp}',
             'fonts/fondant.*'
           ]
-        }, {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: ['generated/*']
         }]
       },
       styles: {
@@ -320,25 +297,33 @@ module.exports = function (grunt) {
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
     // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css',
-    //         '<%= yeoman.app %>/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
+    cssmin: {
+      dist: {
+        options: {
+          banner: '/** fondant\n  * https://github.com/zedgu/fondant\n  * MIT\n */'
+        },
+        files: {
+          '<%= yeoman.dist %>/styles/fondant.css': [
+            '.tmp/styles/fondant.css'
+          ],
+          '<%= yeoman.dist %>/styles/fondant-ie8.css': [
+            '.tmp/styles/fondant-ie8.css'
+          ]
+        }
+      }
+    },
+    uglify: {
+      dist: {
+        options: {
+          banner: '/** fondant\n  * https://github.com/zedgu/fondant\n  * MIT\n */\n'
+        },
+        files: {
+          '<%= yeoman.dist %>/scripts/fondant.js': [
+            '<%= yeoman.lib %>/scripts/*.js'
+          ]
+        }
+      }
+    },
     // concat: {
     //   dist: {}
     // },
@@ -354,8 +339,8 @@ module.exports = function (grunt) {
       compile: {
         files: {
           '.tmp/styles/stylus.css': ['<%= yeoman.app %>/styles/index.styl'],
-          '.tmp/styles/fondant.css': ['<%= yeoman.lib %>/index.styl'],
-          '.tmp/styles/fondant-ie8.css': ['<%= yeoman.lib %>/ie8.styl']
+          '.tmp/styles/fondant.css': ['<%= yeoman.lib %>/styles/index.styl'],
+          '.tmp/styles/fondant-ie8.css': ['<%= yeoman.lib %>/styles/ie8.styl']
         }
       }
     }
@@ -393,17 +378,12 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep:dist',
-    'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
-    'concat',
-    'ngmin',
     'copy:dist',
     'cssmin',
     'uglify',
     // 'rev',
-    'usemin',
-    'htmlmin'
   ]);
 
   grunt.registerTask('default', [
