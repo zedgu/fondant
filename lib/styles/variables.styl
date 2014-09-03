@@ -6,79 +6,101 @@ base-family = "Lucida Grande", "Segoe UI", Verdana, Arial, "Heiti SC", "Microsof
 font-path = '../fonts/'
 
 // color
-base-white = #FFF
+color-white = #FFF
 
-base-black = #4E555F
-dark-black = #000
+color-black = #181717
+color-dark-black = #000000
 
-base-highlight = #6CB3D3
+color-light-gray = #F5F4F5
+color-base-gray = #8F949A
+color-dark-gray = #DCDBDC
 
-light-gray = #F9F9FA
-base-gray = #8F949A
-dark-gray = #DCDEDF
+// color variables
+light-mask = rgba(color-dark-black, .15)
+base-mask = rgba(color-dark-black, .7)
+
+base-highlight = #DA3610
+base-bright = color-white
+base-border = color-dark-gray
+
+light-shadow = rgba(color-dark-black, .1)
+base-shadow = rgba(color-dark-black, .3)
+
+light-front = color-base-gray
+base-front = #5B5B5B
+dark-front = color-black
+invert-front = color-white
+
+light-back = color-light-gray
+base-back = color-white
+dark-back = color-black
+invert-back = color-dark-black
 
 states = {
   normal: {
-    color: base-white,
-    bg-color: base-white,
-    invert-color: base-black,
-    border-color: #E0E1E1,
-    mask: 5%
+    color: color-white,
+    bg-color: color-white,
+    invert-color: base-front,
+    border-color: base-border,
+    mask: 4%
   },
   lowlight: {
-    color: light-gray,
-    bg-color: base-white,
-    invert-color: base-gray,
-    border-color: dark-gray,
-    mask: 7%
+    color: color-light-gray,
+    bg-color: color-white,
+    invert-color: color-base-gray,
+    border-color: color-dark-gray,
+    mask: 4%
   },
   highlight: {
-    color: #1B94E8,
-    bg-color: base-white,
-    invert-color: base-white,
-    border-color: #007ACF,
+    color: c = #FF6426
+    bg-color: color-white
+    invert-color: color-white
+    border-color: darken(c, 5%)
     mask: 14%
   },
   ok: {
-    color: #7EC469,
-    bg-color: base-white,
-    invert-color: base-white,
-    border-color: #76B661,
-    mask: 20%
+    color: c = #82C32F
+    bg-color: color-white
+    invert-color: color-white
+    border-color: darken(c, 10%)
+    mask: 14%
   },
   warning: {
-    color: #FFD143,
-    bg-color: base-white,
-    invert-color: base-white,
-    border-color: #F8C537,
-    mask: 24%
+    color: c = #FFA105
+    bg-color: color-white
+    invert-color: color-white
+    border-color: darken(c, 5%)
+    mask: 14%
   },
   danger: {
-    color: #EA4A3C,
-    bg-color: base-white,
-    invert-color: base-white,
-    border-color: #DB4638,
-    mask: 24%
+    color: c = #D52F12
+    bg-color: color-white
+    invert-color: color-white
+    border-color: darken(c, 10%)
+    mask: 14%
   },
   info: {
-    color: #92AFEC,
-    bg-color: base-white,
-    invert-color: base-white,
-    border-color: #8EA6E0,
-    mask: 24%
+    color: c = #4183c4
+    bg-color: color-white
+    invert-color: color-white
+    border-color: darken(c, 5%)
+    mask: 4%
   }
 }
 
-color-a = base-gray
-color-a-hover = base-black
+color-a = color-base-gray
+color-a-hover = color-black
 color-a-active = base-highlight
 color-a-highlight = states['highlight']['color']
 color-a-highlight-hover = darken(color-a-highlight, 10%)
 color-a-highlight-active = color-a-highlight-hover
-color-code = #B90031
-color-selection = #A6D8FF
-color-loader = #0088E5
-color-disabled = #CBCBCB
+color-code = states['danger']['color']
+color-selection = rgba(color-dark-black, 30%)
+color-loader = states['highlight']['color']
+color-disabled = color-dark-gray
+
+samp-back = color-dark-black
+samp-front = color-white
 
 // icons
 icons = {

@@ -59,8 +59,8 @@ pointing-colorful(state)
 // modal
 .modal
   +fd()
-    background-color base-white
-    border 1px solid dark-gray
+    background-color base-back
+    border 1px solid base-border
     border-radius .4em
     user-select text
     position relative
@@ -75,7 +75,7 @@ pointing-colorful(state)
       .content
         width 100%
         padding 2em
-        background-color light-gray
+        background-color light-back
         box-sizing border-box
       .tools
         padding .8rem .8rem
@@ -85,7 +85,7 @@ pointing-colorful(state)
             @extend [class^="icon-"].fd.after:after
             @extend .fd.icon-cancel.after:after
             opacity .2
-            color base-black
+            color base-front
             margin 0
             position absolute
             top 1em
@@ -115,7 +115,7 @@ pointing-colorful(state)
             @extend [class^="icon-"].fd.after:after
             @extend .fd.icon-cancel.after:after
             opacity .2
-            color base-black
+            color base-front
             margin 0
             position absolute
             top .7em

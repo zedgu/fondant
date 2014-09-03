@@ -57,9 +57,9 @@ colorful-invert(state)
   background-color: state['color']
   border-color: darken(state['border-color'], 10%)
 colorful-light(state)
-  color: lightness(state['color']) > 80% ? state['invert-color'] : darken(state['color'], 30%) !important
-  background-color: lightness(state['color']) > 80% ? lighten(state['invert-color'], 90%) : lighten(state['color'], 70%)
-  border-color: lightness(state['border-color']) > 80% ? state['border-color'] : lighten(state['border-color'], 60%)
+  color: lightness(state['color']) > 80% ? state['invert-color'] : state['color'] !important
+  background-color: lightness(state['color']) > 80% ? state['color'] : lighten(state['color'], 80%)
+  border-color: lightness(state['border-color']) > 80% ? state['border-color'] : lighten(state['border-color'], 70%)
 
 // font colors
 text-color(state)

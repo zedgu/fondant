@@ -1,7 +1,7 @@
 /***** Functions *****/
 colorful-panel(state)
-  border-color: lightness(state['border-color']) > 80% ? state['border-color'] : lighten(state['border-color'], 60%)
-  color base-black !important
+  border-color: lightness(state['border-color']) > 80% ? state['border-color'] : lighten(state['border-color'], 70%)
+  color base-front !important
   >
     header
     .header
@@ -17,15 +17,20 @@ nav
 footer
 div
   +fd()
+    &.base
+      background-color base-back
+      color base-front
     &.light
-      background-color base-white
+      background-color light-back
+      color dark-front
     &.dark
-      background-color light-gray
+      background-color dark-back
+      color invert-front
 
 // base border
 .border
   +fd()
-    border 1px solid dark-gray
+    border 1px solid base-border
     box-sizing border-box
 .border.rounded
   +fd()
@@ -55,7 +60,7 @@ section
 // panel style
 .panel
   +fd()
-    background-color base-white
+    background-color base-back
     border-width 1px
     border-style solid
     border-radius .4em
@@ -67,7 +72,7 @@ section
         border-bottom-style solid
         border-radius .4em .4em 0 0
         line-height 2em
-        padding .4em .8em
+        padding .2em .8em
       .content
         padding .8em
     colorful(colorful-panel)

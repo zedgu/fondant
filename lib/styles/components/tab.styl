@@ -48,7 +48,7 @@ tab-hover-colorful(state)
           margin-left 5px      
       &.active
         >a
-          background base-white
+          background base-back
           colorful(tab-active-colorful)
       &:not(.active)
         >a
@@ -57,10 +57,10 @@ tab-hover-colorful(state)
             padding-bottom 7px
       &.disabled
         >a
-          color dark-gray
+          color light-front
           &:hover,&focus
             background none
-            border-color rgba(dark-black, 0)
+            border-color transparent
     &.tab-flip
       >li
         float right
@@ -79,7 +79,7 @@ tab-hover-colorful(state)
         margin-bottom 0
         &.active
           >a
-            border-right-color rgba(dark-black, 0)
+            border-right-color transparent
             colorful(tab-colorful)
         >a
           border-radius 4px 0 0 4px
@@ -109,7 +109,7 @@ tab-hover-colorful(state)
         margin-bottom 0
         &.active
           >a
-            border-left-color rgba(dark-black, 0)
+            border-left-color transparent
             colorful(tab-colorful)
         >a
           border-radius 0 4px 4px 0
@@ -131,7 +131,7 @@ tab-hover-colorful(state)
 
 .tab-content
   +fd()
-    border 1px solid dark-gray
+    border 1px solid base-border
     border-top none
     .item
       display none

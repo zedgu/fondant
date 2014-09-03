@@ -9,11 +9,11 @@ progress-colorful(state)
 .progress
   +fd()
     display block
-    border 1px solid dark-gray
+    border 1px solid base-border
     width 100%
     height 2em
     line-height 1.6em
-    background-color light-gray
+    background-color light-back
     border-radius .2rem
     padding .2em
     box-sizing border-box
@@ -21,7 +21,7 @@ progress-colorful(state)
     position relative
     text-indent -4em
     text-align right
-    text-shadow 1px 0 1px rgba(base-white, 1), 0 1px 1px rgba(base-white, 1), 0 -1px 1px rgba(base-white, 1), -1px 0 1px rgba(base-white, 1)
+    text-shadow 1px 0 1px base-bright, 0 1px 1px base-bright, 0 -1px 1px base-bright, -1px 0 1px base-bright
     overflow hidden
     &:before
       content ' '
@@ -43,14 +43,14 @@ progress-colorful(state)
         left 0
         right 0
         bottom 0
-        background base-white
+        background base-bright
         border-radius .2rem
         animation progressing 2s ease-out infinite
     colorful(progress-colorful)
     &.striped
       &:before
         background-size 2em 2em
-        background-image linear-gradient(-45deg, rgba(base-white, .15) 25%, rgba(dark-black, 0) 25%, rgba(dark-black, 0) 50%, rgba(base-white, .15) 50%, rgba(base-white, .15) 75%, rgba(dark-black, 0) 75%, rgba(dark-black, 0))
+        background-image linear-gradient(-45deg, rgba(base-bright, .15) 25%, rgba(base-bright, 0) 25%, rgba(base-bright, 0) 50%, rgba(base-bright, .15) 50%, rgba(base-bright, .15) 75%, rgba(base-bright, 0) 75%, rgba(base-bright, 0))
       &.ing
         &:before
           animation 2s linear 0s normal none infinite progress-striped
@@ -61,7 +61,7 @@ progress-colorful(state)
       padding 0
     > *
       display block
-      background-color light-gray
+      background-color light-back
       position absolute
       left 0
       top 0

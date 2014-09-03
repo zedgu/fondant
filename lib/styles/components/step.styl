@@ -7,6 +7,7 @@ div
     +fd()
       counter-reset none
       margin .8em 0
+      padding-left 0
 ol
 ul
   &.breadcrumb
@@ -34,7 +35,7 @@ ul
           color color-a-highlight-hover
         & + li:before
           content "/\00a0"
-          color dark-gray
+          color light-front
           margin 0 .15em
 div.breadcrumb
   +fd()
@@ -50,7 +51,7 @@ ul
     +fd()
       display table
       overflow hidden
-      border 1px solid dark-gray
+      border 1px solid base-border
       line-height 1
       border-radius 0.2em
 div.step
@@ -65,7 +66,7 @@ ul
         padding 0 1.9em 0 3em
         display table-cell
         background-color: states['highlight']['bg-color']
-        color base-black
+        color base-front
         height 3em
         line-height 3em
         white-space nowrap
@@ -76,7 +77,7 @@ ul
           height 2.2em
           background-color: states['highlight']['bg-color']
           transform rotate(135deg)
-          box-shadow -1px -1px 0px 0px rgba(dark-black, .1)
+          box-shadow -1px -1px 0px 0px light-shadow
           margin .42em -3em 0 .43em
         > a
           display inline-block
@@ -100,7 +101,7 @@ ul
           & > a
             cursor auto
             background-color: states['highlight']['color']
-            color base-white
+            color invert-front
             font-weight bold
             &:before
               background-color: states['highlight']['color']
@@ -118,7 +119,7 @@ ul
       > li
         &.current ~ li
           cursor not-allowed
-          background-color base-white
+          background-color base-back
           color color-disabled
 div.step
   +fd()
@@ -146,7 +147,7 @@ ul
       &.v > li
         display block
         padding 0 2em
-        border 1px solid dark-gray
+        border 1px solid base-border
         overflow hidden
         &:before
           display none

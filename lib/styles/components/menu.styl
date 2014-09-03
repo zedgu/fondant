@@ -10,9 +10,9 @@ colorful-menu(state)
 .menu
   +fd()
     margin 0
-    background-color base-white
+    background-color base-back
     font-weight normal
-    box-shadow 0px 0px 0px 1px rgba(dark-black, .1);
+    box-shadow 0px 0px 0px 1px light-shadow;
     border-radius .2rem
     list-style none
     &:before
@@ -51,23 +51,23 @@ colorful-menu(state)
                 margin-right 0
           a:hover
             cursor pointer
-            background-color light-gray
+            background-color light-back
         &.disabled >
           a
           span
             cursor not-allowed
-            color dark-gray !important
+            color light-front !important
         &.active
           >
             span
             a
-              background-color light-gray
+              background-color light-back
               box-shadow 0em .2em 0em inset
       .right
         border-left none
       .item ~ .item
       li ~ li
-        border-left 1px solid dark-gray
+        border-left 1px solid base-border
     &.v
       width 13em
       >
@@ -88,11 +88,11 @@ colorful-menu(state)
                 background none
                 border none
                 box-shadow none
-                color dark-gray
-                text-shadow 1px 1px 1px light-gray
+                color light-front
+                text-shadow 1px 1px 1px light-shadow
         .item ~ .item
         li ~ li
-          border-top 1px solid dark-gray
+          border-top 1px solid base-border
           border-left none
         :first-child
           > :first-child

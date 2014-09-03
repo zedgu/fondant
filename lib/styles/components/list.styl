@@ -51,12 +51,12 @@ ol.ordered
 
 // horizontal ul
 +fd(ul)
-  &.h
   &.row
   &.menu
     padding-left 0
     list-style-type none
   &.h
+    list-style-type none
     .li
     li
       display inline-block
@@ -74,9 +74,9 @@ ol.ordered
       @extend .border.rounded.fd
       .li + .li
       li + li
-        border-top 1px solid dark-gray
+        border-top 1px solid base-border
       &.h
         .li + .li
         li + li
           border-top none
-          border-left 1px solid dark-gray
+          border-left 1px solid base-border

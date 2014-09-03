@@ -19,9 +19,9 @@ button-color(state)
   colorful-invert(state)
   &:hover
   &.active
-    background-color: darken(@background-color, state['mask'])
+    background-color: lightness(@background-color) > 80% ? darken(@background-color, state['mask']) : lighten(@background-color, state['mask'])
   &:active
-    box-shadow: inset .05em .05em .8em .1em darken(darken(@background-color, state['mask']), 25%)
+    box-shadow: inset .05em .05em .8em .1em darken(darken(@background-color, state['mask']), 15%)
 
 /***** Styles *****/
 +btn()
@@ -32,14 +32,14 @@ button-color(state)
     display inline-block
     font-family base-family
     font-size 1em
-    line-height 2.2em
-    padding 0 .9em
+    line-height 2em
+    padding 0 .7em
     vertical-align middle
     cursor pointer
     margin 2px
     user-select none
     white-space nowrap
-    height 2.2em
+    height 2em
     box-sizing border-box
     &:focus
       text-decoration none
@@ -61,26 +61,26 @@ button-color(state)
           margin-left 0
       &.labeled
         position relative
-        padding 0 .9em 0 3.3em
+        padding 0 .7em 0 3.1em
         box-sizing content-box
         &:before
         &.after:after
           position absolute
           top 0
           width 2.4em
-          background-color rgba(dark-black, .15)
-          line-height 2.2em
-          height 2.2em
+          background-color light-mask
+          line-height 2em
+          height 2em
           display inline-block
           overflow hidden
         &:before
           left 0
-          border-right 1px solid rgba(dark-black, .17)
+          border-right 1px solid light-mask
         &.after
-          padding 0 3.3em 0 .9em
+          padding 0 3.1em 0 .7em
           &:after
             right 0
-            border-left 1px solid rgba(dark-black, .17)
+            border-left 1px solid rgba(light-mask, .17)
 
 +btn(1)
   +fd(img)

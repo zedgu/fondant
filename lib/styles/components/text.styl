@@ -22,7 +22,7 @@ for i in 1 2 3 4 5 6
     +fd()
       font-weight normal
       +h(22)
-        color darken(base-black, 20%)
+        color darken(dark-front, 20%)
 
 // h2-h6 .sub
 for i in 2 3 4 5 6
@@ -30,7 +30,7 @@ for i in 2 3 4 5 6
   h{i}.sub
     +fd()
       +h(18)
-        color base-gray
+        color light-front
 
 // formatting
 p
@@ -39,8 +39,8 @@ p
 
 code
   color color-code
-  background-color light-gray
-  border 1px solid dark-gray
+  background-color light-back
+  border 1px solid base-border
   border-radius 4px
   font-size 1em
   padding 0 3px
@@ -85,18 +85,18 @@ blockquote
     content '\201D'
 
 samp
-  background-color dark-black
-  color base-white
+  background-color samp-back
+  color samp-front
   padding .1em .4em
 
 kbd
-  background-color light-gray
-  border 1px solid dark-gray
+  background-color light-back
+  border 1px solid base-border
   border-radius 3px
   font-size .6em
   padding .1em .2em
   white-space nowrap
-  box-shadow 0.1em 0.2em 0.2em dark-gray
+  box-shadow 0.1em 0.2em 0.2em base-shadow
 
 // base text style
 .bold

@@ -7,8 +7,8 @@
 @import 'normalize'
 
 body
-  background-color base-white
-  color lighten(base-black, 15%)
+  background-color base-back
+  color base-front
   font-family base-family
   font-size base-size
 
@@ -27,7 +27,7 @@ br
 .hr
   +fd()
     padding-bottom .2em
-    border-bottom 1px solid dark-gray
+    border-bottom 1px solid base-border
 .divider
   +fd()
     text-align center
@@ -38,8 +38,8 @@ br
     &:after
       content " "
       display table-cell
-      border-top 1px solid rgba(base-black, .3)
-      border-bottom 1px solid rgba(base-white, .8)
+      border-top 1px solid rgba(base-front, .3)
+      border-bottom 1px solid rgba(base-back, .8)
       height 0
       position absolute
       top 50%
