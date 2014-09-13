@@ -381,7 +381,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'wiredep:dist',
     'concurrent:dist',
     'autoprefixer',
     'copy:dist',
