@@ -1,6 +1,6 @@
 {
   "name": "fondant",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {
     "angular": "^1.2.18",
     "angular-file-upload": "^0.5.7",
