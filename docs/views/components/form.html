@@ -327,6 +327,45 @@
   </div>
 </section>
 <section class="fd">
+  <h3 class="hr">Input fields with label</h3>
+  <div>Input fields with label in different sizes.</div>
+  <div class="docs">
+    <div class="usage">
+     <ul class="fd">
+       <li><code>label.fd &gt; input</code> or <code>.label.fd &gt; input</code></li>
+       <li><code>label.fd &gt; span + input</code> or <code>.label.fd &gt; span + input</code></li>
+     </ul>
+    </div>
+    <div class="example">
+      <p class="fd">
+        <label class="fd">
+          Name
+          <input type="text" class="m">
+        </label>
+      </p>
+      <p class="fd">
+        <label class="fd">
+          Password
+          <input type="password" class="m">
+        </label>
+      </p>
+      <p class="fd">
+        <label>
+          <span class="narrow">Name</span>
+          <input type="text" class="fd m">
+        </label>
+      </p>
+      <p class="fd">
+        <label>
+          <span class="narrow">Password</span>
+          <input type="password" class="fd m">
+        </label>
+      </p>
+    </div>
+    <div class="markup" fd-code hljs language="html" source="code"></div>
+  </div>
+</section>
+<section class="fd">
   <h3 class="hr">Input fields with icons</h3>
   <div>Support outside icons by default and use the <q>inside</q> class to make the icons be inside of the input fields.</div>
   <div class="docs">
