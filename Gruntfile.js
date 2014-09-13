@@ -22,7 +22,8 @@ module.exports = function (grunt) {
       // configurable paths
       app: 'docs',
       dist: 'dist',
-      lib: 'lib'
+      lib: 'lib',
+      ver: grunt.file.readJSON("bower.json").version
     },
 
     // Watches files for changes and runs tasks based on the changed files
@@ -304,7 +305,7 @@ module.exports = function (grunt) {
     cssmin: {
       dist: {
         options: {
-          banner: '/** fondant\n  * https://github.com/zedgu/fondant\n  * MIT\n */'
+          banner: '/*! fondant <%= yeoman.ver %> | MIT License | github.com/zedgu/fondant */'
         },
         files: {
           '<%= yeoman.dist %>/styles/fondant.css': [
@@ -319,7 +320,7 @@ module.exports = function (grunt) {
     uglify: {
       dist: {
         options: {
-          banner: '/** fondant\n  * https://github.com/zedgu/fondant\n  * MIT\n */\n'
+          banner: '/*! fondant <%= yeoman.ver %> | MIT License | github.com/zedgu/fondant */'
         },
         files: {
           '<%= yeoman.dist %>/scripts/fondant.js': [
