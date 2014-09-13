@@ -71,6 +71,10 @@ module.exports = function (grunt) {
         middleware: function(connect, options) {
           var middlewares = [];
           var directory = options.directory || options.base[options.base.length - 1];
+          middlewares.push(function(req, res, next) {
+            res.setHeader('Access-Control-Allow-Origin', '*');
+            next();
+          });
           middlewares.push(require('connect-modrewrite')(['!\\.html|\\.js|\\.svg|\\.css|\\.png|\\.eot|\\.ttf|\\.woff$ /index.html [L]']));
 
           if (!Array.isArray(options.base)) {
