@@ -1,12 +1,15 @@
 /***** Functions *****/
 // button selector
-btn(n = 3)
+btn(n = 4)
   if n == 1
     .button
       {block}
   else if n == 2
     .button
     button
+      {block}
+  else if n == 3
+    input[type="button"]
       {block}
   else
     .button
@@ -131,3 +134,21 @@ button-color(state)
     sizes(\&, ' > button')
     sizes(\&, ' > .button')
     sizes(\&, ' > input[type="button"]')
+    &.v
+      +btn()
+        display block
+        float none
+        border-left-width 1px
+        border-top-width 0px
+        border-radius 0
+        &:first-child
+          border-top-width 1px
+          border-top-left-radius .2rem
+          border-top-right-radius .2rem
+        &:last-child
+          border-bottom-left-radius .2rem
+          border-bottom-right-radius .2rem
+      +btn(1)
+        text-align center
+      +btn(3)
+        width 100%
