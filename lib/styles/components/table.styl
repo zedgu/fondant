@@ -1,0 +1,55 @@
+/***** Functions *****/
+
+// colorful table
+table-color(state)
+  th
+  td
+    border-color: lightness(state['border-color']) > 85% ? state['border-color'] : lighten(state['border-color'], 70%)
+  th
+    color: lightness(state['color']) > 85% ? state['invert-color'] : state['color'] !important
+    background-color: lightness(state['color']) > 85% ? state['color'] : lighten(state['color'], 85%)
+
+table-colorful-vertical(state)
+  tbody > tr > td:first-child
+    background-color lightness(state['color']) > 85% ? state['color'] : lighten(state['color'], 85%)
+    font-weight 600
+
+table-colorful-striped(state)
+  tbody > tr:nth-child(2n)
+    background-color lightness(state['color']) > 95% ? state['color'] : lighten(state['color'], 95%)
+
+table-colorful-active(state)
+  tbody > tr
+    &:hover
+    &:active
+      background-color lightness(state['color']) > 90% ? state['color'] : lighten(state['color'], 90%)
+
+table-colorful-invert(state)
+  th
+    colorful-invert(state)
+
+/***** Styles *****/
+table
+table.table
+  +fd()
+    margin 0
+    background-color base-back
+    font-weight normal
+    // box-shadow 0px 0px 0px 1px light-shadow;
+    border-radius .2rem
+    colorful(table-color)
+    th
+    td
+      padding 8px 10px
+      border-width 1px
+      border 1px solid
+    th
+      font-weight 600
+    &.striped
+      colorful(table-colorful-striped)
+    &.active
+      colorful(table-colorful-active)
+    &.invert
+      colorful(table-colorful-invert)
+    &.vertical
+      colorful(table-colorful-vertical)
