@@ -45,6 +45,9 @@ body
       for key,value in e_n_12
         &.{key}
           width unit(100/12*value, "%")
+      @media (max-width: 768px)
+        width 100% !important
+        float none
     &:before
     &:after
       clearfix()
@@ -57,6 +60,9 @@ body
         padding 1% 1.5%
         display table-cell
         vertical-align middle
+        @media (max-width: 768px)
+          width 100% !important
+          display block 
       aside
         width 17%
       article
@@ -71,7 +77,7 @@ body
     > article
     > .article
       width 80%
-
+              
 // box be center
 .mid
   +fd()
