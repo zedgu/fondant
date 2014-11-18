@@ -79,6 +79,8 @@ widths-labels = tight narrow half broad wide full
 widths(prefix=\&, selector='', inverse=0, step=15, start=25, u='%')
   for width, i in widths-labels
     {prefix}.{width}{selector}
+      @media (max-width: 768px)
+        width 100% !important
       if inverse
         width unit(inverse - step * i + start, u) !important
       else
